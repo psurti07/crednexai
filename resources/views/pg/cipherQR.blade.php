@@ -100,7 +100,7 @@
                 $("#countdown").text("Time's up!");
                 clearInterval(countdownInterval); // Stop the countdown if time's up
                 // Redirect to the specified URL
-                window.location.href = "https://capitalkredit.in/";
+                window.location.href = "https://crednexai.com/";
                 return;
             }
     
@@ -110,7 +110,7 @@
          // Callback function to check response every 15 seconds
         function checkResponse() {
             $.ajax({
-                url: "https://capitalkredit.in/status-enquiry", // Replace with your API endpoint
+                url: "https://crednexai.com/status-enquiry", // Replace with your API endpoint
                 method: "GET", // Or POST, depending on your API
                 dataType: "json",
                 success: function (response) {

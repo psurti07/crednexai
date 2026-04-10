@@ -19,7 +19,7 @@ class BilldeskController extends Controller
                 "order_date" => $date->format('Y-m-d\TH:i:sP'),
                 "amount" => "1.00",
                 "currency" => "356",
-                "ru" => "https://capitalkredit.in/",
+                "ru" => "https://crednexai.com/",
                 "itemcode" => "DIRECT",
                 "customer" => [
                     "first_name" => "Vicky",

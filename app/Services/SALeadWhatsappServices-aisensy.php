@@ -73,7 +73,7 @@ class SALeadWhatsappServices
                         					"url" => $aisensy->media_url,
                         					"filename" => $aisensy->media_filename
                         				),
-                        				"userName" => 'Capital Kredit Admin',
+                        				"userName" => 'CredNexAI Admin',
                         				"tags" => array("Self_RM"),
                         				"attributes" => array(
                         					"EligibleAmount" => strval($eligibilityAmt)

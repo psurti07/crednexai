@@ -74,7 +74,7 @@ class LALeadWhatsappServices
                         					"url" => $aisensy->media_url,
                         					"filename" => $aisensy->media_filename
                         				),
-                        				"userName" => 'Capital Kredit Admin',
+                        				"userName" => 'CredNexAI Admin',
                         				"tags" => array("Get Offer"),
                         				"attributes" => array(
                         					"EligibleAmount" => strval($eligibilityAmt)

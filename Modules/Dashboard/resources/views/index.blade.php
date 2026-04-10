@@ -1,5 +1,5 @@
 @extends('layouts.customer')
-@section('title','Welcome to Capital Kredit! ')
+@section('title','Welcome to CredNexAI! ')
 @push('style-css')
 @endpush
 
@@ -172,7 +172,7 @@
                                                                 <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
                                                                     <div class="d-flex flex-column">
                                                                         <div class="d-flex align-items-center mb-2">
-                                                                            <a href="javascript:;" class="text-gray-900 text-hover-success fs-2 fw-bold me-1">{{ isset($agent->fullname) ? $agent->fullname : 'capitalkredit Support' }}</a>
+                                                                            <a href="javascript:;" class="text-gray-900 text-hover-success fs-2 fw-bold me-1">{{ isset($agent->fullname) ? $agent->fullname : 'crednexai Support' }}</a>
                                                                             <a href="javascript:;"><i class="ki-duotone ki-verify fs-1 text-primary"><span class="path1"></span><span class="path2"></span></i></a>
                                                                         </div>
                                                                         <div class="d-flex flex-wrap fw-semibold fs-6 mb-4 pe-2">
@@ -186,7 +186,7 @@
                                                                             </a>
                                                                             <a href="javascript:;" class="d-flex align-items-center text-gray-700 text-hover-success mb-2">
                                                                                 <i class="ki-duotone ki-sms fs-4 me-1"><span class="path1"></span><span class="path2"></span></i>
-                                                                                {{ $agent->emailid ?? 'support@capitalkredit.in' }}
+                                                                                {{ $agent->emailid ?? 'support@crednexai.com' }}
                                                                             </a>
                                                                         </div>
                                                                     </div>
@@ -288,7 +288,7 @@
             
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <h6 class="text-danger"><marquee scrollamount="8" behavior="scroll">BE AWARE! We ask our customers to make payments ONLY on our website https://capitalkredit.in and NOT through any other source, directly or indirectly. Thanks!</marquee></h6>
+                    <h6 class="text-danger"><marquee scrollamount="8" behavior="scroll">BE AWARE! We ask our customers to make payments ONLY on our website https://crednexai.com and NOT through any other source, directly or indirectly. Thanks!</marquee></h6>
                 </div>
             </div>
         </div>

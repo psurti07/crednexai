@@ -18,9 +18,9 @@
                 height: 100%;
                 background-repeat: repeat;
                 background-position: center top;
-                background-image: url(https://capitalkredit.in/assets/images/mail-bgm.png);
+                background-image: url(https://crednexai.com/assets/images/mail-bgm.png);
                 background-color: #f9f9f9;
-                " background="https://capitalkredit.in/front/images/bg-01.webp">
+                " background="https://crednexai.com/front/images/bg-01.webp">
         <tbody>
         <tr>
             <td class="es-m-margin" valign="top" style="padding: 0; margin: 0;">
@@ -60,13 +60,13 @@
                                                                 class="es-m-txt-c"
                                                                 style="padding: 0; margin: 0; padding-top: 5px; font-size: 0;">
                                                                 <a target="_blank"
-                                                                   href="https://capitalkredit.in/"
+                                                                   href="https://crednexai.com/"
                                                                    style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: underline; color: #000f26; font-size: 14px;">
-                                                                    <img src="https://capitalkredit.in/front/images/logo/logo.png"
-                                                                         alt="capitalkredit"
+                                                                    <img src="https://crednexai.com/front/images/logo/logo.png"
+                                                                         alt="crednexai"
                                                                          style="display: block; border: 0; outline: 0; text-decoration: none; -ms-interpolation-mode: bicubic;"
                                                                          width="190"
-                                                                         title="capitalkredit">
+                                                                         title="crednexai">
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -118,7 +118,7 @@
                                                                 <p>Mobile : <strong>{{ $mobile }}</strong></p>
                                                                 <p>Password : <strong>{{ $password }}</strong></p>
                                                                 <p>Please visit Your Personalised Portal and login with your credentials:</p></p>
-                                                                <a href="https://capitalkredit.in/customer/login" style="display:inline-block;background:#2c2c2c;color:#fff;font-family:Ubuntu,Helvetica,Arial,sans-serif,Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line-height:17.5px;margin:0;text-decoration:none;text-transform:none;padding:9px 26px 9px 26px; margin:auto; display:block; width: fit-content; mso-padding-alt:0;border-radius:10px" target="_blank"><span><strong><span style="font-family:Poppins,sans-serif;font-size:14px">Click to Login</span></strong></span></a>
+                                                                <a href="https://crednexai.com/customer/login" style="display:inline-block;background:#2c2c2c;color:#fff;font-family:Ubuntu,Helvetica,Arial,sans-serif,Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line-height:17.5px;margin:0;text-decoration:none;text-transform:none;padding:9px 26px 9px 26px; margin:auto; display:block; width: fit-content; mso-padding-alt:0;border-radius:10px" target="_blank"><span><strong><span style="font-family:Poppins,sans-serif;font-size:14px">Click to Login</span></strong></span></a>
                                                                 <p  style="font-size:13px">For security reasons, please keep this information confidential. If you did not request this password change, please contact our support team immediately.</p>
                                                             </td>
                                                         </tr>
@@ -184,25 +184,25 @@
                                                                                                 ">
                                                                     <a target="_blank"
                                                                        style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: none; color: #000f26; font-size: 14px;"
-                                                                       href="https://capitalkredit.in/privacy-policy">
+                                                                       href="https://crednexai.com/privacy-policy">
                                                                         Privacy Policy
                                                                     </a>
                                                                     &nbsp; | &nbsp;
                                                                     <a target="_blank"
                                                                        style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: none; color: #000f26; font-size: 14px;"
-                                                                       href="https://capitalkredit.in/terms-and-conditions">
+                                                                       href="https://crednexai.com/terms-and-conditions">
                                                                         Terms &amp; Conditions
                                                                     </a>
                                                                     &nbsp; | &nbsp;
                                                                     <a target="_blank"
                                                                        style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: none; color: #000f26; font-size: 14px;"
-                                                                       href="https://capitalkredit.in/raise-request">
+                                                                       href="https://crednexai.com/raise-request">
                                                                         Raise a request
                                                                     </a>
                                                                     &nbsp; | &nbsp;
                                                                     <a target="_blank"
                                                                        style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: none; color: #000f26; font-size: 14px;"
-                                                                       href="https://capitalkredit.in">
+                                                                       href="https://crednexai.com">
                                                                         Visit Website
                                                                     </a>
                                                                 </p>
@@ -249,7 +249,7 @@
                                                                         {{ str_ireplace(' ','-',env('COMPANY_MOBILE')) }}
                                                                     </a>
                                                                     | Email:
-                                                                    <a href="mailto:info@capitalkredit.in"
+                                                                    <a href="mailto:info@crednexai.com"
                                                                        style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: none; color: #000f26; font-size: 14px;">
                                                                         {{ env('INFO_EMAIL') }}
                                                                     </a>

@@ -95,7 +95,7 @@ dwIDAQAB
                 "sender_vpa"=> "nikjaiswal33-4@okaxis",
                 "sender_name"=> "Vicky Jaiswal",
                 "sender_mobile"=> "+918530537178",
-                "receiver_vpa"=> "cpy.capitalkredit@finobank",
+                "receiver_vpa"=> "cpy.crednexai@finobank",
                 "amount"=> "10",
                 "remarks"=> "Initiate Collect",
                 "refid"=> rand(1000,9999),
@@ -134,9 +134,9 @@ dwIDAQAB
         $segments = explode('/', trim($path, '/'));
         $secondLastSegment = $segments[count($segments) - 2];
 
-        $actualReturnUrl = $secondLastSegment === 'self-apply' ? 'https://capitalkredit.in/self-apply/premium-offer-response' : 'https://capitalkredit.in/loan-agent/ultra-saver-offer-response';
+        $actualReturnUrl = $secondLastSegment === 'self-apply' ? 'https://crednexai.com/self-apply/premium-offer-response' : 'https://crednexai.com/loan-agent/ultra-saver-offer-response';
 
-        $redirectUrl = $paymentMessage === 'Transaction Successfull' ? $actualReturnUrl : 'https://capitalkredit.in/cipher-payment-failed/';
+        $redirectUrl = $paymentMessage === 'Transaction Successfull' ? $actualReturnUrl : 'https://crednexai.com/cipher-payment-failed/';
         Log::info($redirectUrl);
         return response()->json(array('type'=>'SUCCESS', 'message' => $paymentMessage, 'redirectUrl' => $redirectUrl, 'data' => $response));
     }
@@ -150,7 +150,7 @@ dwIDAQAB
             "url" => "payin/dynamic-qr",
             "parameter" => [
                 //'receiver_vpa' => "cpy.kredbaz@fin",
-                'receiver_vpa' => "cpy.capitalkredit@finobank",
+                'receiver_vpa' => "cpy.crednexai@finobank",
                 'amount' => "299", // amount
                 'remarks' => "Dynamic QR", // remarks
                 'refid' => $refId, //refrence id

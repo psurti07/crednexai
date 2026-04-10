@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>500 Server Error :: Capital Kredit</title>
+    <title>500 Server Error :: CredNexAI</title>
 
     <style id="" media="all">
         /* cyrillic-ext */

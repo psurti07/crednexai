@@ -135,7 +135,7 @@
                             <div class="col-md-12"><span class="text-danger" id="usererrormsg"></span></div>
                         </div>
 
-                        <p class="mb-0 s-14 text-start text-dark">By submitting, you agree to Capital Kredit's <a href="{{ route('front.terms.conditions') }}" target="_blank" class="text-dark text-decoration-none">Terms of Use</a> and <a href="{{ route('front.privacy.policy') }}" class="text-dark text-decoration-none" target="_blank">Privacy Policy</a>, and consent to receive promotional and informational messages via email, call, or SMS.</p>
+                        <p class="mb-0 s-14 text-start text-dark">By submitting, you agree to CredNexAI's <a href="{{ route('front.terms.conditions') }}" target="_blank" class="text-dark text-decoration-none">Terms of Use</a> and <a href="{{ route('front.privacy.policy') }}" class="text-dark text-decoration-none" target="_blank">Privacy Policy</a>, and consent to receive promotional and informational messages via email, call, or SMS.</p>
                     </form>
                 </div>
             </div>
@@ -177,13 +177,13 @@
 </section>
 <!-- Affiliate NBFCs section ends -->
 
-<!-- why Capital Kredit section starts -->
+<!-- why CredNexAI section starts -->
 <section id="features-6" class="pt-0 pb-80 features-section division">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 col-lg-9">
                 <div class="section-title mb-50">
-                    <h2 class="s-28 mb-0">Why <span class="color--green-500">Capital Kredit?</span></h2>
+                    <h2 class="s-28 mb-0">Why <span class="color--green-500">CredNexAI?</span></h2>
                     <p class="s-16 color--grey">Here's What Makes Us Your Top Choice. </p>
                 </div>
             </div>
@@ -246,7 +246,7 @@
         </div>
     </div>
 </section>
-<!-- why Capital Kredit section ends -->
+<!-- why CredNexAI section ends -->
 
 <!-- Testimonioals section starts -->
 <section id="reviews-1" class="pt-0 pb-80 shape--06 reviews-section">
@@ -277,13 +277,13 @@
                 <div class="form-holder">
                     <div class="contact-form-notice">
                         <p class="s-14">
-                            <strong>Disclosure:</strong> Loan Tenure ranges from minimum 6 months to maximum of 72 months with Annual Interest Rates ranging between 11% - 35%. Processing fee up to 2%. For Example: Taking in consideration a personal loan of Rs.1,00,000 availed at 11%* interest rate for a tenure of 6* years with 2%* processing fee, the APR will be 11.75%*. Capital Kredit is not a direct lender itself. Instead we provide consultation services to help users connect with right NBFCs for loan approval. *T&C Apply. All these numbers are tentative/indicative, the final loan specifics may vary depending upon the customer profile and NBFCs’ criteria, rules & regulations, and terms & conditions.
+                            <strong>Disclosure:</strong> Loan Tenure ranges from minimum 6 months to maximum of 72 months with Annual Interest Rates ranging between 11% - 35%. Processing fee up to 2%. For Example: Taking in consideration a personal loan of Rs.1,00,000 availed at 11%* interest rate for a tenure of 6* years with 2%* processing fee, the APR will be 11.75%*. CredNexAI is not a direct lender itself. Instead we provide consultation services to help users connect with right NBFCs for loan approval. *T&C Apply. All these numbers are tentative/indicative, the final loan specifics may vary depending upon the customer profile and NBFCs’ criteria, rules & regulations, and terms & conditions.
                         </p>
                         <p class="s-14">
-                            <strong>Disclaimer:</strong> Capital Kredit is a loan service aggregator and is authorised to provide services on behalf of its Lending Partners.
+                            <strong>Disclaimer:</strong> CredNexAI is a loan service aggregator and is authorised to provide services on behalf of its Lending Partners.
                         </p>
                         <p class="s-14">
-                            <strong>Important Note:</strong> BE AWARE! We ask our customers to make payments ONLY on our website https://capitalkredit.in and NOT through any other source, directly or indirectly. Thanks!
+                            <strong>Important Note:</strong> BE AWARE! We ask our customers to make payments ONLY on our website https://crednexai.com and NOT through any other source, directly or indirectly. Thanks!
                         </p>
                         <p class="s-14">
                             <strong>Registered Office Address:</strong> {{ env('COMPANY_ADDRESS') }} <br /> Mobile: {{ env('COMPANY_MOBILE') }} | Email: {{ env('INFO_EMAIL') }}

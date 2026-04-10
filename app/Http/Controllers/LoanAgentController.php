@@ -70,7 +70,7 @@ class LoanAgentController extends Controller
             /* check the entered mobile number is present or not */
             $user = singleUserDetails(['mobile' => $inputs['mobile']]);
             if (!$user || (Cookie::has('user_mobile') && Cookie::get('user_mobile') != $inputs['mobile'])) {
-                $keysToKeep = ['XSRF-TOKEN', 'capitalkredit_session', 'utm_campaign', 'utm_medium', 'utm_source'];
+                $keysToKeep = ['XSRF-TOKEN', 'crednexai_session', 'utm_campaign', 'utm_medium', 'utm_source'];
                 foreach (Cookie::get() as $key => $value) {
                     if (!in_array($key, $keysToKeep)) {
                         Cookie::queue(Cookie::forget($key));
@@ -786,7 +786,7 @@ class LoanAgentController extends Controller
                     ];
 
                     /* send email in brevo */
-                    sendBrevoHtmlMail2($mailData, 'Congratulations! Payment for Capital Kredit’s Hire Agent plan has been successful.', $sendGreetings, 3, $attachments);
+                    sendBrevoHtmlMail2($mailData, 'Congratulations! Payment for CredNexAI’s Hire Agent plan has been successful.', $sendGreetings, 3, $attachments);
 
                     DB::table('application_remarks')->updateOrInsert([
                         'service' => 5,
@@ -1063,7 +1063,7 @@ class LoanAgentController extends Controller
                     ];
 
                     /* send email in brevo */
-                    sendBrevoHtmlMail2($mailData, 'Congratulations! Payment for Capital Kredit’s Hire Agent plan has been successful.', $sendGreetings, 3, $attachments);
+                    sendBrevoHtmlMail2($mailData, 'Congratulations! Payment for CredNexAI’s Hire Agent plan has been successful.', $sendGreetings, 3, $attachments);
 
                     $remote_data = array(
                         'company_code' => config('constant.COMPANY_CODE'),
@@ -1177,7 +1177,7 @@ class LoanAgentController extends Controller
                         'zip' => $userData->pincode,
                         'orderid' => $orderId,
                         'odamount' => $orderData->orderamount,
-                        'sourceurl' => 'https://capitalkredit.in/loan-agent/paymentSuccess'
+                        'sourceurl' => 'https://crednexai.com/loan-agent/paymentSuccess'
                     );
 
                     if ($fbleads) {
@@ -1391,7 +1391,7 @@ class LoanAgentController extends Controller
 
             //Log::info('Offer data - '. $offerId);
             $orderId = number_format(microtime(true) * 1000, 0, '.', '');
-            $returnUrl = 'https://capitalkredit.in/api/loan-agent/great-deal-offer-response';
+            $returnUrl = 'https://crednexai.com/api/loan-agent/great-deal-offer-response';
 
             if (env('SABPAISA_MODE') == "PROD") {
                 $curlurl = "https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1";
@@ -1662,7 +1662,7 @@ class LoanAgentController extends Controller
     //         $offerId = $record->id;
 
     //         $orderid = number_format(microtime(true) * 1000, 0, '.', '');
-    //         $returnUrl = 'https://capitalkredit.in/api/loan-agent/elite-offer-response';
+    //         $returnUrl = 'https://crednexai.com/api/loan-agent/elite-offer-response';
     //         $password = trim(random_code(6));
     //         Session::put('orderid', $orderid);
     //         Session::save();
@@ -2054,7 +2054,7 @@ class LoanAgentController extends Controller
             //Log::info('Offer data - '. $offerId);
             $orderId = number_format(microtime(true) * 1000, 0, '.', '');
             $encData = null;
-            $returnUrl = 'https://capitalkredit.in/api/loan-agent/ultra-saver-offer-response';
+            $returnUrl = 'https://crednexai.com/api/loan-agent/ultra-saver-offer-response';
 
             /* cipherPay PG starts */
             $refId = rand(1000, 9999);
@@ -2063,7 +2063,7 @@ class LoanAgentController extends Controller
                 "url" => "payin/dynamic-qr",
                 "parameter" => [
                     //'receiver_vpa' => "cpy.kredbaz@fin",
-                    'receiver_vpa' => "cpy.capitalkredit@finobank",
+                    'receiver_vpa' => "cpy.crednexai@finobank",
                     'amount' => round($grandAmount), // amount
                     'remarks' => "Dynamic QR", // remarks
                     'refid' => $refId, //refrence id
@@ -2238,7 +2238,7 @@ class LoanAgentController extends Controller
             //Log::info('Offer data - '. $offerId);
             $orderId = 'KRBZVGP' . number_format(microtime(true) * 1000, 0, '.', '');
             $encData = null;
-            $returnUrl = 'https://capitalkredit.in/api/loan-agent/ultra-saver-offer-response';
+            $returnUrl = 'https://crednexai.com/api/loan-agent/ultra-saver-offer-response';
 
             /* veegah PG starts */
 
@@ -2786,7 +2786,7 @@ class LoanAgentController extends Controller
 
             $orderid = "APLive" . number_format(microtime(true) * 1000, 0, '.', '');
             $url = "https://payments.airpay.co.in/pay/index.php";
-            $returnUrl = 'https://capitalkredit.in/api/loan-agent/big-benefit-offer-response';
+            $returnUrl = 'https://crednexai.com/api/loan-agent/big-benefit-offer-response';
 
             $hiddenmod = "";
 

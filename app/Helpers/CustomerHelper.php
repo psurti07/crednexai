@@ -337,10 +337,10 @@ use Barryvdh\DomPDF\Facade\Pdf;
                     ];
                     
                     $subject = (($accType == 2)
-                        ? 'Congratulations! Payment for Capital Kredit’s Hire Agent plan has been successful.'
+                        ? 'Congratulations! Payment for CredNexAI’s Hire Agent plan has been successful.'
                         : (($accType == 3) 
-                        ? 'Congratulations! Payment for Capital Kredit’s Self-Apply plan has been successful.'
-                        : 'Congratulations! Payment Successful for Capital Kredit’s Self-Apply Plan.'));
+                        ? 'Congratulations! Payment for CredNexAI’s Self-Apply plan has been successful.'
+                        : 'Congratulations! Payment Successful for CredNexAI’s Self-Apply Plan.'));
             
                     sendBrevoHtmlMail2($mailData, $subject, $sendGreetings, 3, $attachments);
                     session(['isMailSend'=>true, 'cardno'=> $cardno]);

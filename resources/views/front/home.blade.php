@@ -9,32 +9,6 @@
 
 @endpush
 @section('content')
-<!-- main section starts -->
-<!-- <section id="hero-7" class="hero-section position-relative">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col p-0">
-                <div class="owl-carousel owl-theme reviews-1-wrapper-new">
-                    <div class="slide-box">
-                        <img src="{{ asset('front/images/1-blue.jpg') }}" class="">
-                    </div>
-                    <div class="slide-box">
-                        <img src="{{ asset('front/images/2-yellow.jpg') }}" class="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <nav class="social-btn">
-        <ul>
-            <li><a href="{{ route('front.home') }}#contact"><span class="flaticon-tech-support fs-4"></span></a></li>
-            <li><a href="mailto:{{ env('COMPANY_INFO_MAIL') }}"><span class="flaticon-email fs-4"></span></a></li>
-            <li><a href="{{ route('loan.agent.main') }}"><span class="flaticon-user fs-4"></span></a></li>
-        </ul>
-    </nav>
-</section> -->
-
 
 <section id="hero-7" class="hero-section bg--scroll position-relative pb-0">
     <div class="container-fluid">
@@ -56,9 +30,8 @@
             </div>
             <div class="hero-main">
                 <div class="hero-content">
-                    <h1 class="s-40 w-700 ">We Design Your Roadmap to <br> Financial Success</span></h1>
-                    <p class="mb-20 s-16 ">Take confident steps toward your goals with structured guidance and
-                        technology-powered loan assistance.</p>
+                    <h1 class="s-40 w-700 ">Build a Better Financial Future with the Right Guidance</span></h1>
+                    <p class="mb-20 s-16 ">Move forward with confidence with expert financial consultation and services that steer you in the right direction.</p>
                     <div class="d-flex justify-content-start">
                         <a href="{{ route('self.apply.main') }}"
                             class="btn r-04 btn--theme hover--tra-black last-link me-2">Self Apply</a>
@@ -71,8 +44,6 @@
     </div>
 </section>
 
-<!-- main section ends -->
-
 <section class="py-80 ct-02 content-section division bg--green-100" id="company">
     <div class="container">
         <div class="row justify-content-center">
@@ -81,7 +52,7 @@
                     <div class="d-flex justify-content-center align-items-center">
                         <h2 class="s-28 mb-0">About <span class="color--green-500">Us!</span> </h2>
                     </div>
-                    <p class="s-16 color--grey">Quality Financial Services to Strengthen Your Future!</p>
+                    <p class="s-16 color--grey">We Prioritize Your Financial Goals Above Everything Else</p>
                 </div>
             </div>
 
@@ -93,10 +64,9 @@
 
             <div class="col-md-6 align-items-center m-auto">
                 <div class="txt-block right-column">
-                    <p class="">Capital Kredit is founded on a simple principle: obtaining financial assistance should be simple and straightforward. We work with individuals who are looking for the right direction when exploring loan opportunities, helping them move forward with better understanding and clarity.</p>
-                    <p>Every person’s financial situation is different, which is why our approach focuses on listening first. By understanding our clients’ requirements, we assist them through the steps involved in the loan process and ensure they feel informed along the way.</p>
-                    <p>Through our network of trusted NBFC partners, we help our customers to get the proper financial solutions without making the process overwhelming. Our team focuses on keeping everything organized and easy to follow.</p>
-                    <p>At Capital Kredit, we believe financial guidance should be practical, transparent, and supportive. Our goal is to make the journey smoother so individuals can take important financial steps with greater confidence.</p>
+                    <p class="">CredNexAI makes financial solutions feel simple and approachable. Instead of complicating things, we focus on helping you understand your options and choose what truly works for you. With access to trusted NBFC partners, you can explore reliable solutions without feeling overwhelmed.</p>
+                    <p>We believe the process should be clear and comfortable from the beginning. That is why we stay with you through every step, offering guidance that is easy to follow and actually helpful. It is not just about finding an option – it is about making sure it feels right for you.</p>
+                    <p>At CredNexAI, everything is built around making your financial journey smoother. Whether you are planning ahead or dealing with something immediate, you can count on steady support and solutions that are practical, simple, and easy to move forward with.</p>
                 </div>
             </div>
 
@@ -113,11 +83,11 @@
                         <div class="statistic-block">
                             <div class="statistic-digit">
                                 <h2 class="s-30 w-700 mb-10 text-white">
-                                    <span class="count-element">5000</span>+
+                                    <span class="count-element">5500</span>+
                                 </h2>
                             </div>
                             <div class="statistic-txt">
-                                <h5 class="s-16 w-500 text-white">Applicants Assisted</h5>
+                                <h5 class="s-16 w-500 text-white">Happy Customer</h5>
                             </div>
                         </div>
                     </div>
@@ -127,11 +97,11 @@
                         <div class="statistic-block">
                             <div class="statistic-digit">
                                 <h2 class="s-30 w-700 mb-10 text-white">
-                                    <span class="count-element">10</span>+
+                                    <span class="count-element">4.5</span>Cr+
                                 </h2>
                             </div>
                             <div class="statistic-txt">
-                                <h5 class="s-16 w-500 text-white">NBFC Partners</h5>
+                                <h5 class="s-16 w-500 text-white">Disbursal</h5>
                             </div>
                         </div>
                     </div>
@@ -141,11 +111,11 @@
                         <div class="statistic-block">
                             <div class="statistic-digit">
                                 <h2 class="s-30 w-700 mb-10 text-white">
-                                    <span class="count-element">15</span>+
+                                    <span class="count-element">8</span>+
                                 </h2>
                             </div>
                             <div class="statistic-txt">
-                                <h5 class="s-16 w-500 text-white">Operational Team Members</h5>
+                                <h5 class="s-16 w-500 text-white">ONBFC Partners</h5>
                             </div>
                         </div>
                     </div>
@@ -159,7 +129,7 @@
                                 </h2>
                             </div>
                             <div class="statistic-txt">
-                                <h5 class="s-16 w-500 text-white">Digital Application Model</h5>
+                                <h5 class="s-16 w-500 text-white">Digital Process</h5>
                             </div>
                         </div>
                     </div>
@@ -174,34 +144,34 @@
             <div class="col-md-10 col-lg-10">
                 <div class="section-title mb-40 align-items-center">
                     <div class="d-flex justify-content-center align-items-center">
-                        <h2 class="s-28 mb-0">Strengthen Your Financial <span class="color--green-500">Aspects Smartly</span></h2>
+                        <h2 class="s-28 mb-0">Take the Next Step Your Way</h2>
                     </div>
-                    <p class="s-16 color--grey">Choose the plan that best suits your needs. </p>
+                    <p class="s-16 color--grey">Choose The Option That Suits Your Needs</p>
                 </div>
             </div>
         </div>
         <div class="fbox-wrapper text-center">
             <div class="row d-flex gx-4 gy-4">
                 <div class="col-md-6">
-                    <div class="fbox-5 fbox--hover fb-2 border r-16">
+                    <div class="fbox-5 fb-2 border r-16">
                         <div class="fbox-5-img mb-2">
                             <img class="img-fluid light-theme-img mb-3" src="{{ asset('front/images/Easy-Self-Apply-ai.png') }}" alt="feature-image">
                         </div>
                         <div class="fbox-txt">
-                            <h3 class="s-22 w-700">Quick Self-Apply</h3>
-                            <p class="mb-20">Enjoy instant access to expert digital loan consultation, convenient login links, and personalized loan offers from our trusted NBFC partners.</p>
+                            <h3 class="s-22 w-700">Quick Self-Apply </h3>
+                            <p class="mb-20">Get quick access to a smooth digital process, easy login links, and personalized offers from our trusted NBFC partners.</p>
                             <a href="{{ route('self.apply.main') }}" class="btn r-04 btn--theme hover--tra-black">Apply Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="fbox-5 fbox--hover fb-2 border r-16">
+                    <div class="fbox-5 fb-2 border r-16">
                         <div class="fbox-5-img mb-2">
                             <img class="img-fluid light-theme-img mb-3" src="{{ asset('front/images/Hire-Loan-Agent-ai.png') }}" alt="feature-image">
                         </div>
                         <div class="fbox-txt">
                             <h3 class="s-22 w-700">Hire Loan Agent</h3>
-                            <p class="mb-20">Relax while our expert team handles the entire loan process and carefully walks you through each step, ensuring a seamless experience.</p>
+                            <p class="mb-20">Let our experienced experts handle the process for you, so you can move forward with ease and without any hassle.</p>
                             <a href="{{ route('loan.agent.main') }}" class="btn r-04 btn--theme hover--tra-black">Apply Now</a>
                         </div>
                     </div>
@@ -217,9 +187,9 @@
             <div class="col-md-10 col-lg-9">
                 <div class="section-title mb-40">
                     <div class="d-flex justify-content-center align-items-center">
-                        <h2 class="s-28 mb-0">Why Choose <span class="color--green-500">Capital Kredit?</span></h2>
+                        <h2 class="s-28 mb-0">How It Works</h2>
                     </div>
-                    <p class="s-16 color--grey">Our team of experts strives to provide the best services to help you achieve your goals easily.</p>
+                    <p class="s-16 color--grey">6 Simple Steps To Get Started</p>
                 </div>
             </div>
         </div>
@@ -234,8 +204,8 @@
                             </div>
                         </div>
                         <div class="fbox-txt">
-                            <p class="s-18">Access To Multiple NBFCs</p>
-                            <p class="color--grey">Benefit from our enriching partnership with multiple industry-leading NBFCs to process your loan with ease.</p>
+                            <p class="s-18">1.</p>
+                            <p class="color--grey">Start your process by entering your mobile number, bank-registered name, and other required details. </p>
                         </div>
                     </div>
                 </div>
@@ -248,8 +218,8 @@
                             </div>
                         </div>
                         <div class="fbox-txt">
-                            <p class="s-18">Dedicated Expert Assigned</p>
-                            <p class="color--grey">Make sound financial decisions with the help of a dedicated expert assigned to make your financial journey easier.</p>
+                            <p class="s-18">2.</p>
+                            <p class="color--grey">Our system will check your eligibility and display pre-approved offers accordingly. This is not a final offer.</p>
                         </div>
                     </div>
                 </div>
@@ -263,8 +233,8 @@
                             </div>
                         </div>
                         <div class="fbox-txt">
-                            <p class="s-18">Easy Online Process</p>
-                            <p class="color--grey">Enjoy the convenience of the most straightforward online portal from the comfort of your own home.</p>
+                            <p class="s-18">3.</p>
+                            <p class="color--grey">To gain access to the pre-approved loan offers displayed, purchase the plan that best meets your needs. </p>
                         </div>
                     </div>
                 </div>
@@ -277,8 +247,8 @@
                             </div>
                         </div>
                         <div class="fbox-txt">
-                            <p class="s-18">No Impact On CIBIL Score</p>
-                            <p class="color--grey">Because our expert will only submit your file to the NBFC if your profile meets the eligibility requirements.</p>
+                            <p class="s-18">4.</p>
+                            <p class="color--grey">Within 24 to 48 hours, our team will contact you for verification and guide you with the required documents.</p>
                         </div>
                     </div>
                 </div>
@@ -291,8 +261,8 @@
                             </div>
                         </div>
                         <div class="fbox-txt">
-                            <p class="s-18">Personalised Tracking Portal</p>
-                            <p class="color--grey">So you do not have to make a lot of calls just to get an update on your process; instead, everything is right at your fingertips.</p>
+                            <p class="s-18">5.</p>
+                            <p class="color--grey">The NBFC will review your profile and documents in accordance with their process and guidelines.</p>
                         </div>
                     </div>
                 </div>
@@ -305,8 +275,8 @@
                             </div>
                         </div>
                         <div class="fbox-txt">
-                            <p class="s-18">Tailored Financial Solutions</p>
-                            <p class="color--grey">Our one-size-doesn’t-fit-all approach helps you get the financial solution that is tailored to your financial needs</p>
+                            <p class="s-18">6.</p>
+                            <p class="color--grey">The NBFC will make the final approval and disbursement decision based on their terms and policies.</p>
                         </div>
                     </div>
                 </div>
@@ -323,9 +293,9 @@
             <div class="col-md-10 col-lg-10">
                 <div class="section-title mb-40">
                     <div class="d-flex justify-content-center align-items-center">
-                        <h2 class="s-28 mb-0">Calculate Your <span class="color--green-500">EMI in Seconds</span></h2>
+                        <h2 class="s-28 mb-0">Calculate Your EMI Instantly</h2>
                     </div>
-                    <p class="s-16 color--grey">Plan your finances more confidently!</p>
+                    <p class="s-16 color--grey">Plan your finances with greater confidence!</p>
                 </div>
             </div>
         </div>
@@ -598,7 +568,8 @@
             <div class="col-md-12 col-lg-12">
                 <div class="section-title mb-40">
                     <div class="d-flex justify-content-center align-items-center">
-                        <h2 class="s-28 mb-0">Our Happy<span class="color--green-500">Customers</span></h2>
+                        <h2 class="s-28 mb-0">Hear Straight From Our Customers</h2>
+                        <p class="s-16 color--grey">Words that inspire us to do better.</p>
                     </div>
                 </div>
             </div>
@@ -620,10 +591,10 @@
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-6 md-mb-50">
                 <div class="sec-title2 mb-40">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <h2 class="s-28 mb-0">We Are Here to <span class="color--green-500">Help You</span></h2>
+                    <div class="d-flex text-start">
+                        <h2 class="s-28 mb-0">Let's talk!</h2>
                     </div>
-                    <p class="description">Drop us a message with your basic information, and our team will get back to you shortly.</p>
+                    <p class="description">Send us a message, and our team will get back to you shortly. </p>
                 </div>
                 <div class="row gy-3 gx-3">
                     <div class="col-lg-6 col-md-6 col-12">

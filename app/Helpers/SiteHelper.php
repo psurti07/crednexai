@@ -15,6 +15,7 @@ use App\Models\InfoPages;
 
 
 /* cities list on map */
+
 if (!function_exists('citiesone')) {
     function citiesone()
     {
@@ -76,7 +77,7 @@ if (!function_exists('citiesone')) {
 if (!function_exists('nbfcsList')) {
     function nbfcsList()
     {
-        $banks = Bank::where('isActive',1)->where('isDelete',0)->get();
+        $banks = Bank::where('isActive', 1)->where('isDelete', 0)->get();
         /*$array = [
             'Bajaj Finserv' => 'Bajaj-Finserv.webp',
             'Credi Saison' => 'Credi-saison.webp',
@@ -109,7 +110,7 @@ if (!function_exists('nbfcsList')) {
             $data['list'] .= '<div class="col company" data-index="' . $loop . '">
                             <a href="javascript:;" class="in_tool it-1 r-10">
                                 <div class="bg--white-100 block-shadow r-10 mb-20">
-                                    <img class="img-fluid" src="https://managecapitalkredit.in/upload/banks/'.$bank->bank_image.'" alt="' . $bank->bank_name . '" width="auto">
+                                    <img class="img-fluid" src="https://manage.easyailoans.com/upload/banks/' . $bank->bank_image . '" alt="' . $bank->bank_name . '" width="auto">
                                 </div>
                                 <h6 class="s-14 w-700">' . $bank->bank_name . '</h6>
                             </a>
@@ -117,7 +118,7 @@ if (!function_exists('nbfcsList')) {
 
             $data['carousel'] .= '<div class="bg--white-100 border border-primary r-10 mb-20">
                                     <a href="javascript:;">
-                                        <img class="img-fluid" src="https://managecapitalkredit.in/upload/banks/'.$bank->bank_image.'" alt="' . $bank->bank_name . '" width="auto">
+                                        <img class="img-fluid" src="https://manage.easyailoans.com/upload/banks/' . $bank->bank_image . '" alt="' . $bank->bank_name . '" width="auto">
                                     </a>
                                 </div>';
             $loop++;
@@ -134,28 +135,26 @@ if (!function_exists('raiseRequestFaqs')) {
             <ul class="accordion">
                 <li class="accordion-item mb-10">
                     <div class="accordion-thumb">
-                        <h6 class="s-16 w-500">I have already paid. However, my account has not been created yet. What should I do?</h6>
+                        <h6 class="s-16 w-500">I paid, but the account is still not created. What do I do? </h6>
                     </div>
                     <div class="accordion-panel">
                         <div class="accordion-panel-item">
                             <div class="faqs-2-answer">
                                 <p>
-                                This could occur if the payment gateway is still holding your funds and they have not been credited to the company`s account.
-                                Do not worry; as soon as the funds are credited to the company`s account, your account will be created and you will be notified via email.
-                                Otherwise, the payment gateway will refund your funds in accordance with their policies.</p>
+                                This could happen if the payment gateway holds your funds and has yet to credit the company account. Do not worry; as soon as the funds are credited to the company account, your account will be created and you will be notified via email. Otherwise, the payment gateway will refund your funds in accordance with its policies.</p>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li class="accordion-item mb-10">
                     <div class="accordion-thumb">
-                        <h6 class="s-16 w-500">Even after so many days, I still have not received my refund. What should I do?</h6>
+                        <h6 class="s-16 w-500">I have yet to receive my refund, even after so many days. What do I do? </h6>
                     </div>
                     <div class="accordion-panel">
                         <div class="accordion-panel-item">
                             <div class="faqs-2-answer">
                                 <p>
-                                    This may occur if your funds are held by the payment gateway/bank. The refund will be processed in accordance with the bank`s payment gateway`s policies and procedures.
+                                    This could happen if your money is held by the bank/payment gateway. It will be refunded in accordance with the bank/payment gateway rules and regulations.
                                 </p>
                             </div>
                         </div>
@@ -163,13 +162,13 @@ if (!function_exists('raiseRequestFaqs')) {
                 </li>
                 <li class="accordion-item mb-10">
                     <div class="accordion-thumb">
-                        <h6 class="s-16 w-500">I misunderstood the company`s service and/or paid by mistake. Is there a way to get a refund?</h6>
+                        <h6 class="s-16 w-500">I misunderstood the company service and/or made a payment by mistake. Can I get a refund? </h6>
                     </div>
                     <div class="accordion-panel">
                         <div class="accordion-panel-item">
                             <div class="faqs-2-answer">
                                 <p>
-                                    Subscription plan fees are only refundable if you adhere to the company`s Return & Refund Policy. <a href="' . route('front.refund.policy') . '">Click here</a> to know more.
+                                   The subscription plan payment is only refundable under the company cancellation and refund policy. <a href="' . route('front.refund.policy') . '">Click here</a> to know more.
                                 </p>
                             </div>
                         </div>
@@ -177,13 +176,13 @@ if (!function_exists('raiseRequestFaqs')) {
                 </li>
                 <li class="accordion-item mb-10">
                     <div class="accordion-thumb">
-                        <h6 class="s-16 w-500">Who qualifies for a GST refund?</h6>
+                        <h6 class="s-16 w-500">Despite being shown pre-approved loan offers based on my eligibility, I did not receive a loan. Why? </h6>
                     </div>
                     <div class="accordion-panel">
                         <div class="accordion-panel-item">
                             <div class="faqs-2-answer">
                                 <p>
-                                    Customers who have updated their GST information through their portal are eligible to file GST returns.
+                                    Please read the terms and conditions to get a clear understanding of what a pre-approval loan offer is Click here
                                 </p>
                             </div>
                         </div>
@@ -191,13 +190,13 @@ if (!function_exists('raiseRequestFaqs')) {
                 </li>
                 <li class="accordion-item mb-10">
                     <div class="accordion-thumb">
-                        <h6 class="s-16 w-500">I have changed my mind and no longer want to use the company`s services. Is it possible to get a refund?</h6>
+                        <h6 class="s-16 w-500">Who can get a GST return? </h6>
                     </div>
                     <div class="accordion-panel">
                         <div class="accordion-panel-item">
                             <div class="faqs-2-answer">
                                 <p>
-                                    Subscription Plan fees are only refundable in accordance with the cancellation and refund policy: Click here for more information.
+                                    Anyone who updates their GST information in the portal will receive a GST return. 
                                 </p>
                             </div>
                         </div>
@@ -205,13 +204,55 @@ if (!function_exists('raiseRequestFaqs')) {
                 </li>
                 <li class="accordion-item mb-10">
                     <div class="accordion-thumb">
-                        <h6 class="s-16 w-500">I accidentally made multiple payments. Can I get a refund?</h6>
+                        <h6 class="s-16 w-500">I changed my mind and no longer want to use the company services. Can I get my refund? </h6>
                     </div>
                     <div class="accordion-panel">
                         <div class="accordion-panel-item">
                             <div class="faqs-2-answer">
                                 <p>
-                                    If a customer accidentally makes multiple payments, they are entitled to a refund. The customer must request a refund within 48 hours of making the payment, either by using the website`s Raising A Request section or by calling the company`s registered phone number.
+                                   The subscription plan payment is only refundable according to the company cancellation and refund policy. Click here to know more
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="accordion-item mb-10">
+                    <div class="accordion-thumb">
+                        <h6 class="s-16 w-500">I am not satisfied with the company service. What do I do?</h6>
+                    </div>
+                    <div class="accordion-panel">
+                        <div class="accordion-panel-item">
+                            <div class="faqs-2-answer">
+                                <p>
+                                   We request you to kindly call the company on +91-{#VAR#} between 10 AM to 5 PM- Monday to Saturday (only business days). Allow us to discuss your concerns, and we will ensure that you receive the best solutions possible.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="accordion-item mb-10">
+                    <div class="accordion-thumb">
+                        <h6 class="s-16 w-500">What happens if I make multiple payments by mistake? Do I qualify for a refund?</h6>
+                    </div>
+                    <div class="accordion-panel">
+                        <div class="accordion-panel-item">
+                            <div class="faqs-2-answer">
+                                <p>
+                                   If a customer makes multiple payments, they are eligible for a refund. You can request a refund within 48 hours of making the payment via the website Raising A Request section or by calling the company registered contact number.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="accordion-item mb-10">
+                    <div class="accordion-thumb">
+                        <h6 class="s-16 w-500">Can I get a refund if I buy subscriptions or memberships from multiple companies in your group?</h6>
+                    </div>
+                    <div class="accordion-panel">
+                        <div class="accordion-panel-item">
+                            <div class="faqs-2-answer">
+                                <p>
+                                   If a customer purchased Subscriptions/Memberships from several companies in our group, they are eligible for a refund. You can request a refund within 48 hours of payment by visiting the website Raising A Request section or calling the company registered phone number.
                                 </p>
                             </div>
                         </div>
@@ -341,29 +382,32 @@ if (!function_exists('cookieHelper')) {
 }
 
 
- /* checkuserdata */
- if(!function_exists('checkuserdata')){
-    function checkuserdata($applyid){
+/* checkuserdata */
+if (!function_exists('checkuserdata')) {
+    function checkuserdata($applyid)
+    {
         $details = DB::table('loan_applications as a')
             ->selectRaw('r.id as userid, r.staff_id, r.rec_date, CONCAT(r.first_name," ",r.last_name) as fullname, r.dob, r.first_name, r.last_name, r.pincode, r.mobile, r.email, r.city, r.state, r.isUser, r.process_step, a.id, a.loan_type, a.loan_amount, a.monthly_income, a.currentemi')
-            ->join('user_registrations as r','r.id','=','a.userid')
-            ->where('a.id', $applyid)->where('r.isDelete',0)->first();
+            ->join('user_registrations as r', 'r.id', '=', 'a.userid')
+            ->where('a.id', $applyid)->where('r.isDelete', 0)->first();
         return $details;
     }
 }
 
 /* order data */
-if(!function_exists('orderdata')){
-    function orderdata($orderid, $tbl){
-        return DB::table($tbl)->where('orderid',$orderid)->first();
+if (!function_exists('orderdata')) {
+    function orderdata($orderid, $tbl)
+    {
+        return DB::table($tbl)->where('orderid', $orderid)->first();
     }
 }
 
 /* check account type is selfapply or loan-agent */
-if(!function_exists('accType')){
-    function accType(){
+if (!function_exists('accType')) {
+    function accType()
+    {
         $userId = Auth::user()->id;
-        $accType = UserRegistration::where('id',$userId)->pluck('acc_type')->first();
+        $accType = UserRegistration::where('id', $userId)->pluck('acc_type')->first();
         return $accType;
     }
 }
@@ -387,8 +431,8 @@ if (!function_exists('render_html')) {
             'cancelcheque' => 'Cancel Cheque',
             'bankstatement' => 'Bank Statement - Last 6 months',
         ];
-        
-        if($userType == 1){
+
+        if ($userType == 1) {
             $fields['formsixteen'] = 'Form Sixteen';
             $fields['salaryslip'] = 'Salary Slip';
         } else {
@@ -471,7 +515,7 @@ if (!function_exists('handleFileUpload')) {
                 mkdir($fullDirectory, 0755, true);
             }
 
-            $filename = "{$filePrefix}_" . Str::uuid(). "_{$userId}." . $file->getClientOriginalExtension();
+            $filename = "{$filePrefix}_" . Str::uuid() . "_{$userId}." . $file->getClientOriginalExtension();
 
             $file->move($fullDirectory, $filename);
 
@@ -481,10 +525,11 @@ if (!function_exists('handleFileUpload')) {
 }
 
 
-if(!function_exists('sendBrevoHtmlMail')){
-    function sendBrevoHtmlMail($maildata, $subject = '', $message = '', $sendmail = '', $attachmentPath = ''){
+if (!function_exists('sendBrevoHtmlMail')) {
+    function sendBrevoHtmlMail($maildata, $subject = '', $message = '', $sendmail = '', $attachmentPath = '')
+    {
         $data['sender']['name'] = env('APP_NAME');
-        $data["sender"]["email"] = 'info@capitalkredit.in';
+        $data["sender"]["email"] = 'info@crednexai.com';
 
         $user_res["name"] = $maildata["fullname"];
         $user_res["email"] = $maildata["email"];
@@ -510,7 +555,9 @@ if(!function_exists('sendBrevoHtmlMail')){
         $data_json = json_encode($data);
 
         $curl = curl_init();
-        curl_setopt_array($curl, array(
+        curl_setopt_array(
+            $curl,
+            array(
                 CURLOPT_URL => "https://api.brevo.com/v3/smtp/email",
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -522,7 +569,7 @@ if(!function_exists('sendBrevoHtmlMail')){
                 CURLOPT_HTTPHEADER => [
                     "Accept: application/json",
                     "Content-Type: application/json",
-                    "api-key: ".env('BREVO_API_KEY')
+                    "api-key: " . env('BREVO_API_KEY')
                 ],
             )
         );
@@ -536,11 +583,12 @@ if(!function_exists('sendBrevoHtmlMail')){
     }
 }
 
-if(!function_exists('sendBrevoHtmlMail2')){
-    function sendBrevoHtmlMail2($maildata, $subject = '', $message = '', $sendmail = '', $attachments = []){
-        Log::info('brevo key:'. env('BREVO_API_KEY'));
+if (!function_exists('sendBrevoHtmlMail2')) {
+    function sendBrevoHtmlMail2($maildata, $subject = '', $message = '', $sendmail = '', $attachments = [])
+    {
+        Log::info('brevo key:' . env('BREVO_API_KEY'));
         $data['sender']['name'] = env('APP_NAME');
-        $data["sender"]["email"] = 'info@capitalkredit.in';
+        $data["sender"]["email"] = 'info@crednexai.com';
 
         $user_res["name"] = $maildata["fullname"];
         $user_res["email"] = $maildata["email"];
@@ -568,7 +616,9 @@ if(!function_exists('sendBrevoHtmlMail2')){
         $data_json = json_encode($data);
 
         $curl = curl_init();
-        curl_setopt_array($curl, array(
+        curl_setopt_array(
+            $curl,
+            array(
                 CURLOPT_URL => "https://api.brevo.com/v3/smtp/email",
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
@@ -580,12 +630,12 @@ if(!function_exists('sendBrevoHtmlMail2')){
                 CURLOPT_HTTPHEADER => [
                     "Accept: application/json",
                     "Content-Type: application/json",
-                    "api-key: ".env('BREVO_API_KEY')
+                    "api-key: " . env('BREVO_API_KEY')
                 ],
             )
         );
         $response = curl_exec($curl);
-        
+
         $err = curl_error($curl);
 
         Log::info("response : " . $response);
@@ -597,9 +647,10 @@ if(!function_exists('sendBrevoHtmlMail2')){
     }
 }
 
-if(!function_exists('assignAgent')){
-    function assignAgent(){
-        $lastAgentId = DB::table('site_options')->where('option_key','last_agent_id')->first()->option_value;
+if (!function_exists('assignAgent')) {
+    function assignAgent()
+    {
+        $lastAgentId = DB::table('site_options')->where('option_key', 'last_agent_id')->first()->option_value;
         $agentIds = \App\Models\Administrations::where('role', 2)->where(['isActive' => 1, 'isDelete' => 0])->pluck('id')->toArray();
         $nextAgentId = 0;
         if (!empty($agentIds)) {
@@ -615,16 +666,17 @@ if(!function_exists('assignAgent')){
             $staff = \App\Models\Administrations::where('id', $nextAgentId)
                 ->limit(1)
                 ->first();
-            $lastAgentIdUpdate = DB::table('site_options')->where('option_key','last_agent_id')->update(['option_value'=>$nextAgentId]);
+            $lastAgentIdUpdate = DB::table('site_options')->where('option_key', 'last_agent_id')->update(['option_value' => $nextAgentId]);
             return $staff;
         }
-         // If no agent found or $staff is null, return 0
+        // If no agent found or $staff is null, return 0
         return 0;
     }
 }
 
 if (!function_exists('assignAgentSelf')) {
-    function assignAgentSelf() {
+    function assignAgentSelf()
+    {
         $lastAgentIdRow = DB::table('site_options')->where('option_key', 'last_self_agent_id')->first();
         $lastAgentId = $lastAgentIdRow ? $lastAgentIdRow->option_value : 0;
 
@@ -661,52 +713,54 @@ if (!function_exists('assignAgentSelf')) {
     }
 }
 
-    if(!function_exists('assignAssistant')){
-        function assignAssistant(){
-            $lastAssistantId = DB::table('site_options')->where('option_key','last_assistant_id')->first()->option_value;
-            $assistantIds = \App\Models\Administrations::where('role', 7)->where(['isActive' => 1, 'isDelete' => 0])->pluck('id')->toArray();
-            
-            $nextAssistantId = 0;
-            
-            if (!empty($assistantIds)) {
-                if ($lastAssistantId > 0 && in_array($lastAssistantId, $assistantIds)) {
-                    $lastIndex = array_search($lastAssistantId, $assistantIds);
-                    $nextIndex = ($lastIndex + 1) % count($assistantIds);
-                    $nextAssistantId = $assistantIds[$nextIndex];
-                } else {
-                    // First time assignment or invalid lastassistantId
-                    $nextassistantId = $assistantIds[0]; // Start with the first assistant
-                }
-                
-                $staff = \App\Models\Administrations::where('id', $nextassistantId)
-                    ->limit(1)
-                    ->first();
-                
-                if ($staff) {
-                    DB::table('site_options')
-                        ->where('option_key', 'last_assistant_id')
-                        ->update(['option_value' => $nextAssistantId]);
-                    return $staff;
-                }
+if (!function_exists('assignAssistant')) {
+    function assignAssistant()
+    {
+        $lastAssistantId = DB::table('site_options')->where('option_key', 'last_assistant_id')->first()->option_value;
+        $assistantIds = \App\Models\Administrations::where('role', 7)->where(['isActive' => 1, 'isDelete' => 0])->pluck('id')->toArray();
+
+        $nextAssistantId = 0;
+
+        if (!empty($assistantIds)) {
+            if ($lastAssistantId > 0 && in_array($lastAssistantId, $assistantIds)) {
+                $lastIndex = array_search($lastAssistantId, $assistantIds);
+                $nextIndex = ($lastIndex + 1) % count($assistantIds);
+                $nextAssistantId = $assistantIds[$nextIndex];
+            } else {
+                // First time assignment or invalid lastassistantId
+                $nextassistantId = $assistantIds[0]; // Start with the first assistant
             }
-            
-            // If no assistant found or $staff is null, return 0
-            return 0;
+
+            $staff = \App\Models\Administrations::where('id', $nextassistantId)
+                ->limit(1)
+                ->first();
+
+            if ($staff) {
+                DB::table('site_options')
+                    ->where('option_key', 'last_assistant_id')
+                    ->update(['option_value' => $nextAssistantId]);
+                return $staff;
+            }
         }
+
+        // If no assistant found or $staff is null, return 0
+        return 0;
     }
+}
 
 
-if(!function_exists('sendPaymentGreetings')){
-    function sendPaymentGreetings($fullname, $mobile, $email){
+if (!function_exists('sendPaymentGreetings')) {
+    function sendPaymentGreetings($fullname, $mobile, $email)
+    {
         /*if($mobile != '') {
-            $smsmessage = "Dear Customer, Congratulations! Your loan application has been successfully submitted. Our Customer Executive will call you shortly. Thanks, Capital Kredit";
+            $smsmessage = "Dear Customer, Congratulations! Your loan application has been successfully submitted. Our Customer Executive will call you shortly. Thanks, CredNexAI";
             $smsresponse = sendtextSMSobb($mobile, $smsmessage, 'main');
         }*/
-        if($email != '') {
+        if ($email != '') {
             // Send email
-            $subject = "Welcome to Capital Kredit";
-            $content = view('mail.simpleEmailTemplate',compact('fullname'))->render();
-            if($content != '') {
+            $subject = "Welcome to CredNexAI";
+            $content = view('mail.simpleEmailTemplate', compact('fullname'))->render();
+            if ($content != '') {
                 $maildata = array(
                     'fullname' => $fullname,
                     'email' => $email,
@@ -720,17 +774,18 @@ if(!function_exists('sendPaymentGreetings')){
     }
 }
 
-if(!function_exists('sendForgetPassword')){
-    function sendForgetPassword($fullname, $mobile, $email, $pswd){
+if (!function_exists('sendForgetPassword')) {
+    function sendForgetPassword($fullname, $mobile, $email, $pswd)
+    {
         /*if($mobile != '') {
-            $smsmessage = "Dear Customer, Congratulations! Your loan application has been successfully submitted. Our Customer Executive will call you shortly. Thanks, Capital Kredit";
+            $smsmessage = "Dear Customer, Congratulations! Your loan application has been successfully submitted. Our Customer Executive will call you shortly. Thanks, CredNexAI";
             $smsresponse = sendtextSMSobb($mobile, $smsmessage, 'main');
         }*/
-        if($email != '') {
+        if ($email != '') {
             // Send email
             $subject = "New Password Set for Your Account";
-            $content = view('mail.forgetPassword',compact('fullname', 'pswd'))->render();
-            if($content != '') {
+            $content = view('mail.forgetPassword', compact('fullname', 'pswd'))->render();
+            if ($content != '') {
                 $maildata = array(
                     'fullname' => $fullname,
                     'email' => $email,
@@ -744,40 +799,43 @@ if(!function_exists('sendForgetPassword')){
     }
 }
 
-if(!function_exists('getFacebookDomainVerificationId')){
-    function getFacebookDomainVerificationId(){
-        return InfoPages::where('slug','sa_facebookdomain')->first()->content;
+if (!function_exists('getFacebookDomainVerificationId')) {
+    function getFacebookDomainVerificationId()
+    {
+        return InfoPages::where('slug', 'sa_facebookdomain')->first()->content;
     }
 }
 
-if(!function_exists('getFacebookPixelKey')){
-    function getFacebookPixelKey(){
+if (!function_exists('getFacebookPixelKey')) {
+    function getFacebookPixelKey()
+    {
         $url = request()->segment(1);
         $pxKey = (($url == 'loan-agent') ? 'la_facebookpixelkey' : (($url == 'loan-assistant') ? 'lat_facebookpixelkey' : 'sa_facebookpixelkey'));
-        return InfoPages::where('slug',$pxKey)->first()->content;
+        return InfoPages::where('slug', $pxKey)->first()->content;
     }
 }
 
 
-if(!function_exists('getFBConversionData')){
-    function getFBConversionData($type){
+if (!function_exists('getFBConversionData')) {
+    function getFBConversionData($type)
+    {
         $arr_data = [];
-        if($type == 'self-apply'){
-            $data = InfoPages::whereIn('slug',['sa_facebookaccesstoken','sa_facebookeventname','sa_facebookeventid'])->get()->pluck('content','slug');
+        if ($type == 'self-apply') {
+            $data = InfoPages::whereIn('slug', ['sa_facebookaccesstoken', 'sa_facebookeventname', 'sa_facebookeventid'])->get()->pluck('content', 'slug');
             $arr_data[] = [
                 'fbaccesstoken' => $data['sa_facebookaccesstoken'] ?? '',
                 'fbeventname' => $data['sa_facebookeventname'] ?? '',
                 'fbeventid' => $data['sa_facebookeventid'] ?? ''
             ];
-        } else if($type == 'hire-agent'){
-            $data = InfoPages::whereIn('slug',['la_facebookaccesstoken','la_facebookeventname','la_facebookeventid'])->get()->pluck('content','slug');
+        } else if ($type == 'hire-agent') {
+            $data = InfoPages::whereIn('slug', ['la_facebookaccesstoken', 'la_facebookeventname', 'la_facebookeventid'])->get()->pluck('content', 'slug');
             $arr_data[] = [
                 'fbaccesstoken' => $data['la_facebookaccesstoken'] ?? '',
                 'fbeventname' => $data['la_facebookeventname'] ?? '',
                 'fbeventid' => $data['la_facebookeventid'] ?? ''
             ];
-        } else if($type == 'loan-assistant'){
-            $data = InfoPages::whereIn('slug',['lat_facebookaccesstoken','lat_facebookeventname','lat_facebookeventid'])->get()->pluck('content','slug');
+        } else if ($type == 'loan-assistant') {
+            $data = InfoPages::whereIn('slug', ['lat_facebookaccesstoken', 'lat_facebookeventname', 'lat_facebookeventid'])->get()->pluck('content', 'slug');
             $arr_data[] = [
                 'fbaccesstoken' => $data['lat_facebookaccesstoken'] ?? '',
                 'fbeventname' => $data['lat_facebookeventname'] ?? '',
@@ -790,142 +848,144 @@ if(!function_exists('getFBConversionData')){
     }
 }
 
-if(!function_exists('fbconversioncurl')){
-    function fbconversioncurl($userdata, $ver = 21){
+if (!function_exists('fbconversioncurl')) {
+    function fbconversioncurl($userdata, $ver = 21)
+    {
         $FBConversionData = getFBConversionData($userdata['type']);
         $fbaccesstoken = $FBConversionData[0]['fbaccesstoken'];
-    	$eventname = $FBConversionData[0]['fbeventname'];
-    	$eventid = $FBConversionData[0]['fbeventid'];
-        
-    	/* purchasde data */
-    	$data = array();
+        $eventname = $FBConversionData[0]['fbeventname'];
+        $eventid = $FBConversionData[0]['fbeventid'];
 
-    	$data["event_name"] = $eventname;
-    	$data["event_time"] = round(microtime(true));
-    	$data["event_id"] = $eventid;
-    	$data["event_source_url"] = $userdata['sourceurl'];
-    	$data["action_source"] = "website";
+        /* purchasde data */
+        $data = array();
 
-    	$fnarr[] = hash("sha256", $userdata['firstname']);
-    	$data["user_data"]["fn"] = $fnarr;
+        $data["event_name"] = $eventname;
+        $data["event_time"] = round(microtime(true));
+        $data["event_id"] = $eventid;
+        $data["event_source_url"] = $userdata['sourceurl'];
+        $data["action_source"] = "website";
 
-    	$lnarr[] = hash("sha256", $userdata['lastname']);
-    	$data["user_data"]["ln"] = $lnarr;
+        $fnarr[] = hash("sha256", $userdata['firstname']);
+        $data["user_data"]["fn"] = $fnarr;
 
-    	$emarr[] = hash("sha256", $userdata['email']);
-    	$data["user_data"]["em"] = $emarr;
+        $lnarr[] = hash("sha256", $userdata['lastname']);
+        $data["user_data"]["ln"] = $lnarr;
 
-    	$pharr[] = hash("sha256", $userdata['mobile']);
-    	$data["user_data"]["ph"] = $pharr;
+        $emarr[] = hash("sha256", $userdata['email']);
+        $data["user_data"]["em"] = $emarr;
 
-    	$ctarr[] = hash("sha256", $userdata['city']);
-    	$data["user_data"]["ct"] = $ctarr;
+        $pharr[] = hash("sha256", $userdata['mobile']);
+        $data["user_data"]["ph"] = $pharr;
 
-    	/*$dbarr[] = hash("sha256", $userdata['dob']);
+        $ctarr[] = hash("sha256", $userdata['city']);
+        $data["user_data"]["ct"] = $ctarr;
+
+        /*$dbarr[] = hash("sha256", $userdata['dob']);
     	$data["user_data"]["db"] = $dbarr;*/
 
-    	$statearr[] = hash("sha256", $userdata['state']);
-    	$data["user_data"]["st"] = $statearr;
+        $statearr[] = hash("sha256", $userdata['state']);
+        $data["user_data"]["st"] = $statearr;
 
         $zparr[] = hash("sha256", $userdata['zip']);
-    	$data["user_data"]["zp"] = $zparr;
+        $data["user_data"]["zp"] = $zparr;
 
-    	$countryarr[] = hash("sha256", "in");
-    	$data["user_data"]["country"] = $countryarr;
+        $countryarr[] = hash("sha256", "in");
+        $data["user_data"]["country"] = $countryarr;
 
-    	$data["user_data"]["client_ip_address"] = request()->ip();
-    	$data["user_data"]["client_user_agent"] = request()->userAgent();
+        $data["user_data"]["client_ip_address"] = request()->ip();
+        $data["user_data"]["client_user_agent"] = request()->userAgent();
 
-    	if ($userdata['fbclid'] != "") {
-    		$data["user_data"]["fbc"] = $userdata['fbclid'];
-    	}
-    	$orderAmount = $userdata['odamount'] / (1 + (18 / 100));
-    	if($ver == 11){
-        	/* v11 code starts here */
-        	$contents["id"] = "KB2025";
-        	$contents["quantity"] = 1;
-        	$data["contents"][] = $contents;
-    
-        	$data["custom_data"]["currency"] = "INR";
-        	$data["custom_data"]["value"] = $orderAmount;
-        	$data["custom_data"]["order_id"] = $userdata['orderid'];
-    	    /* v11 code ends here */
-    	} else {
-    	    /* v21 code starts here */
-        	$data["custom_data"]["currency"] = "INR";
-        	$data["custom_data"]["value"] = formatePriceIndia($orderAmount);
-        	$data["custom_data"]["num_items"] = 1;
-        	$data["custom_data"]["content_type"] = "product";
-        	$data["custom_data"]["order_id"] = $userdata['orderid'];
-        	$data["custom_data"]["status"] = "registered";
-    
-        	$contents["id"] = "KB2025";
-        	$contents["quantity"] = 1;
-        	$contents["item_price"] = formatePriceIndia($orderAmount);
-        	$data["custom_data"]["contents"] = array($contents);
-            /* v21 code ends here */    
-    	}
-	    
-    	$data_json = json_encode(array($data));
+        if ($userdata['fbclid'] != "") {
+            $data["user_data"]["fbc"] = $userdata['fbclid'];
+        }
+        $orderAmount = $userdata['odamount'] / (1 + (18 / 100));
+        if ($ver == 11) {
+            /* v11 code starts here */
+            $contents["id"] = "KB2025";
+            $contents["quantity"] = 1;
+            $data["contents"][] = $contents;
+
+            $data["custom_data"]["currency"] = "INR";
+            $data["custom_data"]["value"] = $orderAmount;
+            $data["custom_data"]["order_id"] = $userdata['orderid'];
+            /* v11 code ends here */
+        } else {
+            /* v21 code starts here */
+            $data["custom_data"]["currency"] = "INR";
+            $data["custom_data"]["value"] = formatePriceIndia($orderAmount);
+            $data["custom_data"]["num_items"] = 1;
+            $data["custom_data"]["content_type"] = "product";
+            $data["custom_data"]["order_id"] = $userdata['orderid'];
+            $data["custom_data"]["status"] = "registered";
+
+            $contents["id"] = "KB2025";
+            $contents["quantity"] = 1;
+            $contents["item_price"] = formatePriceIndia($orderAmount);
+            $data["custom_data"]["contents"] = array($contents);
+            /* v21 code ends here */
+        }
+
+        $data_json = json_encode(array($data));
 
         if ($userdata['type'] == 'self-apply') {
-    	    $fbpixel = InfoPages::where('slug','sa_facebookpixelkey')->first()->content;
-    		$accesstoken = $fbaccesstoken;
-    	} else if ($userdata['type'] == 'hire-agent') {
-    	    $fbpixel = InfoPages::where('slug','la_facebookpixelkey')->first()->content;
-    		$accesstoken = $fbaccesstoken;
-    	} else if ($userdata['type'] == 'loan-assistant') {
-    	    $fbpixel = InfoPages::where('slug','lat_facebookpixelkey')->first()->content;
-    		$accesstoken = $fbaccesstoken;
-    	} else {
-    		$fbpixel = '';
-    		$accesstoken = $fbaccesstoken;
-    	}
+            $fbpixel = InfoPages::where('slug', 'sa_facebookpixelkey')->first()->content;
+            $accesstoken = $fbaccesstoken;
+        } else if ($userdata['type'] == 'hire-agent') {
+            $fbpixel = InfoPages::where('slug', 'la_facebookpixelkey')->first()->content;
+            $accesstoken = $fbaccesstoken;
+        } else if ($userdata['type'] == 'loan-assistant') {
+            $fbpixel = InfoPages::where('slug', 'lat_facebookpixelkey')->first()->content;
+            $accesstoken = $fbaccesstoken;
+        } else {
+            $fbpixel = '';
+            $accesstoken = $fbaccesstoken;
+        }
 
-    	// Fill available fields
-    	$fields = array();
-    	$fields['access_token'] = $accesstoken;
-    	$fields['upload_tag'] = "orders"; // You should set a tag here (feel free to adjust)
-    	$fields['data'] = $data_json;
-        
+        // Fill available fields
+        $fields = array();
+        $fields['access_token'] = $accesstoken;
+        $fields['upload_tag'] = "orders"; // You should set a tag here (feel free to adjust)
+        $fields['data'] = $data_json;
+
         $curlUrl = (($ver == 11) ? "https://graph.facebook.com/v11.0/" . $fbpixel . "/events" : "https://graph.facebook.com/v21.0/" . $fbpixel . "/events");
-        
+
         $curl = curl_init();
-    	curl_setopt_array($curl, array(
-    		CURLOPT_URL => $curlUrl,
-    		CURLOPT_RETURNTRANSFER => true,
-    		CURLOPT_ENCODING => "",
-    		CURLOPT_MAXREDIRS => 10,
-    		CURLOPT_TIMEOUT => 30,
-    		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    		CURLOPT_CUSTOMREQUEST => "POST",
-    		CURLOPT_POSTFIELDS => http_build_query($fields),
-    		CURLOPT_HTTPHEADER => array(
-    				"cache-control: no-cache",
-    				//"content-type: multipart/form-data",
-    				"Accept: application/json"
-    			),
-    	));
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $curlUrl,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => http_build_query($fields),
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache",
+                //"content-type: multipart/form-data",
+                "Accept: application/json"
+            ),
+        ));
 
-    	$response = curl_exec($curl);
-    	$err = curl_error($curl);
-    	curl_close($curl);
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        curl_close($curl);
 
-    	if ($err) {
-    		return "cURL Error #:" . $err;
-    	} else {
-    		return $response;
-    	}
-	    //return $response;
+        if ($err) {
+            return "cURL Error #:" . $err;
+        } else {
+            return $response;
+        }
+        //return $response;
     }
 }
 
 
-if(!function_exists('offersBankList')){
-    function offersBankList($monthlyIncome, $userType, $loanAmount){
-        try{
+if (!function_exists('offersBankList')) {
+    function offersBankList($monthlyIncome, $userType, $loanAmount)
+    {
+        try {
             $criteriaId = 0;
-            switch($monthlyIncome) {
+            switch ($monthlyIncome) {
                 case ($monthlyIncome >= 0 && $monthlyIncome <= 15000 && $userType == 1):
                     $criteriaId = 1;
                     break;
@@ -960,12 +1020,12 @@ if(!function_exists('offersBankList')){
                 ->limit(4)
                 ->pluck('applylink_id');
 
-            $recommended = ApplyLink::with('bank')->where('is_recommended',1)->where('isDelete', 0)->inRandomOrder()->limit(1)->get();
+            $recommended = ApplyLink::with('bank')->where('is_recommended', 1)->where('isDelete', 0)->inRandomOrder()->limit(1)->get();
             $noRecommended = ApplyLink::with('bank')->whereIn('id', $applyLinkIds)->where('isDelete', 0)->get();
             $banks = $recommended->merge($noRecommended);
 
             $jsonData = [];
-            foreach($banks as $applyLink){
+            foreach ($banks as $applyLink) {
                 $jsonData[] = [
                     'apply_id' => $applyLink->id,
                     'rec_date' => $applyLink->rec_date,
@@ -986,7 +1046,7 @@ if(!function_exists('offersBankList')){
                 ];
             }
             return json_encode($jsonData, true);
-        } catch(\Exception $e){
+        } catch (\Exception $e) {
             dd($e->getMessage());
         }
     }

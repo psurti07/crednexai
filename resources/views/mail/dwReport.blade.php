@@ -88,13 +88,13 @@
                                                                             class="es-m-txt-c"
                                                                             style="padding: 0; margin: 0; padding-top: 5px; font-size: 0;">
                                                                             <a target="_blank"
-                                                                                href="https://capitalkredit.in/"
+                                                                                href="https://crednexai.com/"
                                                                                 style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: underline; color: #000f26; font-size: 14px;">
-                                                                            <img src="https://capitalkredit.in/front/images/logo/logo.png"
-                                                                                alt="Capital Kredit"
+                                                                            <img src="https://crednexai.com/front/images/logo/logo.png"
+                                                                                alt="CredNexAI"
                                                                                 style="display: block; border: 0; outline: 0; text-decoration: none; -ms-interpolation-mode: bicubic;"
                                                                                 width="190"
-                                                                                title="Capital Kredit">
+                                                                                title="CredNexAI">
                                                                             </a>
                                                                         </td>
                                                                     </tr>
@@ -128,7 +128,7 @@
                                                                     <tr>
                                                                         <td class="es-m-p20b" align="left"
                                                                             style="padding: 0; margin: 0; width: 600px;">
-                                                                            <h3 style="text-align:center; color: #035bac;font-family: Poppins, sans-serif;">
+                                                                            <h3 style="text-align:center; color: #0c3e65;font-family: Poppins, sans-serif;">
                                                                                 Personal Details / Subscription Details
                                                                             </h3>
                                                                             <hr>
@@ -200,7 +200,7 @@
                                                                     <tr>
                                                                         <td class="es-m-p20b" align="left"
                                                                             style="padding: 0; margin: 0; width: 600px;">
-                                                                            <h3 style="text-align:center; color: #035bac;font-family: Poppins, sans-serif;">
+                                                                            <h3 style="text-align:center; color: #0c3e65;font-family: Poppins, sans-serif;">
                                                                                 Agent Details
                                                                             </h3>
                                                                             <hr>
@@ -214,9 +214,9 @@
                                                                                                 <td><p style="margin:0">Email :</p></td>
                                                                                             </tr>
                                                                                             <tr>
-                                                                                                <td><h5 style="margin:0">{{ $agent->fullname ?? 'Capital Kredit Support' }}</h5></td>
+                                                                                                <td><h5 style="margin:0">{{ $agent->fullname ?? 'CredNexAI Support' }}</h5></td>
                                                                                                 <td><h5 style="margin:0">+91 {{ $agent->mobile ?? '97242 06519' }}</h5></td>
-                                                                                                <td><h5 style="margin:0">{{ $agent->emailid ?? 'info@capitalkredit.in' }}</h5></td>
+                                                                                                <td><h5 style="margin:0">{{ $agent->emailid ?? 'info@crednexai.com' }}</h5></td>
                                                                                             </tr>
                                                                                         </table>
                                                                                     </td>
@@ -257,10 +257,10 @@
                                                                                                                                         <tr>
                                                                         <td class="es-m-p20b" align="left"
                                                                             style="padding: 0; margin: 0; width: 600px;">
-                                                                            <h3 style="text-align:center; color: #035bac;font-family: Poppins, sans-serif;">
+                                                                            <h3 style="text-align:center; color: #0c3e65;font-family: Poppins, sans-serif;">
                                                                                 Pre-Approved Offers
                                                                             </h3>
-                                                                            <span style="display:flex; justify-content:center; color: #035bac;font-family: Poppins, sans-serif;">Loan Amount - ₹&nbsp;<strong>{{ formatePriceIndia($offers[0]->loanAmount) }}</strong></span>
+                                                                            <span style="display:flex; justify-content:center; color: #0c3e65;font-family: Poppins, sans-serif;">Loan Amount - ₹&nbsp;<strong>{{ formatePriceIndia($offers[0]->loanAmount) }}</strong></span>
                                                                             <hr>
                                                                             <table class="offers-table">
                                                                                 <thead>
@@ -279,7 +279,7 @@
                                                                                     @endphp
                                                                                     <tr style="font-family: Poppins, sans-serif;">
                                                                                         <td>{{ $loop->iteration }}</td>
-                                                                                        <td><img src="https://managecapitalkredit.in/upload/banks/{{ $offer->bank_image }}" alt="{{ $offer->bank_name }}" class="bank-logo"></td>
+                                                                                        <td><img src="https://managecrednexai.com/upload/banks/{{ $offer->bank_image }}" alt="{{ $offer->bank_name }}" class="bank-logo"></td>
                                                                                         <td>{{ $offer->bank_name }}</td>
                                                                                         <td>{{ $offer->tenures }}&nbsp;Months<br><span class="subtext">({{ $offer->roi }}%)</span></td>
                                                                                         <td><strong>{{ $click }}</strong> Clicked</td>
@@ -321,7 +321,7 @@
                                                                                                                                         <tr>
                                                                         <td class="es-m-p20b" align="left"
                                                                             style="padding: 0; margin: 0; width: 600px;">
-                                                                            <h3 style="text-align:center; color: #035bac; font-family: Poppins, sans-serif;">
+                                                                            <h3 style="text-align:center; color: #0c3e65; font-family: Poppins, sans-serif;">
                                                                                 Service Timeline
                                                                             </h3>
                                                                             <hr>

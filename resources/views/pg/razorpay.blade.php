@@ -29,9 +29,9 @@
       "key": "{{ env('RAZOR_KEY_ID') }}",
       "amount": "{{ $amount }}",
       "currency": "INR",
-      "name": "CapitalKredit",
+      "name": "CredNexAI",
       "description": "Payment",
-      "image": "https://capitalkredit.in/public/front/images/logo/logo.png",
+      "image": "https://crednexai.com/public/front/images/logo/logo.png",
       "order_id": "{{ $order_id }}",
 
       "handler": function(response) {

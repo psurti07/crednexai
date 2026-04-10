@@ -47,7 +47,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-12">
                     <div class="section-title mb-40">
-                        <h2 class="s-34 w-700">Why Choose Capital Kredit for a Personal Loan in {{ ucwords($city) }}?</h2>
+                        <h2 class="s-34 w-700">Why Choose CredNexAI for a Personal Loan in {{ ucwords($city) }}?</h2>
                         <p class="s-16">We partner with NBFCs and lenders open to offering loans with easy terms and quick processing in {{ ucwords($city) }}.</p>
                     </div>
                 </div>
@@ -163,7 +163,7 @@
                             </div>
                             <div class="fbox-txt">
                                 <h6 class="s-18 w-700">Loans for All – Salaried & Self-Employed</h6>
-                                <p>Whether you're a private employee, government worker, or running your own business – you can easily get a personal loan in {{ ucwords($city) }} through Capital Kredit.
+                                <p>Whether you're a private employee, government worker, or running your own business – you can easily get a personal loan in {{ ucwords($city) }} through CredNexAI.
                                 </p>
                             </div>
                         </div>
@@ -451,7 +451,7 @@
                                     <div class="accordion-panel">
                                         <div class="accordion-panel-item">
                                             <div class="faqs-2-answer">
-                                                <p>No. You can apply for a personal loan completely online through Capital Kredit. No office visit required.
+                                                <p>No. You can apply for a personal loan completely online through CredNexAI. No office visit required.
                                                 </p>
                                             </div>
                                         </div>

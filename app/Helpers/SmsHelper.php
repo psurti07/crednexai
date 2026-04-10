@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 if(!function_exists('sendSingleSMS')){
     function sendSingleSMS($mobile, $otp, $panel = 'self'){
-        $message = "Hello, the Capital Kredit OTP for your mobile number registration is ".$otp.". Kindly do not share it with anyone. Thanks, Capital Kredit";
+        $message = "Hello, the CredNexAI OTP for your mobile number registration is ".$otp.". Kindly do not share it with anyone. Thanks, CredNexAI";
         // URL encode the message
        // URL encode the message
         $sms_text = urlencode($message);

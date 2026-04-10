@@ -179,7 +179,7 @@ class DashboardController extends Controller
                 }
             }
             $orderId = "ZPLAT" . number_format(microtime(true) * 1000, 0, '.', '');
-            $returnUrl = "https://capitalkredit.in/api/customer/plan-upgrade";
+            $returnUrl = "https://crednexai.com/api/customer/plan-upgrade";
             
             /*zaakpay code starts*/
             if (env('ZAAKPAY_ENV') == "PRODUCTION") {
@@ -383,7 +383,7 @@ class DashboardController extends Controller
                     $invoiceData = view('mail.invoice', $invAttach)->render();
                     Log::info($invoiceData);
                     $pdf = Pdf::loadHTML($invoiceData)->setPaper('A4', 'portrait')->output();
-                    sendBrevoHtmlMail2($mailData, 'Congratulations! Successful Plan Renewal for capitalkredit.', $sendGreetings, 3, $pdf);
+                    sendBrevoHtmlMail2($mailData, 'Congratulations! Successful Plan Renewal for crednexai.', $sendGreetings, 3, $pdf);
                     return redirect("customer/dashboard")->with('success', 'Your plan has been successfully renewed!');
                 } else {
                     Log::info('response code not success');

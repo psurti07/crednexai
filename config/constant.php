@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'COMPANY_CODE' => 'CAPKR6257',
+    'COMPANY_CODE' => 'CDNXAI1234',
     'uat_mobile_numbers' => array_filter(explode(',', env('UAT_MOBILE_NUMBERS', ''))),
     'LA_OFFER_1' => 'la-offer-1',
     'LA_OFFER_2' => 'la-offer-2',

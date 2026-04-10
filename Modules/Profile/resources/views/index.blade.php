@@ -103,7 +103,7 @@
                                                 <span data-kt-element="bullet" class="bullet bullet-vertical d-flex align-items-center min-h-20px mh-100 me-4 bg-success"></span>
                                                 <div class="flex-grow-1 me-5">
                                                     <div class="text-gray-700 fw-semibold fs-6">
-                                                        Agent Name. : {{ isset($agent->fullname) ? $agent->fullname : 'Capital Kredit Support' }}
+                                                        Agent Name. : {{ isset($agent->fullname) ? $agent->fullname : 'CredNexAI Support' }}
                                                     </div>
                                                 </div>
                                             </div>

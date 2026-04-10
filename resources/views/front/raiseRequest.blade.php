@@ -23,7 +23,7 @@
                         <span class="section-id"></span>
                         <h2 class="w-700">Raise a <span class="color--green-500">Request</span></h2>
                         <p class="p-md w-400">
-                            Have a query? Raise a request with Capital Kredit and get quick assistance for all your loan needs.
+                            Have a query? Raise a request with CredNexAI and get quick assistance for all your loan needs.
                         </p>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
     <div class="container">
         <div class="row justify-content-center">
             
-            <div class="col-md-6 col-lg-6 col-sm-12">
+            <div class="col-md-6 col-lg-6 col-sm-12 align-items-center justify-content-center m-auto">
                 <div id="contacts" class="contacts-section division">
                     <div class="card">
                         <div class="card-body">

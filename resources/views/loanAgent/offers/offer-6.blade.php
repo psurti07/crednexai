@@ -93,7 +93,7 @@
                                 </div>
                             </div>
                         </form>
-                        <p class="p-sm mt-3 mb-0">By submitting the form & proceeding, you agree to the <a href="{{ route('front.terms.conditions') }}" target="_blank" class="text-dark text-decoration-none">Terms</a>  and <a href="{{ route('front.privacy.policy') }}" target="_blank" class="text-dark text-decoration-none"> Privacy Policy</a> of Capital Kredit.</p>
+                        <p class="p-sm mt-3 mb-0">By submitting the form & proceeding, you agree to the <a href="{{ route('front.terms.conditions') }}" target="_blank" class="text-dark text-decoration-none">Terms</a>  and <a href="{{ route('front.privacy.policy') }}" target="_blank" class="text-dark text-decoration-none"> Privacy Policy</a> of CredNexAI.</p>
                     </div>
                 </div>
             </div>
@@ -162,7 +162,7 @@
                             </p>
                             
                             <p class="s-14">
-                                <strong>Important Note:</strong> BE AWARE! We ask our customers to make payments ONLY on our website https://capitalkredit.in and NOT through any other source, directly or indirectly. Thanks!
+                                <strong>Important Note:</strong> BE AWARE! We ask our customers to make payments ONLY on our website https://crednexai.com and NOT through any other source, directly or indirectly. Thanks!
                             </p>
                         </div>
                     </div>
