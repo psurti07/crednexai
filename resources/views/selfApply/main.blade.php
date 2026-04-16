@@ -152,9 +152,6 @@
                     <div class="section-title mb-50">
                         <div class="d-flex justify-content-center align-items-center">
                             <h2 class="s-28 mb-0">Trusted by the <span class="color--green-500">Best in the Industry</span></h2>
-                            <div class="">
-                                <img src="{{ asset('front/images/logo/icon-1.png') }}" class="" width="50" alt="Trusted Users">
-                            </div>
                         </div>
                         <p class="s-16 color--grey">Partnering with the best NBFCs to provide the best for our customers.</p>
                     </div>
@@ -178,7 +175,7 @@
 <!-- Affiliate NBFCs section ends -->
 
 <!-- why CredNexAI section starts -->
-<section id="features-6" class="pt-0 pb-80 features-section division">
+<section id="features-6" class="pt-0 pb-80 features-section division bg--green-100">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 col-lg-9">

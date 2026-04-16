@@ -370,6 +370,8 @@ if (!function_exists('cookieHelper')) {
             $sourceId = $request->input('fbclid');
         } elseif ($source === 'taboola') {
             $sourceId = $request->input('tbclid');
+        } else {
+            $sourceId = $request->input('fbclid') ?? null;
         }
 
         // Set cookies with standard parameters
