@@ -11,7 +11,7 @@
 @section('content')
 
 <section id="hero-7" class="hero-section bg--scroll position-relative pb-0">
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 p-0">
                 <div class="owl-carousel custom-slider">
@@ -37,6 +37,20 @@
                             class="btn r-04 btn--theme hover--tra-black last-link me-2">Self Apply</a>
                         <a href="{{ route('loan.agent.main') }}" class="btn r-04 btn--theme hover--tra-black last-link">Hire
                             an Agent</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col p-0">
+                <div class="owl-carousel owl-theme reviews-1-wrapper-new">
+                    <div class="slide-box">
+                        <img src="{{ asset('front/images/1-blue.jpg') }}" class="">
+                    </div>
+                    <div class="slide-box">
+                        <img src="{{ asset('front/images/2-yellow.jpg') }}" class="">
                     </div>
                 </div>
             </div>
