@@ -153,7 +153,7 @@
                                 </h2>
                             </div>
                             <div class="statistic-txt">
-                                <h5 class="s-16 w-500 text-white">ONBFC Partners</h5>
+                                <h5 class="s-16 w-500 text-white">NBFC Partners</h5>
                             </div>
                         </div>
                     </div>

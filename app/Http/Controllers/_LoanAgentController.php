@@ -36,7 +36,18 @@ use App\Http\Controllers\CipherPayController as CipherPay;
 
 class LoanAgentController extends Controller
 {
-
+    public $mainurl;
+    public $key;
+    public $partnerid;
+    public $headerJson;
+    public $publicKey;
+    public $privateKey;
+    public $aesKey;
+    public $aesIv;
+    public $publicKeyHeader;
+    public $partnerToken;
+    public $lifetime;
+    
     public function __construct()
     {
         $this->mainurl = "https://api.cipherpay.in/api/v3/";
