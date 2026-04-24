@@ -58,7 +58,7 @@
 
     <div class="row align-items-center justify-content-center m-auto">
         <div class="col-md-4 text-center mb-4 mb-md-0">
-            <img src="{{ asset('front/images/testimonial/model-image-3.png') }}"
+            <img src="{{ asset('front/images/testimonial/model-image-6.png') }}"
                 class="img-fluid rounded"
                 alt="testimonial">
         </div>
@@ -86,7 +86,7 @@
 
     <div class="row align-items-center justify-content-center m-auto">
         <div class="col-md-4 text-center mb-4 mb-md-0">
-            <img src="{{ asset('front/images/testimonial/model-image-4.png') }}"
+            <img src="{{ asset('front/images/testimonial/model-image-7.png') }}"
                 class="img-fluid rounded"
                 alt="testimonial">
         </div>

@@ -10,7 +10,7 @@
 @endpush
 @section('content')
 
-<section id="hero-7" class="hero-section bg--scroll position-relative pb-0">
+<!-- <section id="hero-7" class="hero-section bg--scroll position-relative pb-0"> -->
     <!-- <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 p-0">
@@ -42,7 +42,7 @@
             </div>
         </div>
     </div> -->
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="row">
             <div class="col p-0">
                 <div class="owl-carousel owl-theme reviews-1-wrapper-new">
@@ -56,9 +56,33 @@
             </div>
         </div>
     </div>
+</section> -->
+
+<section id="hero-7" class="hero-section bg--green-100 bg--scroll pb-0">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-md-6 col-lg-6 col-12">
+                <div class="hero-7-txt">
+                    <div class=" mt-lg-0 mb-lg-5">
+                        <h1 class="s-40 w-700">Build a Better Financial Future with the Right Guidance</h1>
+                        <p class="mb-20">Move forward with confidence with expert financial consultation and services that steer you in the right direction.</p>
+                        <a href="{{ route('self.apply.main') }}"
+                            class="btn r-04 btn--theme hover--tra-black last-link">Self Apply</a>
+                        <a href="{{ route('loan.agent.main') }}"
+                            class="btn r-04 btn--theme hover--tra-black last-link">Hire an Agent</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-12 ">
+                <div class="hero-7-img d-flex justify-content-center align-items-start">
+                    <img src="{{ asset('front/images/Who-Can-Apply.webp') }}" alt="easyailoans" class="img-fluid p-0">
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="py-80 ct-02 content-section division bg--green-100" id="company">
+<section class="py-80 ct-02 content-section division" id="company">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 col-lg-9">
@@ -195,7 +219,7 @@
     </div>
 </section>
 
-<section id="features-2" class="pt-0 features-section division">
+<section id="features-2" class="py-80 features-section division bg--green-100">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 col-lg-9">
@@ -211,7 +235,7 @@
         <div class="fbox-wrapper text-center">
             <div class="row g-4 row-cols-1 row-cols-md-3 row-cols-lg-3">
                 <div class="col d-flex">
-                    <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12 h-100 w-100">
+                    <div class="fbox-7 bg--white-100 fb-1 r-12 h-100 w-100">
                         <div class="fbox-ico ico-50">
                             <div class="fbox-image">
                                 <img class="h-100" src="{{ asset('front/images/Access-To-Multiple-NBFCs.png') }}" alt="Access-To-Multiple-NBFCs">
@@ -225,7 +249,7 @@
                 </div>
 
                 <div class="col d-flex">
-                    <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12 h-100 w-100">
+                    <div class="fbox-7 bg--white-100 fb-1 r-12 h-100 w-100">
                         <div class="fbox-ico ico-50">
                             <div class="fbox-image">
                                 <img class="h-100" src="{{ asset('front/images/Dedicated-Expert-Assigned.png') }}" alt="Dedicated-Expert-Assigned">
@@ -239,7 +263,7 @@
                 </div>
 
                 <div class="col d-flex">
-                    <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12 h-100 w-100">
+                    <div class="fbox-7 bg--white-100 fb-1 r-12 h-100 w-100">
                         <div class="fbox-ico ico-50">
                             <div class="fbox-image">
                                 <img class="h-100" src="{{ asset('front/images/Easy-Online-Process.png') }}" alt="Easy-Online-Process">
@@ -254,7 +278,7 @@
                 </div>
 
                 <div class="col d-flex">
-                    <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12 h-100 w-100">
+                    <div class="fbox-7 bg--white-100 fb-1 r-12 h-100 w-100">
                         <div class="fbox-ico ico-50">
                             <div class="fbox-image">
                                 <img class="h-100" src="{{ asset('front/images/No-Impact-On-CIBIL-Score.png') }}" alt="No-Impact-On-CIBIL-Score">
@@ -268,7 +292,7 @@
                 </div>
 
                 <div class="col d-flex">
-                    <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12 h-100 w-100">
+                    <div class="fbox-7 bg--white-100 fb-1 r-12 h-100 w-100">
                         <div class="fbox-ico ico-50">
                             <div class="fbox-image">
                                 <img class="h-100" src="{{ asset('front/images/Personalised-Tracking-Portal.png') }}" alt="Personalised-Tracking-Portal">
@@ -282,7 +306,7 @@
                 </div>
 
                 <div class="col d-flex">
-                    <div class="fbox-7 fbox--hover bg--white-100 fb-1 r-12 h-100 w-100">
+                    <div class="fbox-7 bg--white-100 fb-1 r-12 h-100 w-100">
                         <div class="fbox-ico ico-50">
                             <div class="fbox-image">
                                 <img class="h-100" src="{{ asset('front/images/Tailored-Financial-Solutions.png') }}" alt="Tailored-Financial-Solutions">
