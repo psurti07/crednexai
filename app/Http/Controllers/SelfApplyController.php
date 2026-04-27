@@ -41,7 +41,7 @@ use Razorpay\Api\Api;
 
 class SelfApplyController extends Controller
 {
-
+    public $lifetime;
     public function __construct()
     {
         $this->lifetime = config('session.lifetime');
@@ -1002,6 +1002,7 @@ class SelfApplyController extends Controller
                 sendBrevoHtmlMail2($mailData, 'Congratulations! Payment Successful for CredNexAI’s Self-Apply Plan.', $sendGreetings, 3, $attachments);
 
                 // application remarks data insert
+                $staffID = assignAgentSelf();
                 DB::table('application_remarks')->updateOrInsert(
                     [
                         'application_id' => $userData->id,
@@ -1012,11 +1013,10 @@ class SelfApplyController extends Controller
                         'rec_date' => now(),
                         'entry_at' => now(),
                         'notes'    => '',
-                        'staff_id' => 5,
+                        'staff_id' => $staffID->id,
                     ]
                 );
 
-                $staffID = assignAgentSelf();
                 UserRegistration::where('id', $userData->userid)->update(['process_step' => 5, 'staff_id' => $staffID->id]);
 
                 if ($response2 > 0) {
@@ -1086,6 +1086,7 @@ class SelfApplyController extends Controller
                     UserRegistration::where('id', $userData->userid)->update(['process_step' => 5]);
 
                     /* application remarks entry start */
+                    $staffID = assignAgentSelf();
                     DB::table('application_remarks')->updateOrInsert(
                         [
                             'application_id' => $userData->id,
@@ -1096,7 +1097,7 @@ class SelfApplyController extends Controller
                             'rec_date' => now(),
                             'entry_at' => now(),
                             'notes'    => '',
-                            'staff_id' => 5,
+                            'staff_id' => $staffID->id,
                         ]
                     );
                     /* application remarks entry ends */

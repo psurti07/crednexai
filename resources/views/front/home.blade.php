@@ -143,17 +143,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col sec-3 pt-3">
-                        <div id="sb-5-2" class="text-center bg--green-400 rounded-4 px-3 py-3">
-                            <div class="statistic-block">
-                                <div class="statistic-digit">
-                                    <h2 class="s-30 w-700 mb-10 text-white">
-                                        <span class="count-element">8</span>+
-                                    </h2>
-                                </div>
-                                <div class="statistic-txt">
-                                    <h5 class="s-16 w-500 text-white">ONBFC Partners</h5>
-                                </div>
+                </div>
+                <div class="col sec-3 border-end border-light">
+                    <div id="sb-5-2" class="text-center">
+                        <div class="statistic-block">
+                            <div class="statistic-digit">
+                                <h2 class="s-30 w-700 mb-10 text-white">
+                                    <span class="count-element">8</span>+
+                                </h2>
+                            </div>
+                            <div class="statistic-txt">
+                                <h5 class="s-16 w-500 text-white">NBFC Partners</h5>
                             </div>
                         </div>
                     </div>
