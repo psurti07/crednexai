@@ -31,6 +31,11 @@
   color: #6c757d !important
 }
 
+.role-box:hover span,
+.role-box:hover h5,
+.role-box:hover p {
+  color: #fff !important
+}
 .tra-menu.navbar-dark .btn--purple-500 {
   border-color: #3a3189 !important;
   background-color: #3a3189 !important;
@@ -400,4 +405,10 @@
     height: 700px;
     object-fit: cover;
     display: block;
+}
+
+@media screen and (max-width:991px) {
+ .hero-section{
+min-height: auto !important;
+} 
 }

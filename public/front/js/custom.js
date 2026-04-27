@@ -240,6 +240,7 @@ $(document).ready(function () {
     autoplay: true,
     navBy: 1,
     dots: false,
+    margin:20,
     autoplayTimeout: 4500,
     autoplayHoverPause: true,
     smartSpeed: 1500,
@@ -257,7 +258,7 @@ $(document).ready(function () {
         items: 1,
       },
       1000: {
-        items: 1,
+        items: 2,
       },
     },
   });

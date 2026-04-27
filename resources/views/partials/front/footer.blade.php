@@ -1,7 +1,7 @@
-<footer id="footer-3" class="pt-80 footer">
+<footer id="footer-3" class="pt-0 footer">
     <div class="container">
         <!-- FOOTER CONTENT -->
-        <div class="row">
+        <div class="row pt-80">
             <!-- FOOTER LOGO -->
             <div class="col-xl-4 mb-sm-20 mb-md-20">
                 <div class="footer-info">
@@ -112,7 +112,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="footer-copyright">
-                        <p><span class="text-light">{{ date('Y') }} &copy; {{ env('COMPANY_NAME') }} All Rights Reserved.</span></p>
+                        <p class="mt-0"><span class="text-light">{{ date('Y') }} &copy; {{ env('COMPANY_NAME') }} All Rights Reserved.</span></p>
                     </div>
                 </div>
                 <!-- FOOTER SECONDARY LINK -->

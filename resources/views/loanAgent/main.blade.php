@@ -143,16 +143,15 @@
 </section>
 
 <!-- Affiliate NBFCs section starts -->
-<section id="integrations-2" class="pt-0 pb-40 integrations-section">
+<section id="integrations-2" class="pt-0 pb-80 integrations-section">
     <div class="container">
         <div class="r-12 text-center">
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-12">
-                    <div class="section-title mb-50">
-                        <div class="d-flex justify-content-center align-items-center">
-                            <h2 class="s-28 mb-0">Trusted by the <span class="color--green-500">Best in the Industry</span></h2>
-                        </div>
-                        <p class="s-16 color--grey">Partnering with the best NBFCs to provide the best for our customers.</p>
+                    <div class="section-title mb-40">
+                            <h2 class="s-28 mb-5">Trusted by the <span class="color--green-500">Best in the Industry</span></h2>
+                              <p class="s-16 color--grey mt-0">Partnering with the best NBFCs to provide the best for our customers.</p>
+                     
                     </div>
                 </div>
             </div>
@@ -174,13 +173,13 @@
 <!-- Affiliate NBFCs section ends -->
 
 <!-- why CredNexAI section starts -->
-<section id="features-6" class="pt-60 pb-20 features-section division">
+<section id="features-6" class="pt-0 pb-80 features-section division">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 col-lg-9">
-                <div class="section-title mb-50">
-                    <h2 class="s-28">Why <span class="color--green-500">CredNexAI</span></h2>
-                    <p class="s-16 color--grey">Here's what sets us apart.</p>
+                <div class="section-title mb-40">
+                    <h2 class="s-28 mb-5">Why <span class="color--green-500">CredNexAI</span></h2>
+                    <p class="s-16 color--grey mt-0">Here's what sets us apart.</p>
                 </div>
             </div>
         </div>
@@ -245,7 +244,7 @@
 <!-- why CredNexAI section ends -->
 
 <!-- Testimonioals section starts -->
-<section id="reviews-1" class="py-80 shape--06 reviews-section">
+<section id="reviews-1" class="pt-0 pb-80 shape--06 reviews-section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-12">

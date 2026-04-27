@@ -12,7 +12,7 @@
                 <div class="col-md-12 text-center">
                     <div class="txt-block left-column">
                         <span class="section-id"></span>
-                        <h2 class="w-700">Frequently Asked <span class="color--green-500">Questions</span></h2>
+                        <h2 class="w-700 mb-40">Frequently Asked <span class="color--green-500">Questions</span></h2>
                     </div>
                 </div>
             </div>

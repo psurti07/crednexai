@@ -16,7 +16,7 @@
 @endpush
 @section('content')
     <!-- main section starts -->
-    <section id="hero-201" class="bg--white-100 bg--fixed hero-section">
+    <section  class="bg--white-100 bg--fixed hero-section pt-100 pb-80 personal-details-form min-vh-100 d-flex align-items-center">
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="col-md-6 col-lg-6 self-apply-form">

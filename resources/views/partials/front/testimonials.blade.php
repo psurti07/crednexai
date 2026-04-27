@@ -1,12 +1,12 @@
 <!-- Testimonials carousel start  -->
 <div class="owl-carousel reviews-1-wrapper-testimonial">
-    <div class="row align-items-center justify-content-center m-auto">
-        <div class="col-md-4 text-center mb-4 mb-md-0">
+    <div class="row align-items-center justify-content-center m-auto bg--white-100 shadow fbox-7 p-0 rounded-3">
+        <div class="col-md-6 text-center mb-4 mb-md-0 p-0">
             <img src="{{ asset('front/images/testimonial/model-image-6.png') }}"
                 class="img-fluid rounded"
                 alt="testimonial">
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6 p-4">
             <p class="mb-3">
                 "I really liked how simple everything was. The team was supportive and helped me choose what was right for me."
             </p>
@@ -28,13 +28,13 @@
         </div>
     </div>
 
-    <div class="row align-items-center justify-content-center m-auto">
-        <div class="col-md-4 text-center mb-4 mb-md-0">
+    <div class="row align-items-center justify-content-center m-auto bg--white-100 shadow fbox-7 p-0 rounded-3">
+        <div class="col-md-6 text-center mb-4 mb-md-0 p-0">
             <img src="{{ asset('front/images/testimonial/model-image-7.png') }}"
                 class="img-fluid rounded"
                 alt="testimonial">
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6 p-4">
             <p class="mb-3">
                 "Very simple loan process. 100% online. No hassle at all. I loved my whole experience. Would definitely recommend. "
             </p>
@@ -56,13 +56,13 @@
         </div>
     </div>
 
-    <div class="row align-items-center justify-content-center m-auto">
-        <div class="col-md-4 text-center mb-4 mb-md-0">
+    <div class="row align-items-center justify-content-center m-auto bg--white-100 shadow fbox-7 p-0 rounded-3">
+        <div class="col-md-6 text-center mb-4 mb-md-0 p-0">
             <img src="{{ asset('front/images/testimonial/model-image-6.png') }}"
                 class="img-fluid rounded"
                 alt="testimonial">
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6 p-4">
             <p class="mb-3">
                 "CredNexAI is the best. Everything was handled professionally. I am very thankful to them for helping me in my needs. "
             </p>
@@ -84,13 +84,13 @@
         </div>
     </div>
 
-    <div class="row align-items-center justify-content-center m-auto">
-        <div class="col-md-4 text-center mb-4 mb-md-0">
+    <div class="row align-items-center justify-content-center m-auto bg--white-100 shadow fbox-7 p-0 rounded-3">
+        <div class="col-md-6 text-center mb-4 mb-md-0 p-0">
             <img src="{{ asset('front/images/testimonial/model-image-7.png') }}"
                 class="img-fluid rounded"
                 alt="testimonial">
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6 p-4">
             <p class="mb-3">
                 "The whole process was very smooth and easy to understand. I got proper guidance at every step and didn’t feel confused at all."
             </p>

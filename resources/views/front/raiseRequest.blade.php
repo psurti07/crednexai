@@ -21,10 +21,8 @@
                 <div class="col-md-12 text-center">
                     <div class="txt-block left-column">
                         <span class="section-id"></span>
-                        <h2 class="w-700">Raise a <span class="color--green-500">Request</span></h2>
-                        <p class="p-md w-400">
-                            Have a query? Raise a request with CredNexAI and get quick assistance for all your loan needs.
-                        </p>
+                        <h2 class="w-700 mb-40">Raise a <span class="color--green-500">Request</span></h2>
+                        
                     </div>
                 </div>
             </div>
@@ -136,7 +134,7 @@
             <div class="col-md-6 col-lg-6 col-sm-12">
                 <div class="faqs-section">
                     <div class="faqs-3-questions">
-                        <h4 class="mb-20">Common <span class="color--green-500">FAQs</span></h4>
+                        <h4 class="mb-20 text-center">Common <span class="color--green-500">FAQs</span></h4>
                         <div class="accordion-wrapper">
                             {!! raiseRequestFaqs() !!}
                         </div>
