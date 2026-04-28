@@ -70,8 +70,8 @@
                 <div id="hero-8-form" class="border border-primary r-06 h-100 p-0">
 
                     <div class="text-center">
-                        <img src="{{ asset('front/images/apply-now.png') }}" alt="Apply Now"
-                            class="img-fluid rounded w-100">
+                        <img src="{{ asset('front/images/loan-agent.jpg') }}" alt="Apply Now"
+                            class="img-fluid w-100">
                     </div>
 
                     <form method="post" action="{{ route('loan.agent.send.otp') }}" class="request-form save-form-1 needs-validation p-3" novalidate>
