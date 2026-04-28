@@ -80,7 +80,7 @@
                                                         <td align="left"
                                                             style="padding: 0; margin: 0; padding-top: 10px; padding-bottom: 10px;">
                                                             <table class="es-left" cellspacing="0" cellpadding="0"
-                                                                align="left"
+                                                                align="center"
                                                                 style="mso-table-lspace: 0; mso-table-rspace: 0; border-collapse: collapse; border-spacing: 0; float: center;">
                                                                 <tbody>
                                                                     <tr>
@@ -90,7 +90,7 @@
                                                                             <a target="_blank"
                                                                                 href="https://crednexai.com/"
                                                                                 style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; mso-line-height-rule: exactly; text-decoration: underline; color: #000f26; font-size: 14px;">
-                                                                            <img src="https://crednexai.com/front/images/logo/logo.png"
+                                                                            <img src="https://crednexai.com/public/front/images/logo/logo.png"
                                                                                 alt="CredNexAI"
                                                                                 style="display: block; border: 0; outline: 0; text-decoration: none; -ms-interpolation-mode: bicubic;"
                                                                                 width="190"
