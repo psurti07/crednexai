@@ -58,14 +58,14 @@
     </div>
 </section> -->
 
-<section id="hero-7" class="hero-section bg--green-100 bg--scroll pb-0">
+<section id="hero-1" class="hero-section">
     <div class="container">
         <div class="row d-flex align-items-center">
             <div class="col-md-6 col-lg-6 col-12">
                 <div class="hero-7-txt">
-                    <div class=" mt-lg-0 mb-lg-5">
-                        <h1 class="s-40 w-700">Build a Better Financial Future with the Right Guidance</h1>
-                        <p class="mb-20">Move forward with confidence with expert financial consultation and services
+                    <div class="mt-lg-5 mb-lg-5">
+                        <h1 class="s-40 w-700 text-white">Build a Better Financial Future with the Right Guidance</h1>
+                        <p class="mb-20 text-white">Move forward with confidence with expert financial consultation and services
                             that steer you in the right direction.</p>
                         <a href="{{ route('self.apply.main') }}"
                             class="btn r-04 btn--theme hover--tra-black last-link">Self Apply</a>
@@ -74,11 +74,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6 col-12 ">
+            <!-- <div class="col-md-6 col-lg-6 col-12 ">
                 <div class="hero-7-img d-flex justify-content-center align-items-start">
                     <img src="{{ asset('front/images/hero-1.png') }}" alt="easyailoans" class="img-fluid p-0">
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
@@ -114,38 +114,37 @@
                         planning ahead or dealing with something immediate, you can count on steady support and
                         solutions that are practical, simple, and easy to move forward with.</p>
                 </div>
-                <div class="row row-cols-2 row-cols-md-4">
-                    <div class="col sec-1 pt-3">
-                        <div id="sb-5-1" class="text-center bg--green-400 rounded-4 px-3 py-3 mb-0">
-                            <div class="statistic-block">
-                                <div class="statistic-digit">
-                                    <h2 class="s-30 w-700 mb-10 text-white">
-                                        <span class="count-element">5500</span>+
-                                    </h2>
-                                </div>
-                                <div class="statistic-txt">
-                                    <h5 class="s-16 w-500 text-white">Happy Customer</h5>
-                                </div>
+                <div class="row row-cols-2 row-cols-md-4 mt-lg-4 mt-0">
+                <div class="col sec-1 border-end border-light">
+                    <div id="sb-5-1" class="text-center bg--green-400 rounded-4 px-3 py-3 mb-0">
+                        <div class="statistic-block">
+                            <div class="statistic-digit">
+                                <h2 class="s-30 w-700 mb-10 text-white">
+                                    <span class="count-element">5500</span>+
+                                </h2>
+                            </div>
+                            <div class="statistic-txt">
+                                <h5 class="s-16 w-500 text-white">Happy Customer</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col sec-2 pt-3">
-                        <div id="sb-5-3" class="text-center bg--green-400 rounded-4 px-3 py-3">
-                            <div class="statistic-block">
-                                <div class="statistic-digit">
-                                    <h2 class="s-30 w-700 mb-10 text-white">
-                                        <span class="count-element">5</span>Cr+
-                                    </h2>
-                                </div>
-                                <div class="statistic-txt">
-                                    <h5 class="s-16 w-500 text-white">Disbursal</h5>
-                                </div>
+                </div>
+                <div class="col sec-2 border-end border-light">
+                    <div id="sb-5-3" class="text-center bg--green-400 rounded-4 px-3 py-3 mb-0">
+                        <div class="statistic-block">
+                            <div class="statistic-digit">
+                                <h2 class="s-30 w-700 mb-10 text-white">
+                                    <span class="count-element">4.5</span>Cr+
+                                </h2>
+                            </div>
+                            <div class="statistic-txt">
+                                <h5 class="s-16 w-500 text-white">Disbursal</h5>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col sec-3 border-end border-light">
-                    <div id="sb-5-2" class="text-center">
+                    <div id="sb-5-2" class="text-center bg--green-400 rounded-4 px-3 py-3 mb-0">
                         <div class="statistic-block">
                             <div class="statistic-digit">
                                 <h2 class="s-30 w-700 mb-10 text-white">
@@ -157,21 +156,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col sec-4 pt-3">
-                        <div id="sb-5-4" class="text-center bg--green-400 rounded-4 px-3 py-3">
-                            <div class="statistic-block">
-                                <div class="statistic-digit">
-                                    <h2 class="s-30 w-700 mb-10 text-white">
-                                        <span class="count-element">100</span>%
-                                    </h2>
-                                </div>
-                                <div class="statistic-txt">
-                                    <h5 class="s-16 w-500 text-white">Digital Process</h5>
-                                </div>
+                </div>
+                <div class="col sec-4">
+                    <div id="sb-5-4" class="text-center bg--green-400 rounded-4 px-3 py-3 mb-0">
+                        <div class="statistic-block">
+                            <div class="statistic-digit">
+                                <h2 class="s-30 w-700 mb-10 text-white">
+                                    <span class="count-element">100</span>%
+                                </h2>
+                            </div>
+                            <div class="statistic-txt">
+                                <h5 class="s-16 w-500 text-white">Digital Process</h5>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
