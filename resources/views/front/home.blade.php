@@ -212,7 +212,7 @@
                                 <div class="col-lg-5">
                                     <div class="fbox-5-img mb-lg-0 mb-3 m-0">
                                         <img class="img-fluid light-theme-img mb-0"
-                                            src="http://127.0.0.1:8000/front/images/Self-Apply.png"
+                                            src="{{ asset('front/images/Self-Apply.png') }}"
                                             alt="feature-image">
                                     </div>
                                 </div>
@@ -222,7 +222,7 @@
                                         <p class="mb-20 ps-0">Get quick access to a smooth digital process, easy login links,
                                             and
                                             personalized offers from our trusted NBFC partners.</p>
-                                        <a href="http://127.0.0.1:8000/self-apply"
+                                        <a href="{{ route('self.apply.main') }}"
                                             class="btn r-04 btn--theme hover--tra-black">Apply
                                             Now</a>
                                     </div>
@@ -236,7 +236,7 @@
                                 <div class="col-lg-5">
                                     <div class="fbox-5-img mb-lg-0 mb-3 m-0">
                                         <img class="img-fluid light-theme-img mb-0"
-                                            src="http://127.0.0.1:8000/front/images/Hire-Loan-Agent.png"
+                                            src="{{ asset('front/images/Hire-Loan-Agent.png') }}"
                                             alt="feature-image">
                                     </div>
                                 </div>
@@ -246,7 +246,7 @@
                                         <p class="mb-20 ps-0">Let our experienced experts handle the process for you, so
                                             you can move
                                             forward with ease and without any hassle.</p>
-                                        <a href="http://127.0.0.1:8000/loan-agent"
+                                        <a href="{{ route('loan.agent.main') }}"
                                             class="btn r-04 btn--theme hover--tra-black">Apply
                                             Now</a>
                                     </div>
