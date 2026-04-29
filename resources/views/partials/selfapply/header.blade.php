@@ -12,13 +12,13 @@
             <div class="wsmainwp clearfix">
                 <!-- HEADER BLACK LOGO -->
                 <div class="desktoplogo">
-                    <a href="javascript:;" class="logo-black">
+                    <a href="{{ route('front.home') }}" class="logo-black">
                         <img src="{{ asset('front/images/logo/logo.png') }}" alt="{{ env('APP_NAME') }}" />
                     </a>
                 </div>
                 <!-- HEADER WHITE LOGO -->
                 <div class="desktoplogo">
-                    <a href="javascript:;" class="logo-white">
+                    <a href="{{ route('front.home') }}" class="logo-white">
                         <img src="{{ asset('front/images/logo/logo.png') }}" alt="{{ env('APP_NAME') }}" />
                     </a>
                 </div>
