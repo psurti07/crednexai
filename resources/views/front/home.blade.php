@@ -74,11 +74,11 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-md-6 col-lg-6 col-12 ">
+            <div class="col-sm-8 col-md-6 col-lg-6 col-12 m-auto">
                 <div class="hero-7-img d-flex justify-content-center align-items-start">
-                    <img src="{{ asset('front/images/hero-1.png') }}" alt="easyailoans" class="img-fluid p-0">
+                    <img src="{{ asset('front/images/hero-1.png') }}" alt="easyailoans" class="img-fluid p-0" width="500px">
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 </section>
@@ -116,7 +116,7 @@
                 </div>
                 <div class="row row-cols-2 row-cols-md-4 mt-lg-4 mt-0">
                 <div class="col sec-1 border-end border-light">
-                    <div id="sb-5-1" class="text-center bg--green-400 rounded-4 px-3 py-3 mb-0">
+                    <div id="sb-5-1" class="text-center bg--green-400 rounded-4 px-3 py-3 mb-0 h-100">
                         <div class="statistic-block">
                             <div class="statistic-digit">
                                 <h2 class="s-30 w-700 mb-10 text-white">
@@ -130,7 +130,7 @@
                     </div>
                 </div>
                 <div class="col sec-2 border-end border-light">
-                    <div id="sb-5-3" class="text-center bg--green-400 rounded-4 px-3 py-3 mb-0">
+                    <div id="sb-5-3" class="text-center bg--green-400 rounded-4 px-3 py-3 mb-0 h-100">
                         <div class="statistic-block">
                             <div class="statistic-digit">
                                 <h2 class="s-30 w-700 mb-10 text-white">
@@ -144,7 +144,7 @@
                     </div>
                 </div>
                 <div class="col sec-3 border-end border-light">
-                    <div id="sb-5-2" class="text-center bg--green-400 rounded-4 px-3 py-3 mb-0">
+                    <div id="sb-5-2" class="text-center bg--green-400 rounded-4 px-3 py-3 mb-0 h-100">
                         <div class="statistic-block">
                             <div class="statistic-digit">
                                 <h2 class="s-30 w-700 mb-10 text-white">
@@ -158,7 +158,7 @@
                     </div>
                 </div>
                 <div class="col sec-4">
-                    <div id="sb-5-4" class="text-center bg--green-400 rounded-4 px-3 py-3 mb-0">
+                    <div id="sb-5-4" class="text-center bg--green-400 rounded-4 px-3 py-3 mb-0 h-100">
                         <div class="statistic-block">
                             <div class="statistic-digit">
                                 <h2 class="s-30 w-700 mb-10 text-white">
@@ -177,7 +177,7 @@
     </div>
 </section>
 
-<section id="faqs-4" class="py-80 faqs-section division bg--green-100">
+<section id="products" class="py-80 faqs-section division bg--green-100">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 col-lg-10">

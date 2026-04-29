@@ -3386,9 +3386,9 @@ span.sm-info {
 /*------------------------------------------*/
 
 #hero-1 {
-    background-image: url(../images/home-page-new.png);
+    background-image: url(../images/home-banner.png);
     padding-top: 180px;
-    padding-bottom: 180px;
+    padding-bottom: 0px;
     background-repeat: no-repeat;
 }
 

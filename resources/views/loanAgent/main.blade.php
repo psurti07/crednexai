@@ -70,7 +70,7 @@
                 <div id="hero-8-form" class="border border-primary r-06 h-100 p-0">
 
                     <div class="text-center">
-                        <img src="{{ asset('front/images/loan-agent.jpg') }}" alt="Apply Now"
+                        <img src="{{ asset('front/images/loan-agent-02.jpg') }}" alt="Apply Now"
                             class="img-fluid w-100">
                     </div>
 

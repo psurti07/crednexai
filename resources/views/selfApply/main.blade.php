@@ -72,7 +72,7 @@
                     <!-- <h4 class="s-20 w-700 mb-2">Business loan that's made for you</h4>
                     <p class="s-16">Get up to ₹5 lakhs instantly!</p> -->
                     <div class="text-center self-apply-img">
-                        <img src="{{ asset('front/images/self-apply.jpg') }}" alt="Apply Now"
+                        <img src="{{ asset('front/images/self-apply-01.jpg') }}" alt="Apply Now"
                             class="img-fluid w-100">
                     </div>
                     <form method="post" action="{{ route('self.apply.send.otp') }}" class="request-form save-form-1 needs-validation p-3" novalidate>
