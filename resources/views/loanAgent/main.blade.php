@@ -173,7 +173,7 @@
 <!-- Affiliate NBFCs section ends -->
 
 <!-- why CredNexAI section starts -->
-<section id="features-6" class="pt-0 pb-80 features-section division">
+<section id="features-6" class="py-80 features-section division bg--green-100">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 col-lg-9">
@@ -244,13 +244,13 @@
 <!-- why CredNexAI section ends -->
 
 <!-- Testimonioals section starts -->
-<section id="reviews-1" class="pt-0 pb-80 shape--06 reviews-section">
+<section id="reviews-1" class="py-80 shape--06 reviews-section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-12">
-                <div class="section-title mb-50">
-                    <h2 class="s-28">What Our <span class="color--green-500">Customer Says</span></h2>
-                    <p class="s-16 color--grey">Hear directly from our customers about their experiences with us.</p>
+                <div class="section-title mb-40">
+                    <h2 class="s-28 mb-5">What Our <span class="color--green-500">Customer Says</span></h2>
+                    <p class="s-16 color--grey mt-0">Hear directly from our customers about their experiences with us.</p>
                 </div>
             </div>
         </div>

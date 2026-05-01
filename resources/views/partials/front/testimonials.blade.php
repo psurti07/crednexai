@@ -3,7 +3,7 @@
     <div class="row align-items-center justify-content-center m-auto bg--white-100 shadow fbox-7 p-0 rounded-3">
         <div class="col-md-6 text-center mb-4 mb-md-0 p-0">
             <img src="{{ asset('front/images/testimonial/img-1.png') }}"
-                class="img-fluid rounded"
+                class="img-fluid rounded p-2"
                 alt="testimonial">
         </div>
         <div class="col-md-6 p-4">
@@ -31,7 +31,7 @@
     <div class="row align-items-center justify-content-center m-auto bg--white-100 shadow fbox-7 p-0 rounded-3">
         <div class="col-md-6 text-center mb-4 mb-md-0 p-0">
             <img src="{{ asset('front/images/testimonial/img-2.png') }}"
-                class="img-fluid rounded"
+                class="img-fluid rounded p-2"
                 alt="testimonial">
         </div>
         <div class="col-md-6 p-4">
@@ -59,7 +59,7 @@
     <div class="row align-items-center justify-content-center m-auto bg--white-100 shadow fbox-7 p-0 rounded-3">
         <div class="col-md-6 text-center mb-4 mb-md-0 p-0">
             <img src="{{ asset('front/images/testimonial/img-3.png') }}"
-                class="img-fluid rounded"
+                class="img-fluid rounded p-2"
                 alt="testimonial">
         </div>
         <div class="col-md-6 p-4">
@@ -87,7 +87,7 @@
     <div class="row align-items-center justify-content-center m-auto bg--white-100 shadow fbox-7 p-0 rounded-3">
         <div class="col-md-6 text-center mb-4 mb-md-0 p-0">
             <img src="{{ asset('front/images/testimonial/img-4.png') }}"
-                class="img-fluid rounded"
+                class="img-fluid rounded p-2"
                 alt="testimonial">
         </div>
         <div class="col-md-6 p-4">

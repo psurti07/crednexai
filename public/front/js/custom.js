@@ -389,10 +389,10 @@ $(document).ready(function () {
         items: 4, //5
       },
       991: {
-        items: 6, //5
+        items: 5, //5
       },
       1000: {
-        items: 6, //5
+        items: 5, //5
       },
     },
   });

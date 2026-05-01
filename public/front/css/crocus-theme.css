@@ -3390,6 +3390,7 @@ span.sm-info {
     padding-top: 180px;
     padding-bottom: 0px;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .hero-1-txt p {

@@ -65,7 +65,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">&#8377;</span>
                                         </div>
-                                        <input type="text" name="monthly_income" id="monthly_income" class="numeric-input form-control mb-2" placeholder="Enter Monthly Income (&#8377;)" autocomplete="off" inputmode="numeric">
+                                        <input type="text" name="monthly_income" id="monthly_income" class="numeric-input form-control" placeholder="Enter Monthly Income (&#8377;)" autocomplete="off" inputmode="numeric">
                                     </div>
                                     @component('components.ajax-error',['field'=>'monthly_income'])@endcomponent
                                 </div>
@@ -75,7 +75,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">&#8377;</span>
                                         </div>
-                                        <input type="text" name="current_emi" id="current_emi" value="" class="numeric-input form-control mb-2" placeholder="Enter Current EMI (&#8377;) (If Any)" autocomplete="off" inputmode="numeric">
+                                        <input type="text" name="current_emi" id="current_emi" value="" class="numeric-input form-control" placeholder="Enter Current EMI (&#8377;) (If Any)" autocomplete="off" inputmode="numeric">
                                     </div>
                                 </div>
 

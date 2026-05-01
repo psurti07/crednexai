@@ -10,53 +10,6 @@
 @endpush
 @section('content')
 
-<!-- <section id="hero-7" class="hero-section bg--scroll position-relative pb-0"> -->
-<!-- <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 p-0">
-                <div class="owl-carousel custom-slider">
-                    <div class="item">
-                        <div class="slide-box">
-                            <img src="{{ asset('front/images/hero-section.jpg') }} " alt="">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="slide-box">
-                            <img src="{{ asset('front/images/hero-section.jpg') }} " alt="">
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="hero-main">
-                <div class="hero-content">
-                    <h1 class="s-40 w-700 ">Build a Better Financial Future with the Right Guidance</span></h1>
-                    <p class="mb-20 s-16 ">Move forward with confidence with expert financial consultation and services that steer you in the right direction.</p>
-                    <div class="d-flex justify-content-start">
-                        <a href="{{ route('self.apply.main') }}"
-                            class="btn r-04 btn--theme hover--tra-black last-link me-2">Self Apply</a>
-                        <a href="{{ route('loan.agent.main') }}" class="btn r-04 btn--theme hover--tra-black last-link">Hire
-                            an Agent</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-<!-- <div class="container-fluid">
-        <div class="row">
-            <div class="col p-0">
-                <div class="owl-carousel owl-theme reviews-1-wrapper-new">
-                    <div class="slide-box">
-                        <img src="{{ asset('front/images/1-blue.jpg') }}" class="">
-                    </div>
-                    <div class="slide-box">
-                        <img src="{{ asset('front/images/2-yellow.jpg') }}" class="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
 
 <section id="hero-1" class="hero-section">
     <div class="container">
@@ -76,7 +29,7 @@
             </div>
             <div class="col-sm-8 col-md-6 col-lg-6 col-12 m-auto">
                 <div class="hero-7-img d-flex justify-content-center align-items-start">
-                    <img src="{{ asset('front/images/hero-1.png') }}" alt="easyailoans" class="img-fluid p-0" width="500px">
+                    <img src="{{ asset('front/images/hero-1.png') }}" alt="easyailoans" class="img-fluid p-0">
                 </div>
             </div>
         </div>
@@ -94,14 +47,14 @@
             </div>
         </div>
         <div class="row align-items-center">
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6">
                 <div class="img-block left-column w-100">
                     <img class="img-fluid r-12 w-100" src="{{ asset('front/images/about-2.png') }}"
                         alt="content-image">
                 </div>
             </div>
 
-            <div class="col-md-8 align-items-center m-auto mt-0">
+            <div class="col-lg-8 col-md-6 align-items-center m-auto mt-0">
                 <div class="txt-block right-column pb-0">
                     <p class="">CredNexAI makes financial solutions feel simple and approachable. Instead of
                         complicating things, we focus on helping you understand your options and choose what truly works
@@ -114,7 +67,7 @@
                         planning ahead or dealing with something immediate, you can count on steady support and
                         solutions that are practical, simple, and easy to move forward with.</p>
                 </div>
-                <div class="row row-cols-2 row-cols-md-4 mt-lg-4 mt-0">
+                <div class="row row-cols-2 row-cols-md-2 row-cols-lg-4 mt-lg-4 mt-0 g-2">
                 <div class="col sec-1 border-end border-light">
                     <div id="sb-5-1" class="text-center bg--green-400 rounded-4 px-3 py-3 mb-0 h-100">
                         <div class="statistic-block">
@@ -205,7 +158,7 @@
         </div>
         <div class="tabs-content">
             <div class="row justify-content-center">
-                <div class="col-xl-10">
+                <div class="col-xl-10 col-md-8 col-12">
                     <div id="tab-1" class="tab-content current">
                         <div class="fbox-5 fb-2 border r-16 bg-white">
                             <div class="row align-items-center">
@@ -272,40 +225,40 @@
         </div>
 
         <div class="fbox-wrapper text-center">
-            <div class="row g-4 row-cols-1 row-cols-md-3 row-cols-lg-3">
+            <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
                 <div class="col d-flex">
-                    <div class="fbox-7 bg--white-100 fb-1 r-12 h-100 w-100 d-flex">
-                        <div class="fbox-ico ico-50">
+                    <div class="fbox-7 bg--white-100 fb-1 r-12 w-100 d-flex">
+                        <div class="fbox-ico ico-50 mb-0">
                             <div class="fbox-image">
                                 <img class="h-100" src="{{ asset('front/images/Access-To-Multiple-NBFCs.png') }}"
                                     alt="Access-To-Multiple-NBFCs">
                             </div>
                         </div>
                         <div class="fbox-txt text-start ms-3">
-                            <p class="color--grey">Start your process by entering your mobile number, bank-registered
+                            <p>Start your process by entering your mobile number, bank-registered
                                 name, and other required details. </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col d-flex">
-                    <div class="fbox-7 bg--white-100 fb-1 r-12 h-100 w-100 d-flex">
-                        <div class="fbox-ico ico-50">
+                    <div class="fbox-7 bg--white-100 fb-1 r-12 w-100 d-flex">
+                        <div class="fbox-ico ico-50 mb-0">
                             <div class="fbox-image">
                                 <img class="h-100" src="{{ asset('front/images/Dedicated-Expert-Assigned.png') }}"
                                     alt="Dedicated-Expert-Assigned">
                             </div>
                         </div>
                         <div class="fbox-txt text-start ms-3">
-                            <p class="color--grey">Our system will check your eligibility and display pre-approved
+                            <p>Our system will check your eligibility and display pre-approved
                                 offers accordingly. This is not a final offer.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col d-flex">
-                    <div class="fbox-7 bg--white-100 fb-1 r-12 h-100 w-100 d-flex">
-                        <div class="fbox-ico ico-50">
+                    <div class="fbox-7 bg--white-100 fb-1 r-12 w-100 d-flex">
+                        <div class="fbox-ico ico-50 mb-0">
                             <div class="fbox-image">
                                 <img class="h-100" src="{{ asset('front/images/Easy-Online-Process.png') }}"
                                     alt="Easy-Online-Process">
@@ -313,52 +266,52 @@
                             </div>
                         </div>
                         <div class="fbox-txt text-start ms-3">
-                            <p class="color--grey">To gain access to the pre-approved loan offers displayed, purchase
+                            <p>To gain access to the pre-approved loan offers displayed, purchase
                                 the plan that best meets your needs. </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col d-flex">
-                    <div class="fbox-7 bg--white-100 fb-1 r-12 h-100 w-100 d-flex">
-                        <div class="fbox-ico ico-50">
+                    <div class="fbox-7 bg--white-100 fb-1 r-12 w-100 d-flex">
+                        <div class="fbox-ico ico-50 mb-0">
                             <div class="fbox-image">
                                 <img class="h-100" src="{{ asset('front/images/No-Impact-On-CIBIL-Score.png') }}"
                                     alt="No-Impact-On-CIBIL-Score">
                             </div>
                         </div>
                         <div class="fbox-txt text-start ms-3">
-                            <p class="color--grey">Within 24 to 48 hours, our team will contact you for verification and
+                            <p>Within 24 to 48 hours, our team will contact you for verification and
                                 guide you with the required documents.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col d-flex">
-                    <div class="fbox-7 bg--white-100 fb-1 r-12 h-100 w-100 d-flex">
-                        <div class="fbox-ico ico-50">
+                    <div class="fbox-7 bg--white-100 fb-1 r-12 w-100 d-flex">
+                        <div class="fbox-ico ico-50 mb-0">
                             <div class="fbox-image">
                                 <img class="h-100" src="{{ asset('front/images/Personalised-Tracking-Portal.png') }}"
                                     alt="Personalised-Tracking-Portal">
                             </div>
                         </div>
                         <div class="fbox-txt text-start ms-3">
-                            <p class="color--grey">The NBFC will review your profile and documents in accordance with
+                            <p>The NBFC will review your profile and documents in accordance with
                                 their process and guidelines.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col d-flex">
-                    <div class="fbox-7 bg--white-100 fb-1 r-12 h-100 w-100 d-flex">
-                        <div class="fbox-ico ico-50">
+                    <div class="fbox-7 bg--white-100 fb-1 r-12 w-100 d-flex">
+                        <div class="fbox-ico ico-50 mb-0">
                             <div class="fbox-image">
                                 <img class="h-100" src="{{ asset('front/images/Tailored-Financial-Solutions.png') }}"
                                     alt="Tailored-Financial-Solutions">
                             </div>
                         </div>
                         <div class="fbox-txt text-start ms-3">
-                            <p class="color--grey">The NBFC will make the final approval and disbursement decision based
+                            <p>The NBFC will make the final approval and disbursement decision based
                                 on their terms and policies.</p>
                         </div>
                     </div>
@@ -679,8 +632,8 @@
 <!-- Contact Start -->
 <section id="contact" class="py-80 bg--green-100">
     <div class="container">
-        <div class="row align-items-center justify-content-center">
-            <div class="col-lg-6 md-mb-50">
+        <div class="row align-items-start justify-content-center">
+            <div class="col-lg-6 col-md-6 md-mb-50 order-md-2 order-2  ">
                 <div class="sec-title2 mb-40">
                     <div class="d-flex text-start">
                         <h2 class="s-28 mb-0">Let's <span class="color--green-500">talk!</span></h2>
@@ -710,7 +663,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-12">
+                    <div class="col-lg-12 col-md-6 col-12">
                         <div class="address-item">
                             <div class="address-text">
                                 <h6> Address </h6>
@@ -732,7 +685,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 py-md-0 py-4">
+            <div class="col-lg-6 col-md-6 py-md-0 py-4 order-md-2 order-1 ">
                 <div class="h-100">
                     <div class="card shadow border-primary h-100">
                         <div class="card-body">
