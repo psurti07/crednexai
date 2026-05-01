@@ -4,28 +4,29 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 
-if(!function_exists('sendSingleSMS')){
-    function sendSingleSMS($mobile, $otp, $panel = 'self'){
-        $message = "Hello, the CredNexAI OTP for your mobile number registration is ".$otp.". Kindly do not share it with anyone. Thanks, CredNexAI";
+if (!function_exists('sendSingleSMS')) {
+    function sendSingleSMS($mobile, $otp, $panel = 'self')
+    {
+        $message = "Hello, the CredNexAI OTP for your mobile number registration is " . $otp . ". Kindly do not share it with anyone. Thanks, CredNexAI";
         // URL encode the message
-       // URL encode the message
+        // URL encode the message
         $sms_text = urlencode($message);
 
         // Retrieve the SMS credentials from environment variables
         if ($panel == 'hire') {
-    		$username = env('SMS_OBB_LA_USERNAME');
+            $username = env('SMS_OBB_LA_USERNAME');
             $password = env('SMS_OBB_LA_PASSWORD');
-            $sender_id = DB::table('info_pages')->where('slug','la-senderid-otp')->first()->content;
-    	} else if ($panel == 'self') {
-    		$username = env('SMS_OBB_USERNAME');
+            $sender_id = DB::table('info_pages')->where('slug', 'la-senderid-otp')->first()->content;
+        } else if ($panel == 'self') {
+            $username = env('SMS_OBB_USERNAME');
             $password = env('SMS_OBB_PASSWORD');
-            $sender_id = DB::table('info_pages')->where('slug','sa-senderid-otp')->first()->content;
-    	} else {
-    		$username = env('SMS_OBB_USERNAME');
+            $sender_id = DB::table('info_pages')->where('slug', 'sa-senderid-otp')->first()->content;
+        } else {
+            $username = env('SMS_OBB_USERNAME');
             $password = env('SMS_OBB_PASSWORD');
             $sender_id = env('SMS_OBB_SENDER_ID');
-    	}
-	    // Construct the API URL
+        }
+        // Construct the API URL
         $api_url = "http://m.onlinebusinessbazaar.in/sendsms.jsp?user={$username}&password={$password}&senderid={$sender_id}&mobiles={$mobile}&sms={$sms_text}";
 
         // Submit the request to the server
@@ -39,33 +40,34 @@ if(!function_exists('sendSingleSMS')){
     }
 }
 
-if(!function_exists('sendDynamicSMS')){
-    function sendDynamicSMS($senderId, $message, $mobile, $panel = 'assistant', $type = '', $tempId = ''){
+if (!function_exists('sendDynamicSMS')) {
+    function sendDynamicSMS($senderId, $message, $mobile, $panel = 'assistant', $type = '', $tempId = '')
+    {
         // URL encode the message
         $sms_text = urlencode($message);
 
         // Retrieve the SMS credentials from environment variables
         if ($panel == 'hire') {
-    		$username = env('SMS_OBB_LA_USERNAME');
+            $username = env('SMS_OBB_LA_USERNAME');
             $password = env('SMS_OBB_LA_PASSWORD');
-    	} else if ($panel == 'self') {
-    		$username = env('SMS_OBB_USERNAME');
+        } else if ($panel == 'self') {
+            $username = env('SMS_OBB_USERNAME');
             $password = env('SMS_OBB_PASSWORD');
-    	} else {
-    		$username = env('SMS_OBB_LAT_USERNAME');
+        } else {
+            $username = env('SMS_OBB_LAT_USERNAME');
             $password = env('SMS_OBB_LAT_PASSWORD');
-    	}
-    	/*$sender_id = env('SMS_OBB_SENDER_ID');*/
+        }
+        /*$sender_id = env('SMS_OBB_SENDER_ID');*/
 
         // Construct the API URL
-        if($type == 'forget-password'){
+        if ($type == 'forget-password') {
             $api_url = "http://m.onlinebusinessbazaar.in/sendsms.jsp?user={$username}&password={$password}&senderid={$senderId}&mobiles={$mobile}&sms={$sms_text}&tempid=1707174617771060776";
-        } elseif($tempId!=''){
+        } elseif ($tempId != '') {
             $api_url = "http://m.onlinebusinessbazaar.in/sendsms.jsp?user={$username}&password={$password}&senderid={$senderId}&mobiles={$mobile}&sms={$sms_text}&tempid={$tempId}";
         } else {
             $api_url = "http://m.onlinebusinessbazaar.in/sendsms.jsp?user={$username}&password={$password}&senderid={$senderId}&mobiles={$mobile}&sms={$sms_text}";
         }
-        
+
         // Submit the request to the server
         $response = Http::get($api_url);
 
@@ -78,9 +80,10 @@ if(!function_exists('sendDynamicSMS')){
     }
 }
 
-if(!function_exists('sendDynamicXMLSMS')){
-    function sendDynamicXMLSMS($dataset){
-        $xmldataset = "<?xml version='1.0'?><smslist>".$dataset.'</smslist>';
+if (!function_exists('sendDynamicXMLSMS')) {
+    function sendDynamicXMLSMS($dataset)
+    {
+        $xmldataset = "<?xml version='1.0'?><smslist>" . $dataset . '</smslist>';
 
         $curl = curl_init();
         curl_setopt_array($curl, [
