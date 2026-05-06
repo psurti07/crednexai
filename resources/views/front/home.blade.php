@@ -649,7 +649,7 @@
                                 <span class="flaticon-map color--theme"></span>
                             </div>
                             <div class="address-text ms-3 border-bottom border-primary border-2
- mb-3 pb-3 w-100">
+ mb-3 pb-2 w-100">
                                 <h6> Address </h6>
                                 <p class="address-txt">{{ env('COMPANY_ADDRESS') }}</p>
                             </div>
@@ -661,7 +661,7 @@
                                 <span class="flaticon-mobile-search color--theme"></span>
                             </div>
                             <div class="address-text ms-3 border-bottom border-primary border-2
- mb-3 pb-3 w-100">
+ mb-3 pb-2 w-100">
                                 <h6> Customer Support </h6>
                                 <p class="address-txt"><a
                                         href="tel:{{ str_ireplace(" ","",env('COMPANY_MOBILE')) }}">{{ env('COMPANY_MOBILE') }}</a>
@@ -675,7 +675,7 @@
                             <div class="fbox-ico ico-30 mb-0">
                                 <span class="flaticon-email color--theme"></span>
                             </div>
-                            <div class="address-text ms-3 border-bottom border-primary border-2
+                            <div class="address-text ms-3 border-bottom border-primary border-2 pb-2
  mb-3 w-100">
                                 <h6> Mail Us </h6>
                                 <p class="address-txt"><a
