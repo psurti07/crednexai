@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Log;
+
 if(!function_exists('generateRazorpayOrder')){
     function generateRazorpayOrder($data){
         $curl = curl_init();
@@ -20,7 +22,9 @@ if(!function_exists('generateRazorpayOrder')){
         ]);
 
         $response = curl_exec($curl);
+        Log::info("response : " . $response);
         $err = curl_error($curl);
+        Log::info("err : " . $err);
 
         curl_close($curl);
 
