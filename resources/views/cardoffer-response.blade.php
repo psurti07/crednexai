@@ -20,18 +20,18 @@
             <div class="row justify-content-center">
                 <div class="row mb-35">
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <div class="row">
-                            <div class="col-md-12 col-lg-12 col-12">
+                        <div class="row justify-content-center align-items-center m-auto">
+                            <div class="col-md-8 col-lg-8 col-12 text-center">
                                 <div class="card bg--06">
                                     <div class="card-body">
                                         <div class="row">
                                             <h5 class="fw-bolder s-16 text-{{$response ? 'success' : 'danger'}}"><span class="flaticon-idea"></span>&nbsp;&nbsp;Payment {{$response ? 'Successful' : 'Failed'}}</h5>
                                         </div>
                                         <div class="row mt-3">
-                                            <div class="col-md-12 text-start">
+                                            <div class="col-md-12 text-center">
                                                 <span class="s-14 color--grey text-{{$response ? 'success' : 'danger'}}">{{ $response ? 'Great! You’ve taken your smart step towards expert loan consultation.' : 'We regret to inform you that your payment for Subscription Plan was not successful.' }}</span>
                                             </div>
-                                            <div class="col-md-12 text-start mt-2">
+                                            <div class="col-md-12 text-center mt-2">
                                                 <span class="s-14 color--grey text-{{$response ? 'success' : 'danger'}}">{{ $response ? 'Kindly check your E-mail & WhatsApp for further process.' : 'We request you to try another payment method.' }}</span>
                                             </div>
                                         </div>
