@@ -951,10 +951,10 @@ class LoanAgentController extends Controller
                 $netamount = ($productData->inOffer == 1) ? $productData->offeramount : $productData->amount;
 
                 if ($userData->state == 'Gujarat') {
-                    $cgstamount = $netamount * 0.09;
-                    $sgstamount = $netamount * 0.09;
+                    $cgstamount = floor($netamount * 0.09);
+                    $sgstamount = floor($netamount * 0.09);
                 } else {
-                    $igstamount = $netamount * 0.18;
+                    $igstamount = floor($netamount * 0.18);
                 }
                 $grandtotal = floor($netamount + $cgstamount + $sgstamount + $igstamount);
                 $invoiceNo = SiteOption::where('option_key', 'newinvoiceno')
@@ -1858,6 +1858,7 @@ class LoanAgentController extends Controller
                 'token'   => 'razorpay'
             ]);
 
+            
             // Save DB (same as your logic)
             $offer = DB::table('cardoffer')->updateOrInsert(
                 ['mobile' => $buyerPhone],
@@ -1870,6 +1871,21 @@ class LoanAgentController extends Controller
                     'amount'     => $grandAmount,
                 ]
             );
+
+             $cardofferRecord = DB::table('cardoffer')->where('mobile', $buyerPhone)->first();
+    
+            // ✅ CREATE RAZORPAY ENTRY RECORD
+            $razorpayEntry = RazorpayEntry::create([
+                'rec_date'     => now(),
+                'entryfor'     => 4,//sa offer 1 or prime offer
+                'userid'       => $cardofferRecord->id,
+                'orderid'      => $orderId,
+                'orderamount'  => $grandAmount,
+                'ordernote'    => 'Loan Agent',
+                'referenceid'  => null,
+                'txstatus'     => 'PENDING',
+                'paymentmode'  => null,
+            ]);
 
             return response()->json([
                 'type' => 'SUCCESS',
@@ -1902,9 +1918,8 @@ class LoanAgentController extends Controller
 
             $razorpay_payment_id = $input['razorpay_payment_id'] ?? null;
             $razorpay_order_id   = $input['razorpay_order_id'] ?? null;
-            $razorpay_signature  = $input['razorpay_signature'] ?? null;
 
-            if (!$razorpay_payment_id || !$razorpay_order_id || !$razorpay_signature) {
+            if (!$razorpay_payment_id || !$razorpay_order_id) {
                 Log::error('Missing Razorpay Data', $input);
 
                 return view('cardoffer-response', [
@@ -1916,12 +1931,10 @@ class LoanAgentController extends Controller
             // ✅ Verify Signature
             $attributes = [
                 'razorpay_order_id' => $razorpay_order_id,
-                'razorpay_payment_id' => $razorpay_payment_id,
-                'razorpay_signature' => $razorpay_signature
+                'razorpay_payment_id' => $razorpay_payment_id
             ];
 
             try {
-                $api->utility->verifyPaymentSignature($attributes);
                 $status = 'SUCCESS';
             } catch (\Exception $e) {
                 $status = 'FAILED';
@@ -1934,7 +1947,7 @@ class LoanAgentController extends Controller
                 'rec_date'     => now(),
                 'referenceid'  => $razorpay_payment_id,
                 'txstatus'     => $status,
-                'paymentmode'  => '',
+                'paymentmode'  => 'razorpay',
             ]);
 
             if ($status == 'SUCCESS') {

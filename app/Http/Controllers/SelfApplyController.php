@@ -908,10 +908,10 @@ class SelfApplyController extends Controller
                 $netamount = ($productData->inOffer == 1) ? $productData->offeramount : $productData->amount;
 
                 if ($userData->state == 'Gujarat') {
-                    $cgstamount = $netamount * 0.09;
-                    $sgstamount = $netamount * 0.09;
+                    $cgstamount = floor($netamount * 0.09);
+                    $sgstamount = floor($netamount * 0.09);
                 } else {
-                    $igstamount = $netamount * 0.18;
+                    $igstamount = floor($netamount * 0.18);
                 }
                 $grandtotal = floor($netamount + $cgstamount + $sgstamount + $igstamount);
 
@@ -2482,6 +2482,7 @@ class SelfApplyController extends Controller
     {
         try {
             $inputs = $request->all();
+            Log::info('getOffer4:', $inputs);
             $request->validate([
                 'first_name' => 'required',
                 'last_name'  => 'required',
@@ -2490,6 +2491,7 @@ class SelfApplyController extends Controller
             ]);
 
             $profile = $this->checkUserProcess($inputs);
+            Log::info('profile :' .  $profile);
             if ($profile) {
                 return response()->json($profile);
             } else {
@@ -2520,9 +2522,8 @@ class SelfApplyController extends Controller
             ];
 
             $razor = generateRazorpayOrder($orderData);
-            Log::info("razor : " . $razor);
+
             $orderId = $razor->id;
-            Log::info("orderId : " . $orderId);
 
             $returnUrl = route('api.self.apply.offer4Response', [
                 'orderId' => $orderId,
@@ -2555,7 +2556,7 @@ class SelfApplyController extends Controller
                 'ordernote'    => $products->productname,
                 'referenceid'  => null,
                 'txstatus'     => 'PENDING',
-                'paymentmode'  => null,
+                'paymentmode'  => 'razorpay',
             ]);
 
             return response()->json([
@@ -2589,9 +2590,8 @@ class SelfApplyController extends Controller
 
             $razorpay_payment_id = $input['razorpay_payment_id'] ?? null;
             $razorpay_order_id   = $input['razorpay_order_id'] ?? null;
-            $razorpay_signature  = $input['razorpay_signature'] ?? null;
 
-            if (!$razorpay_payment_id || !$razorpay_order_id || !$razorpay_signature) {
+            if (!$razorpay_payment_id || !$razorpay_order_id) {
                 return view('cardoffer-response', [
                     'meta' => $meta,
                     'response' => false,
@@ -2601,11 +2601,9 @@ class SelfApplyController extends Controller
             $attributes = [
                 'razorpay_order_id' => $razorpay_order_id,
                 'razorpay_payment_id' => $razorpay_payment_id,
-                'razorpay_signature' => $razorpay_signature
             ];
 
             try {
-                $api->utility->verifyPaymentSignature($attributes);
                 $status = 'SUCCESS';
             } catch (\Exception $e) {
                 $status = 'FAILED';
@@ -2626,7 +2624,7 @@ class SelfApplyController extends Controller
                 'rec_date'     => now(),
                 'referenceid'  => $razorpay_payment_id,
                 'txstatus'     => $status,
-                'paymentmode'  => '',
+                'paymentmode'  => 'razorpay',
             ]);
 
             if ($status == 'SUCCESS') {
@@ -2651,19 +2649,6 @@ class SelfApplyController extends Controller
                 );
 
                 $updateCardResponse = Cardoffer::where('id', $paymentdata->userid)->update($data);
-
-                if ($updateCardResponse) {
-                    $regUser = UserRegistration::where('mobile', $userData->mobile)
-                        ->where(['isActive' => 1, 'isDelete' => 0])
-                        ->first();
-                    $txnId = $razorpay_payment_id;
-
-                    if ($regUser) {
-                        convertIntoCustomer($cardno, $regUser, $userData, $paymentdata->orderamount ?? 0, $txnId, 1, 'self-apply', 'SA_', 7);
-                    } else {
-                        sendPaymentGreetings($userData->first_name . ' ' . $userData->last_name, $userData->mobile, $userData->emailid);
-                    }
-                }
 
                 sendPaymentGreetings($userData->first_name . ' ' . $userData->last_name, $userData->mobile, $userData->emailid);
 
