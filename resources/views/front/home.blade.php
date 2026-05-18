@@ -49,8 +49,8 @@
         </div>
         <div class="row align-items-center">
             <div class="col-lg-4 col-md-6">
-                <div class="img-block left-column w-100">
-                    <img class="img-fluid r-12 w-100" src="{{ asset('front/images/about-2.png') }}" alt="content-image">
+                <div class="img-block left-column">
+                    <img class="img-fluid r-12" src="{{ asset('front/images/about-2.png') }}" alt="content-image">
                 </div>
             </div>
 

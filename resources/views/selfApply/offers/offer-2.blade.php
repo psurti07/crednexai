@@ -18,7 +18,7 @@
                         class="img-fluid rounded-4">
                 </div>
             </div>
-            <div class="col-md-12 col-lg-6 self-apply-form order-1 order-md-1 order-lg-2 mb-3">
+            <div class="col-md-12 col-lg-6 self-apply-form order-1 order-md-1 order-lg-2 mb-md-0 mb-3">
                 <div id="hero-8-form" class="r-06">
                     <h4 class="s-22 text-dark mb-1"> Get Loan up to <span class="color--green-500">&#8377;10
                             LAKHS</span> from Affiliate NBFCs!</h4>

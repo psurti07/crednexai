@@ -186,10 +186,10 @@
         <div class="fbox-wrapper text-center">
             <div class="row gx-3 gy-2 row-cols-1 row-cols-md-2 row-cols-lg-4">
                 <div class="col">
-                    <div class="fbox-8 fbox--hover fb-1 r-12">
+                    <div class="fbox-8 fbox--hover fb-1 r-12 h-100">
                         <div class="fbox-ico ico-50">
                             <div class="shape-ico color--theme">
-                                <span class="flaticon-layers-1"></span>
+                              <img class="img-fluid" src="{{ asset('front/images/Enriching-Collaboration.png') }}" alt="content-image">
                             </div>
                         </div>
                         <div class="fbox-txt">
@@ -199,10 +199,10 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="fbox-8 fbox--hover fb-2 r-12">
+                    <div class="fbox-8 fbox--hover fb-1 r-12 h-100">
                         <div class="fbox-ico ico-50">
                             <div class="shape-ico color--theme">
-                                <span class="flaticon-computer-1"></span>
+                              <img class="img-fluid" src="{{ asset('front/images/100%-Online-Process.png') }}" alt="content-image">
                             </div>
                         </div>
                         <div class="fbox-txt">
@@ -212,10 +212,10 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="fbox-8 fbox--hover fb-2 r-12">
+                    <div class="fbox-8 fbox--hover fb-1 r-12 h-100">
                         <div class="fbox-ico ico-50">
                             <div class="shape-ico color--theme">
-                                <span class="flaticon-click-1"></span>
+                                <img class="img-fluid" src="{{ asset('front/images/Self-Apply-Feature.png') }}" alt="content-image">
                             </div>
                         </div>
                         <div class="fbox-txt">
@@ -225,10 +225,10 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="fbox-8 fbox--hover fb-3 r-12">
+                    <div class="fbox-8 fbox--hover fb-1 r-12 h-100">
                         <div class="fbox-ico ico-50">
                             <div class="shape-ico color--theme">
-                                <span class="flaticon-tech-support"></span>
+                               <img class="img-fluid" src="{{ asset('front/images/Hire-Loan-Agent-icon.png') }}" alt="content-image">
                             </div>
                         </div>
                         <div class="fbox-txt">

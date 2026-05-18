@@ -3952,7 +3952,7 @@
   .row-cols-md-3 .fbox-4, .row-cols-md-2 .fbox-4 { padding: 45px 65px 40px; }
   .fbox-5 { padding: 50px 50px 45px; }
   .fbox-7, .row-cols-md-2 .fbox-7 { padding: 25px; margin-bottom: 0; }
-  .fbox-8.fb-1 { padding: 0 75px 50px; }
+  .fbox-8.fb-1 { padding: 35px; }
   .fbox-8.bg--white-100 {padding: 45px 75px; }
   .fbox-8.fb-3 { padding: 55px 75px 0; }
   .fbox-9 { padding: 40px 75px 35px; }
@@ -4966,7 +4966,7 @@
   .row-cols-md-3 .fbox-4, .row-cols-md-2 .fbox-4, .fbox-7, .fbox-9 { padding: 40px 25px 35px; }
   .fbox-5 { padding: 45px 25px 40px; }
   .row-cols-md-2 .fbox-7 { padding: 25px; margin-bottom: 0; }
-  .fbox-8.fb-1 { padding: 0 25px 40px; }
+  .fbox-8.fb-1 { padding: 25px; }
   .fbox-8.bg--white-100 {padding: 45px 25px; }
   .fbox-8.fb-3 { padding: 45px 25px 0; }
 
@@ -6139,7 +6139,7 @@
   .row-cols-md-3 .fbox-4, .row-cols-md-2 .fbox-4, .fbox-7, .fbox-9 { padding: 40px 25px 35px; }
   .fbox-5 { padding: 45px 25px 40px; }
   .row-cols-md-2 .fbox-7 { padding: 25px; margin-bottom: 0; }
-  .fbox-8.fb-1 { padding: 0 25px 40px; }
+  .fbox-8.fb-1 { padding: 25px; }
   .fbox-8.bg--white-100 { padding: 45px 25px; }
   .fbox-8.fb-3 { padding: 45px 25px 0; }
   .fbox-12, .fbox-13 { padding: 20px 25px; }
@@ -7351,7 +7351,7 @@
   .row-cols-md-3 .fbox-4, .row-cols-md-2 .fbox-4, .fbox-7, .fbox-9 { padding: 25px; }
   .fbox-5 { padding: 25px; }
   .row-cols-md-2 .fbox-7 { padding: 25px; margin-bottom: 0; }
-  .fbox-8.fb-1 { padding: 0 25px 40px; }
+  .fbox-8.fb-1 { padding: 25px; }
   .fbox-8.bg--white-100 { padding: 45px 25px; }
   .fbox-8.fb-3 { padding: 45px 25px 0; }
   .fbox-12, .fbox-13 { padding: 20px 25px; }

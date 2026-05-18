@@ -189,7 +189,10 @@
                     <div class="fbox-8 fbox--hover fb-1 r-12 h-100">
                         <div class="fbox-ico ico-50">
                             <div class="shape-ico color--theme">
-                                <span class="flaticon-layers-1"></span>
+                                <div class="fbox-image">
+
+                                <img class="img-fluid" src="{{ asset('front/images/Access-To-Multiple-NBFCs-icon.png') }}" alt="content-image">
+</div>
                             </div>
                         </div>
                         <div class="fbox-txt">
@@ -199,10 +202,10 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="fbox-8 fbox--hover fb-2 r-12 h-100">
+                    <div class="fbox-8 fbox--hover fb-1 r-12 h-100">
                         <div class="fbox-ico ico-50">
                             <div class="shape-ico color--theme">
-                                <span class="flaticon-computer-1"></span>
+                                <img class="img-fluid" src="{{ asset('front/images/Easy-Online-Process-icon.png') }}" alt="content-image">
                             </div>
                         </div>
                         <div class="fbox-txt">
@@ -212,10 +215,10 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="fbox-8 fbox--hover fb-2 r-12 h-100">
+                    <div class="fbox-8 fbox--hover fb-1 r-12 h-100">
                         <div class="fbox-ico ico-50">
                             <div class="shape-ico color--theme">
-                                <span class="flaticon-click-1"></span>
+                         <img class="img-fluid" src="{{ asset('front/images/Tailored-Financial-Solutions-icon.png') }}" alt="content-image">
                             </div>
                         </div>
                         <div class="fbox-txt">
@@ -225,10 +228,10 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="fbox-8 fbox--hover fb-3 r-12 h-100">
+                    <div class="fbox-8 fbox--hover fb-1 r-12 h-100">
                         <div class="fbox-ico ico-50">
                             <div class="shape-ico color--theme">
-                                <span class="flaticon-tech-support"></span>
+                         <img class="img-fluid" src="{{ asset('front/images/Expert-Guidance.png') }}" alt="content-image">
                             </div>
                         </div>
                         <div class="fbox-txt">
