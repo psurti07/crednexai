@@ -59,7 +59,7 @@ class SALeadWhatsappServices
                             ->orderBy('r.id', 'asc')
                             ->get();
                         
-                        $adminUsers = ['7016318366','9408881214','9998807547'];
+                        $adminUsers = ['8488848968'];
                         if($users->isNotEmpty()){
                             foreach ($adminUsers as $admin) {
                                 $eligibilityAmt = 500000;
