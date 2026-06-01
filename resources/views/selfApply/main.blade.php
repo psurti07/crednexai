@@ -143,7 +143,7 @@
 </section>
 
 <!-- Affiliate NBFCs section starts -->
-<section id="integrations-2" class="pt-0 pb-80 integrations-section">
+<section id="integrations-2" class="py-80 integrations-section bg--green-100">
     <div class="container">
         <div class="r-12 text-center">
             <div class="row justify-content-center">
@@ -173,7 +173,7 @@
 <!-- Affiliate NBFCs section ends -->
 
 <!-- why CredNexAI section starts -->
-<section id="features-6" class="py-80 features-section division bg--green-100">
+<section id="features-6" class="py-80 features-section division">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 col-lg-9">
@@ -184,7 +184,7 @@
             </div>
         </div>
         <div class="fbox-wrapper text-center">
-            <div class="row gx-3 gy-2 row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-4">
                 <div class="col">
                     <div class="fbox-8 fbox--hover fb-1 r-12 h-100">
                         <div class="fbox-ico ico-50">
@@ -247,7 +247,7 @@
 <!-- why CredNexAI section ends -->
 
 <!-- Testimonioals section starts -->
-<section id="reviews-1" class="py-80 shape--06 reviews-section">
+<section id="reviews-1" class="pt-0 pb-80 shape--06 reviews-section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-12">

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="{{ $meta['robots'] }}"/>
+    <meta name="robots" content="{{ $meta['robots'] }}" />
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="description" content="{{ $meta['description'] }}">
     <meta name="keywords" content="{{ $meta['keywords'] }}">
@@ -37,83 +38,97 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('front/images/logo/apple-touch-icon-76x76.png') }}" />
     <link rel="apple-touch-icon" href="{{ asset('front/images/logo/apple-touch-icon-60x60.png') }}" />
     <link rel="icon" href="{{ asset('front/images/logo/main-favicon-180x180.png') }}" type="image/x-icon" />
-    
+
     <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
     @include('stacks.css.selfapply.style')
     <style>
-        .register-page-form .form-control { margin-bottom:0px!important; }
+    .register-page-form .form-control {
+        margin-bottom: 0px !important;
+    }
     </style>
 </head>
+
 <body>
 
-<!-- PAGE CONTENT -->
-   <div id="page" class="page font--jakarta">
+    <!-- PAGE CONTENT -->
+    <div id="page" class="page font--jakarta">
         <div id="login" class="bg--fixed login-1 login-section division">
             <div class="container">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-md-6 col-lg-6">	
+                <div class="row align-items-center justify-content-center  bg--green-100 mx-2">
+                    <div class="col-md-6 col-lg-6 col-12 order-md-1 order-2 p-0">
+                        <div class="d-flex justify-content-center align-items-start">
+                            <div class="img-block">
+                                <img src="{{ asset('front/images/login-image-01.png') }}" alt="login now"
+                                    class="img-fluid" width="450">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 order-md-2 order-1 p-0">
                         <div class="register-page-form">
                             <!-- TITLE -->
                             <div class="col-md-12">
                                 <div class="register-form-title">
-                                    <img src="{{ asset('front/images/logo/logo.png') }}" width="200" alt="{{ env('APP_NAME') }}">
+                                    <img src="{{ asset('front/images/logo/logo.png') }}" width="150"
+                                        alt="{{ env('APP_NAME') }}">
                                     <h4 class="mt-20 w-700">Forgot Password</h4>
                                     <p>Please enter your Mobile number you have created at registration.</p>
                                 </div>
                             </div>
 
                             <!-- LOGIN FORM -->
-                            <form name="signinform" class="row sign-in-form auth-form g-3" action="{{ route('customer.forget.password.update') }}" method="post">
+                            <form name="signinform" class="row sign-in-form auth-form g-3"
+                                action="{{ route('customer.forget.password.update') }}" method="post">
                                 <!-- Form Input -->
                                 <div class="col-md-12">
                                     <p class="p-sm input-header">Mobile Number</p>
-                                    <input class="form-control numeric-input" type="tel" name="mobile" placeholder="Mobile Number" id="mobile" maxlength="10" minlength="10" autocomplete="off" inputmode="numeric">
+                                    <input class="form-control numeric-input" type="tel" name="mobile"
+                                        placeholder="Mobile Number" id="mobile" maxlength="10" minlength="10"
+                                        autocomplete="off" inputmode="numeric">
                                     @component('components.ajax-error',['field'=>'mobile'])@endcomponent
                                 </div>
                                 <!-- Form Submit Button -->
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn--theme hover--theme submit btn-login mt-0">Send</button>
+                                    <button type="submit"
+                                        class="btn btn--theme hover--theme submit btn-login mt-0">Send</button>
                                 </div>
                                 <!-- Sign Up Link -->
                                 <div class="col-md-12">
-                                    <p class="create-account text-center">
-                                        Have an account? <a href="{{ route('customer.login') }}" class="color--theme">Sign In</a>
+                                    <p class="create-account text-center mt-0">
+                                        Have an account? <a href="{{ route('customer.login') }}"
+                                            class="color--theme">Sign In</a>
                                     </p>
                                 </div>
-                            </form>	<!-- END LOGIN FORM -->
-                        </div>	
-                    </div>	
-
-                    <div class="col-md-6 col-lg-6 col-12">
-                        <div class="d-flex justify-content-center align-items-start">
-                            <div class="img-block">
-                                <img src="{{ asset('front/images/Login-page-1.png') }}" alt="login now" class="img-fluid">
-                            </div>
+                            </form> <!-- END LOGIN FORM -->
                         </div>
                     </div>
-                </div>	  <!-- End row -->	
-            </div> <!-- End container -->		
-        </div>	<!-- END LOGIN PAGE -->
-	</div>
 
-<script src="{{ asset('front/js/jquery-3.7.0.min.js') }}"></script>
-<script src="{{ asset('front/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('front/js/menu.js') }}"></script>
-<script src="{{ asset('front/js/jquery.easing.js') }}"></script>
-<script src="{{ asset('front/js/jquery.appear.js') }}"></script>
-<script src="{{ asset('front/js/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('front/js/jquery.ajaxchimp.min.js') }}"></script>
-<script src="{{ asset('front/js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('front/js/jquery.validate.min.js') }}"></script>
-<script src="{{ asset('front/js/lunar.js') }}"></script>
-<script src="{{ asset('front/js/wow.js') }}"></script>
-<script src="{{ asset('front/js/custom.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
-<script>
-    $('.auth-form').submit(function (event) {
+
+                </div> <!-- End row -->
+            </div> <!-- End container -->
+        </div> <!-- END LOGIN PAGE -->
+    </div>
+
+    <script src="{{ asset('front/js/jquery-3.7.0.min.js') }}"></script>
+    <script src="{{ asset('front/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('front/js/menu.js') }}"></script>
+    <script src="{{ asset('front/js/jquery.easing.js') }}"></script>
+    <script src="{{ asset('front/js/jquery.appear.js') }}"></script>
+    <script src="{{ asset('front/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('front/js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('front/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('front/js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('front/js/lunar.js') }}"></script>
+    <script src="{{ asset('front/js/wow.js') }}"></script>
+    <script src="{{ asset('front/js/custom.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+    <script>
+    $('.auth-form').submit(function(event) {
         var status = document.activeElement.innerHTML;
         event.preventDefault();
         if (status) {
@@ -128,11 +143,12 @@
                 data: data,
                 processData: false,
                 contentType: false,
-                beforeSend: function(){
-                    $('.btn-login').html('<span class="spinner-border spinner-border-sm"></span> Send ');
+                beforeSend: function() {
+                    $('.btn-login').html(
+                        '<span class="spinner-border spinner-border-sm"></span> Send ');
                     $('.btn-login').attr('disabled', true);
                 },
-                success: function (result) {
+                success: function(result) {
                     $(this).attr("disabled", false);
                     if (result.type === 'SUCCESS') {
                         toastr.success(result.message);
@@ -146,10 +162,11 @@
                         $('.btn-login').attr('disabled', false);
                     }
                 },
-                error: function (error) {
+                error: function(error) {
                     $(this).attr("disabled", false);
-                    let errors = error.responseJSON.errors, errorsHtml = '';
-                    $.each(errors, function (key, value) {
+                    let errors = error.responseJSON.errors,
+                        errorsHtml = '';
+                    $.each(errors, function(key, value) {
                         errorsHtml = '<strong>' + value[0] + '</strong>';
                         $('.' + key).html(errorsHtml);
                     });
@@ -164,6 +181,7 @@
             event.preventDefault();
         }
     });
-</script>
+    </script>
 </body>
+
 </html>

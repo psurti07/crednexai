@@ -5,11 +5,11 @@
 
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-        <div class="container-xxl pt-10" id="kt_content_container">
+        <div class="container-xxl" id="kt_content_container">
             <div class="row g-3 g-xl-10 mb-xl-10">
                 
                 @foreach($lists as $list)
-                <div class="col-md-4 col-lg-4 col-xl-4">
+                <div class="col-md-6 col-lg-4 col-xl-4">
                     <div class="d-print-none border border-dashed border-gray-300 card-rounded h-lg-100 min-w-md-350px p-9 bg-white">
                         <!--begin::Labels-->
                         <div class="mb-6">   
@@ -58,7 +58,7 @@
                         
                         <!--begin::Labels-->
                          <div class="mt-10"> 
-                            <a href="{{ route('customer.invoice') }}" target="_blank" class="btn btn-sm btn-primary">Download Invoice</a>
+                            <a href="{{ route('customer.invoice') }}" target="_blank" class="btn btn-sm btn-success">Download Invoice</a>
                         </div>                 
                         <!--end::Labels-->   
                     </div>  

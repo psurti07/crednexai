@@ -27200,7 +27200,7 @@ fieldset:disabled .btn {
   --bs-primary-active: #0cc45f;
   --bs-secondary-active: #b5b5c3;
   --bs-light-active: #f1f1f2;
-  --bs-success-active: #47be7d;
+  --bs-success-active: #be9d4c ;
   --bs-info-active: #0095e8;
   --bs-warning-active: #f1bc00;
   --bs-danger-active: #d9214e;
@@ -27339,7 +27339,7 @@ fieldset:disabled .btn {
   --bs-gray-900-rgb: 255, 255, 255;
   --bs-white: #ffffff;
   --bs-light: #2b2b40;
-  --bs-primary: #7239ea;
+  /* --bs-primary: #7239ea; */
   --bs-success: #0c3e65;
   --bs-info: #009ef7;
   --bs-warning: #ffc700;
@@ -27349,7 +27349,7 @@ fieldset:disabled .btn {
   --bs-primary-active: #5014d0;
   --bs-secondary-active: #474761;
   --bs-light-active: #323248;
-  --bs-success-active: #47be7d;
+  --bs-success-active: #be9d4c ;
   --bs-info-active: #0095e8;
   --bs-warning-active: #f1bc00;
   --bs-danger-active: #d9214e;

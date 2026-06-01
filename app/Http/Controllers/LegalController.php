@@ -12,29 +12,33 @@ class LegalController extends Controller
     public function privacyPolicy(){
         $meta = privacyPolicyMeta();
         $mainTitle = 'Privacy Policy';
+        $subTitle = 'Your privacy matters to us — understand how your information is collected and protected.';
         $description = InfoPages::select('content')->where('slug','privacy-policy')->first()->content;
-        return view('front.legalPages',compact('meta','description', 'mainTitle'));
+        return view('front.legalPages',compact('meta','description', 'mainTitle' , 'subTitle'));
     }
 
     public function termsConditions(){
         $meta = termsConditionsMeta();
         $mainTitle = 'Terms & Conditions';
+         $subTitle = 'Ensuring transparency through clear terms, user responsibilities, and service policies.';
         $description = InfoPages::select('content')->where('slug','terms-conditions')->first()->content;
-        return view('front.legalPages',compact('meta','description', 'mainTitle'));
+        return view('front.legalPages',compact('meta','description', 'mainTitle' , 'subTitle'));
     }
 
     public function refundPolicy(){
         $meta = refundPolicyMeta();
         $mainTitle = 'Cancellation & Refund Policy';
+         $subTitle = 'Clear guidelines on cancellations, refunds, eligibility, and customer service commitments.';
         $description = InfoPages::select('content')->where('slug','refund-policy')->first()->content;
-        return view('front.legalPages',compact('meta','description', 'mainTitle'));
+        return view('front.legalPages',compact('meta','description', 'mainTitle' , 'subTitle'));
     }
 
     public function disclaimer(){
         $meta = disclaimerMeta();
         $mainTitle = 'Disclaimer';
+         $subTitle = 'Understanding the terms, limitations, and responsibilities associated with our platform and services.';
         $description = InfoPages::select('content')->where('slug','disclaimer')->first()->content;
-        return view('front.legalPages',compact('meta','description', 'mainTitle'));
+        return view('front.legalPages',compact('meta','description', 'mainTitle' , 'subTitle'));
     }
 
     public function raiseRequest(){

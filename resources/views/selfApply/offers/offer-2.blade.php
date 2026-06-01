@@ -9,7 +9,7 @@
 </style>
 @endpush
 @section('content')
-<section class="bg--fixed hero-section pb-lg-80 pt-110">
+<section class="bg--fixed hero-section pb-80 pt-110">
     <div class="container">
         <div class="row d-flex align-items-center">
             <div class="col-md-12 col-lg-6 order-2 order-md-2 order-lg-1">
@@ -113,7 +113,7 @@
     </div>
 </section>
 
-<section id="integrations-2" class="py-80 integrations-section">
+<section id="integrations-2" class="py-80 integrations-section bg--green-100">
     <div class="container">
         <div class="r-12 text-center">
             <div class="row justify-content-center">

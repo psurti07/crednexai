@@ -3,11 +3,11 @@
 }
 
 .navbar-dark .wsmenu-list>li>a.h-link:hover {
-  color: #181818 !important;
+     color: #c7a148 !important;
 }
 
 .navbar-dark.white-scroll .scroll .wsmenu-list>li>a.h-link:hover {
-  color: #1d222f !important;
+     color: #c7a148 !important;
 }
 
 .navbar-dark .logo-black {
@@ -184,7 +184,7 @@
 
 .input-group-text {
   color: #252525 !important;
-  background-color: #f4f4f4 !important;
+background-color: #f5f6f8 !important;
 }
 
 .custm-box,
@@ -349,6 +349,10 @@
 min-height: 100vh;
 padding-bottom: 140px;
   }
+  .brands-carousel-6.owl-carousel .owl-item img{
+padding: 0 20px !important;
+}
+
 
 }
 @media screen and (max-width:767px) {
@@ -424,3 +428,4 @@ min-height: auto !important;
 padding-top: 130px !important;
 } 
 }
+

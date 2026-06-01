@@ -8,12 +8,12 @@
     <section class="page-hero-section">
         <div class="page-hero-section-overlay bg--green-100 bg--scroll">
             <div class="container">
-                <div class="row d-flex justify-content-center align-items-center">
+                <div class="row">
                     <div class="col-md-12 text-center">
-                        <div class="txt-block left-column">
+                        <div class="left-column">
                             <span class="section-id"></span>
-                            <h2 class="w-700 mb-5">Career <span class="color--green-500">with us</span></h2>
-                            <p class="s-16 color--grey mt-0">Growth. Fun. Excitement. Challenges – all in one place.</p>
+                            <h2 class="s-28 mb-5">Career with us</h2>
+                            <p class="s-16 color--grey m-0">Growth. Fun. Excitement. Challenges – all in one place.</p>
                         </div>
                     </div>
                 </div>
@@ -61,9 +61,9 @@
                 </div>
             </div>
             <div class="fbox-wrapper">
-                <div class="row row-cols-1 row-cols-md-3 rows-2 gx-3 gy-4">
+                <div class="row row-cols-1 row-cols-md-3 rows-2 gx-3 gy-3">
                     <div class="col">
-                        <div class="fbox-8 fbox--hover fb-1 r-12 mb-0">
+                        <div class="fbox-8 fbox--hover fb-1 r-12 mb-0 h-100">
                             <div class="fbox-ico-wrap">
                                 <div class="fbox-ico ico-40">
                                     <div class="shape-ico">
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="fbox-8 fbox--hover fb-1 r-12 mb-0">
+                        <div class="fbox-8 fbox--hover fb-1 r-12 mb-0 h-100">
                             <div class="fbox-ico-wrap">
                                 <div class="fbox-ico ico-40">
                                     <div class="shape-ico">
@@ -93,7 +93,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="fbox-8 fbox--hover fb-1 r-12 mb-0">
+                        <div class="fbox-8 fbox--hover fb-1 r-12 mb-0 h-100">
                             <div class="fbox-ico-wrap">
                                 <div class="fbox-ico ico-40">
                                     <div class="shape-ico">
@@ -108,7 +108,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="fbox-8 fbox--hover fb-1 r-12 mb-0">
+                        <div class="fbox-8 fbox--hover fb-1 r-12 mb-0 h-100">
                             <div class="fbox-ico-wrap">
                                 <div class="fbox-ico ico-40">
                                     <div class="shape-ico">
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="fbox-8 fbox--hover fb-1 r-12 mb-0">
+                        <div class="fbox-8 fbox--hover fb-1 r-12 mb-0 h-100">
                             <div class="fbox-ico-wrap">
                                 <div class="fbox-ico ico-40">
                                     <div class="shape-ico">
@@ -138,7 +138,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="fbox-8 fbox--hover fb-1 r-12 mb-0">
+                        <div class="fbox-8 fbox--hover fb-1 r-12 mb-0 h-100">
                             <div class="fbox-ico-wrap">
                                 <div class="fbox-ico ico-40">
                                     <div class="shape-ico">

@@ -17,8 +17,8 @@
             <div class="col-md-6 col-lg-6 col-12">
                 <div class="hero-7-txt">
                     <div class="mt-lg-5 mb-lg-5">
-                        <h1 class="s-40 w-700 text-white">Build a Better Financial Future with the Right Guidance</h1>
-                        <p class="mb-20 text-white">Move forward with confidence with expert financial consultation and
+                        <h1 class="s-40 w-700">Build a Better Financial Future with the Right Guidance</h1>
+                        <p class="mb-20">Move forward with confidence with expert financial consultation and
                             services
                             that steer you in the right direction.</p>
                         <a href="{{ route('self.apply.main') }}"
@@ -30,7 +30,7 @@
             </div>
             <div class="col-sm-8 col-md-6 col-lg-6 col-12 m-auto">
                 <div class="hero-7-img d-flex justify-content-center align-items-start">
-                    <img src="{{ asset('front/images/hero-1.png') }}" alt="easyailoans" class="img-fluid p-0">
+                    <img src="{{ asset('front/images/hero-img.png') }}" alt="easyailoans" class="img-fluid p-0">
                 </div>
             </div>
         </div>
@@ -48,13 +48,13 @@
             </div>
         </div>
         <div class="row align-items-center">
-            <div class="col-lg-4 col-md-6">
-                <div class="img-block left-column">
-                    <img class="img-fluid r-12" src="{{ asset('front/images/about-2.png') }}" alt="content-image">
+            <div class="col-lg-4 col-md-6 order-md-1 order-2">
+                <div class="img-block left-column m-0">
+                    <img class="img-fluid r-12" src="{{ asset('front/images/about-img.png') }}" alt="content-image">
                 </div>
             </div>
 
-            <div class="col-lg-8 col-md-6 align-items-center m-auto mt-0">
+            <div class="col-lg-8 col-md-6 align-items-center m-auto mt-0 order-md-2 order-1 mb-md-0 mb-3">
                 <div class="txt-block right-column pb-0">
                     <p class="">CredNexAI makes financial solutions feel simple and approachable. Instead of
                         complicating things, we focus on helping you understand your options and choose what truly works
@@ -224,7 +224,7 @@
         </div>
 
         <div class="fbox-wrapper text-center">
-            <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <div class="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-3">
                 <div class="col d-flex">
                     <div class="fbox-7 bg--white-100 fb-1 r-12 w-100 d-flex">
                         <div class="fbox-ico ico-50 mb-0">
@@ -642,7 +642,7 @@
         </div>
         <div class="row align-items-center justify-content-center">
             <div class="col-md-5 col-12 md-mb-50 order-md-2 order-2">
-                <div class="row">
+                <div class="row mx-md-0 mx-2">
                     <div class="col-md-12 col-12">
                         <div class="address-item d-flex">
                             <div class="fbox-ico ico-30 mb-0">
@@ -699,7 +699,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-7 col-12 py-md-0 py-4 order-md-2 order-1">
+            <div class="col-md-7 col-12 py-md-0 py-4 order-md-2 order-1 pt-0">
                 <div class="h-100">
                     <div class="card shadow  h-100">
                         <div class="card-body">
@@ -710,7 +710,7 @@
                                 class="contact-form career-form" enctype="multipart/form-data">
                                 <div class="row gx-2 gy-2">
                                     <div class="col-md-6 col-sm-12">
-                                        <div class="form-group form-floating s-15">
+                                        <div class="form-group form-floating">
                                             <input id="form_name" name="fullname" type="text"
                                                 class="form-control name mb-0" placeholder="">
                                             <label for="firstname">Full Name *</label>
