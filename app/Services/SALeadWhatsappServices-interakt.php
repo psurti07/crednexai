@@ -55,7 +55,7 @@ class SALeadWhatsappServices
                             ->orderBy('r.id', 'asc')
                             ->get();
                         
-                        $adminUsers = ['9408881214'];
+                        $adminUsers = ['8488848968'];
                         if($users->isNotEmpty()){
                             $data1 = array(
                 				'rec_date' => date('Y-m-d H:i:s'),

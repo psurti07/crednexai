@@ -101,13 +101,6 @@ class LALeadSmsServices
                                 <message>{$trackingMsg}</message>
                                 <accusage>1</accusage>
                                 <senderid>{$senderId}</senderid>
-                            </sms><sms>
-                                <user>" . env('SMS_OBB_LA_USERNAME') . "</user>
-                                <password>" . env('SMS_OBB_LA_PASSWORD') . "</password>
-                                <mobiles>9408881214</mobiles>
-                                <message>{$trackingMsg}</message>
-                                <accusage>1</accusage>
-                                <senderid>{$senderId}</senderid>
                             </sms>";
                             // Send SMS only if dataset has value
                             if (!empty($dataset)) {
