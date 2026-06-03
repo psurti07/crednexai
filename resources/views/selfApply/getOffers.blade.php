@@ -129,9 +129,12 @@ body {
                                             <!-- Text -->
                                             <div class="fbox-txt">
                                                 <h6 class="s-12">Loan Amount</h6>
+                                                @if(false)
                                                 <p class="s-14 text-black">&#8377;
                                                     {{ formatePriceIndia($offersData[0]['loanAmount']) }}
                                                 </p>
+                                                @endif
+                                                <p class="s-14 text-black">As decided by the Bank/NBFC</p>
                                                 <hr class="custm-HR" />
 
                                                 <h6 class="s-12">Max Tenure</h6>
@@ -167,7 +170,7 @@ body {
                                             <div class="fbox-ico">
                                                 <div class="shape-ico">
                                                     <img class="p-0"
-                                                        src="https://managecrednexai.com/upload/banks/{{ $item['bank_image'] }}"
+                                                        src="https://manage.crednexai.com/upload/banks/{{ $item['bank_image'] }}"
                                                         alt="bank" width="160">
                                                 </div>
                                             </div> <!-- End Icon -->
