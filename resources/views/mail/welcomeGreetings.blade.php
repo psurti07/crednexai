@@ -65,7 +65,7 @@
                                                                                             <img src="https://crednexai.com/public/front/images/logo/logo.png"
                                                                                                 alt="CredNexAI"
                                                                                                 style="display: block; border: 0; outline: 0; text-decoration: none; -ms-interpolation-mode: bicubic;"
-                                                                                                width="150"
+                                                                                                width="190"
                                                                                                 title="CredNexAI">
                                                                                             </a>
                                                                                         </td>
