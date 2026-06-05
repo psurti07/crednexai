@@ -128,8 +128,12 @@ body {
                                             <!-- Text -->
                                             <div class="fbox-txt">
                                                 <h6 class="s-12">Loan Amount</h6>
+                                                @if(false)
                                                 <p class="s-14 text-black">&#8377;
-                                                    {{ formatePriceIndia($offersData[0]['loanAmount']) }}</p>
+                                                    {{ formatePriceIndia($offersData[0]['loanAmount']) }}
+                                                </p>
+                                                @endif
+                                                <p class="s-14 text-black">As decided by the Bank/NBFC</p>
                                                 <hr class="custm-HR" />
 
                                                 <h6 class="s-12">Max Tenure</h6>
