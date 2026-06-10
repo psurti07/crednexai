@@ -61,7 +61,7 @@ if (!function_exists('sendDynamicSMS')) {
 
         // Construct the API URL
         if ($type == 'forget-password') {
-            $api_url = "http://m.onlinebusinessbazaar.in/sendsms.jsp?user={$username}&password={$password}&senderid={$senderId}&mobiles={$mobile}&sms={$sms_text}&tempid=1707174617771060776";
+            $api_url = "http://m.onlinebusinessbazaar.in/sendsms.jsp?user={$username}&password={$password}&senderid={$senderId}&mobiles={$mobile}&sms={$sms_text}&tempid=1707177739947780835";
         } elseif ($tempId != '') {
             $api_url = "http://m.onlinebusinessbazaar.in/sendsms.jsp?user={$username}&password={$password}&senderid={$senderId}&mobiles={$mobile}&sms={$sms_text}&tempid={$tempId}";
         } else {
@@ -71,7 +71,7 @@ if (!function_exists('sendDynamicSMS')) {
         // Submit the request to the server
         $response = Http::get($api_url);
 
-        // Log::info($response);
+        Log::info('forget sms response ' . $response);
         // Return the response
         return [
             'status_code' => $response->status(),

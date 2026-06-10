@@ -128,12 +128,10 @@ body {
                                             <!-- Text -->
                                             <div class="fbox-txt">
                                                 <h6 class="s-12">Loan Amount</h6>
-                                                @if(false)
+
                                                 <p class="s-14 text-black">&#8377;
                                                     {{ formatePriceIndia($offersData[0]['loanAmount']) }}
                                                 </p>
-                                                @endif
-                                                <p class="s-14 text-black">As decided by the Bank/NBFC</p>
                                                 <hr class="custm-HR" />
 
                                                 <h6 class="s-12">Max Tenure</h6>
@@ -142,6 +140,11 @@ body {
 
                                                 <h6 class="s-12">Best Rate</h6>
                                                 <p class="s-14 text-black">{{ $offersData[0]['roi'] }}% P.A</p>
+
+                                                <div class="col-md-12 form-btn mt-4">
+                                                    <button type="submit" class="btn btn--theme hover--theme submit unlockBtn">Unlock Your
+                                                        Offers!</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -185,15 +188,16 @@ body {
 
                                                 <h6 class="s-12">Best Rate</h6>
                                                 <p class="s-14 text-black">-.--% P.M</p>
+
+                                                <div class="col-md-12 form-btn mt-4">
+                                                    <button type="submit" class="btn btn--theme hover--theme submit unlockBtn disabled">Unlock Your
+                                                        Offers!</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     @endforeach
                                 </div>
-                            </div>
-                            <div class="col-md-12 form-btn mt-4">
-                                <button type="submit" class="btn btn--theme hover--theme submit unlockBtn">Unlock Your
-                                    Offers!</button>
                             </div>
                         </form>
                     </div>

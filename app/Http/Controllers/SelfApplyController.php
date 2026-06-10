@@ -2208,7 +2208,7 @@ class SelfApplyController extends Controller
     public function offer4()
     {
         $meta = selfApplyMeta();
-        $products = Product::where('productslug', env('SA_OFFER_4'))->first();
+        $products = Product::where('productslug', config('constant.SA_OFFER_4'))->first();
         if ($products->inOffer == 1) {
             $productData = array(
                 'inOffer' => $products->inOffer,
@@ -2229,256 +2229,338 @@ class SelfApplyController extends Controller
         return view('selfApply.offers.offer-4', compact('meta', 'productData'));
     }
 
-    // public function getOffer4(Request $request)
-    // {
-    //     try {
-    //         $inputs = $request->all();
-    //         $request->validate([
-    //             'first_name' => 'required',
-    //             'last_name' => 'required',
-    //             'email' => 'required|email',
-    //             'mobile' => ['required', 'numeric', 'regex:/^[6-9]\d{9}$/']
-    //         ]);
-    //         $profile = $this->checkUserProcess($inputs);
-    //         if ($profile) {
-    //             return response()->json($profile);
-    //         } else {
-    //             $first_name = $inputs['first_name'];
-    //             $last_name = $inputs['last_name'];
-    //             $mobile = $inputs['mobile'];
-    //             $email = $inputs['email'];
-    //         }
-    //         /* product Data */
-    //         $products = Product::where('productslug', env('SA_OFFER_4'))->first();
-
-    //         /* set amount of offer */
-    //         $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
-    //         $grandAmount = $amount + ($amount * 0.18);
-
-    //         $uatNumbers = explode(',', env('UAT_MOBILE_NUMBERS', '')); // Convert the string into an array
-
-    //         foreach ($uatNumbers as $uatNum) {
-    //             if ($uatNum == $mobile) {
-    //                 $grandAmount = 1;
-    //                 break; // Exit the loop once a match is found
-    //             }
-    //         }
-
-    //         /* insert the adta in cardoffer */
-    //         $offerId = DB::table('cardoffer')->updateOrInsert(
-    //             ['mobile' => $mobile], // Search condition
-    //             [ // Values to update or insert
-    //                 'rec_date' => date('Y-m-d H:i:s'),
-    //                 'offerpage' =>  7, //sa offer 4 or star offer
-    //                 'first_name' => $first_name,
-    //                 'last_name' => $last_name,
-    //                 'emailid' => $email,
-    //                 'amount' => round($grandAmount),
-    //                 'isCustomer' => 0,
-    //                 'isActive' => 0,
-    //                 'isDelete' => 0,
-    //             ]
-    //         );
-
-    //         // Get the ID of the updated or inserted record
-    //         $record = DB::table('cardoffer')->where('mobile', $mobile)->first();
-    //         $offerId = $record->id;
-    //         // $token = $profile['data']['token'];
-
-    //         $orderId = number_format(microtime(true) * 1000, 0, '.', '');
-    //         $encData = null;
-    //         $returnUrl = 'https://crednexai.com/api/self-apply/star-offer-response';
-
-    //         if (env('SABPAISA_MODE') == "PROD") {
-    //             $curlurl = "https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1";
-    //         } else {
-    //             $curlurl = "https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1";
-    //         }
-    //         $fullname = trim($first_name) . " " . trim($last_name);
-    //         /* subpaisa encrypt data */
-    //         $encData = "?clientCode=" . env('SABPAISA_CLIENT_CODE') . "&transUserName=" . env('SABPAISA_USERNAME') . "&transUserPassword=" . env('SABPAISA_PASSWORD') . "&amount=" . round($grandAmount) . "&amountType=INR&clientTxnId=" . $orderId . "&payerName=" . $fullname . "&payerMobile=" . $mobile . "&payerEmail=" . trim(strtolower($email)) . "&mcc=5137&channelId=#&callbackUrl=" . $returnUrl;
-
-    //         /* generate subpaisa paymenturl */
-    //         $AesCipher = new Authuntication();
-    //         $encryptData = $AesCipher->encrypt(env('SABPAISA_AUTH_KEY'), env('SABPAISA_AUTH_IV'), $encData);
-
-    //         $subpaisaData = array(
-    //             'rec_date' => date('Y-m-d H:i:s'),
-    //             'entryfor' => 7, // sa offer 2 or mega offer
-    //             'userid' => $offerId,
-    //             'orderid' => $orderId,
-    //             'orderamount' => round($grandAmount),
-    //             'ordernote' => $products->productname
-    //         );
-
-    //         $response = SubpaisaEntry::insert($subpaisaData);
-    //         $html = view('pg.pay', [
-    //             'data' => $encryptData,
-    //             'clientCode' => env('SABPAISA_CLIENT_CODE'),
-    //             'action' => $curlurl
-    //         ])->render();
-
-    //         return response()->json(array('type' => 'SUCCESS', 'message' => 'Please wait... We are redirecting to the payment page.', 'html' => $html));
-    //     } catch (ValidationException $e) {
-    //         return response()->json(array('type' => 'ERROR', 'errors' => $e->errors()), 422);
-    //     } catch (\Exception $e) {
-    //         Log::info($e->getMessage());
-    //         return response()->json(array('type' => 'ERROR', 'message' => 'Oops! Something went wrong.'));
-    //     }
-    // }
-
-    // public function offer4Response(Request $request)
-    // {
-    //     try {
-    //         //Log::info('request data - '. json_encode($request->all()));
-    //         $meta = selfApplyMeta();
-    //         $query = $request->input('encResponse');
-    //         $authKey = env('SABPAISA_AUTH_KEY');
-    //         $authIV = env('SABPAISA_AUTH_IV');
-
-    //         $AesCipher = new Authuntication();
-    //         $decText = $AesCipher->decrypt($authKey, $authIV, $query);
-
-    //         $grandtotal = $netamount = $cgstamount = $sgstamount = $igstamount = 0;
-
-    //         $token = strtok($decText, "&");
-
-    //         $i = 0;
-
-    //         /* response value After Decryption
-
-    //         payerName=Test&payerEmail=Test@gmail.com&payerMobile=1234567890&clientTxnId=1907&payerAddress=NA&amount=10.0
-    //         &clientCode=XXXXX&paidAmount=10.1&paymentMode=Debit Card&bankName=BOB&amountType=INR&status=FAILED&statusCode=0300&challanNumber=null
-    //         &sabpaisaTxnId=883602112220421050&sabpaisaMessage=Sorry, Your Transaction has Failed.&bankMessage=DebitCard&bankErrorCode=null
-    //         &sabpaisaErrorCode=null&bankTxnId=101202235510088892&transDate=Wed Dec 21 16:26:28 IST 2022&udf1=NA&udf2=NA&udf3=NA&udf4=NA&udf5=NA
-    //         &udf6=NA&udf7=NA&udf8=NA&udf9=null&udf10=null&udf11=null&udf12=null&udf13=null&udf14=null&udf15=null&udf16=null&udf17=null&udf18=null
-    //         &udf19=null&udf20=nulli- */
-
-    //         //Log::info($token);
-
-    //         while ($token !== false) {
-    //             $i = $i + 1;
-    //             $token1 = strchr($token, "=");
-    //             $token = strtok("&");
-    //             $fstr = ltrim($token1, "=");
-
-    //             if ($i == 1) {
-    //                 $payerName = $fstr;
-    //             }
-    //             if ($i == 2)
-    //                 $payerEmail = $fstr;
-    //             if ($i == 3)
-    //                 $payerMobile = $fstr;
-    //             if ($i == 4)
-    //                 $clientTxnId = $fstr;
-    //             if ($i == 5)
-    //                 $payerAddress = $fstr;
-    //             if ($i == 6)
-    //                 $amount = $fstr;
-    //             if ($i == 7)
-    //                 $clientCode = $fstr;
-    //             if ($i == 8)
-    //                 $paidAmount = $fstr;
-    //             if ($i == 9)
-    //                 $paymentMode = $fstr;
-    //             if ($i == 10)
-    //                 $bankName = $fstr;
-    //             if ($i == 11)
-    //                 $amountType = $fstr;
-    //             if ($i == 12)
-    //                 $status = $fstr;
-    //             if ($i == 13)
-    //                 $statusCode = $fstr;
-    //             if ($i == 14)
-    //                 $challanNumber = $fstr;
-    //             if ($i == 15)
-    //                 $sabpaisaTxnId = $fstr;
-    //             if ($i == 16)
-    //                 $sabpaisaMessage = $fstr;
-    //             if ($i == 17)
-    //                 $bankMessage = $fstr;
-    //             if ($i == 18)
-    //                 $bankErrorCode = $fstr;
-    //             if ($i == 19)
-    //                 $sabpaisaErrorCode = $fstr;
-    //             if ($i == 20)
-    //                 $bankTxnId = $fstr;
-    //             if ($i == 21)
-    //                 $transDate = $fstr;
-
-    //             if ($token == true) {
-    //             }
-    //         }
-    //         /* update client tax id in subpaisa_entry table */
-    //         /* Log::info($clientTxnId);
-    //         Log::info($paymentMode);
-    //         Log::info($status);
-    //         Log::info($statusCode);*/
-
-    //         $paymentData = SubpaisaEntry::where('orderid', $clientTxnId)->first();
-    //         $subpaisaData = array(
-    //             'rec_date' => date('Y-m-d H:i:s'),
-    //             'referenceid' => $sabpaisaTxnId,
-    //             'txstatus' => $status,
-    //             'paymentmode' => $paymentMode
-    //         );
-    //         //Log::info('subpaisa data - '. json_encode($subpaisaData));
-    //         $response1 = SubpaisaEntry::where('id', $paymentData->id)->update($subpaisaData);
-    //         //Log::info('subpaisa response - '. $response1);
-    //         if ($statusCode == '0000') {
-    //             $cardno = random_code_num(16);
-    //             $userData = Cardoffer::where('id', $paymentData->userid)->first();
-    //             $data = array(
-    //                 'rec_date' => date('Y-m-d H:i:s'),
-    //                 'card_number' => $cardno,
-    //                 'registration_date' => date('Y-m-d'),
-    //                 'expiry_date' => date('Y-m-d', strtotime('+3 months')),
-    //                 'paymentid' => $sabpaisaTxnId,
-    //                 'amount' => $paymentData->orderamount,
-    //                 'isActive' => 1
-    //             );
-    //             $response = Cardoffer::where('id', $paymentData->userid)->update($data);
-    //             if ($response) {
-    //                 $regUser = UserRegistration::where('mobile', $userData->mobile)
-    //                     ->where(['isActive' => 1, 'isDelete' => 0])
-    //                     ->first();
-
-    //                 if ($regUser) {
-    //                     $converted = convertIntoCustomer($cardno, $regUser, $userData, $paymentData->orderamount, $sabpaisaTxnId, 1, 'self-apply', 'SA_', 5);
-    //                     if (!$converted) {
-    //                         Log::error("Conversion to customer failed for user: " . $regUser->id);
-    //                         dd('check log');
-    //                     }
-    //                 } else {
-    //                     $sent = sendPaymentGreetings($userData->first_name . ' ' . $userData->last_name, $userData->mobile, $userData->emailid);
-    //                 }
-    //             }
-    //             session()->forget(['isMailSend', 'cardno']);
-    //             return view('cardoffer-response', [
-    //                 'meta' => $meta,
-    //                 'response' => TRUE,
-    //             ]);
-    //         } else if ($statusCode == '0300') {
-    //             return view('cardoffer-response', [
-    //                 'meta' => $meta,
-    //                 'response' => FALSE,
-    //             ]);
-    //         } else {
-    //             return view('cardoffer-response', [
-    //                 'meta' => $meta,
-    //                 'response' => FALSE,
-    //             ]);
-    //         }
-    //     } catch (\Exception $e) {
-    //         Log::info($e->getMessage());
-    //         return view('cardoffer-response', [
-    //             'meta' => $meta,
-    //             'response' => FALSE,
-    //         ]);
-    //     }
-    // }
-
     public function getOffer4(Request $request)
+    {
+        $merchantId = "SQUA102";
+        $apiKey     = "sp_itOrld7Rm0SGjkqg_VSEXBtZXqi8T26-pMPfpUCxUQo";
+        $secretKey  = "sec_lLao-1-yDLmV81YjExxgR00a8o7FgJ8-HLSJj9Od4hY";
+
+        $returnUrl  = "https://crednexai.com/api/self-apply/star-offer-response";
+
+        // =========================
+        // PAYMENT DETAILS
+        // =========================
+
+        $merchantTxnId = "TXN" . time();
+        $amount        = "100.00";
+        $currency      = "INR";
+        $timestamp     = time();
+
+        // Generate checksum
+        $input = $merchantId . "|" .
+            $merchantTxnId . "|" .
+            $amount . "|" .
+            $currency . "|" .
+            $timestamp;
+
+        $checksum = hash_hmac('sha256', $input, $secretKey);
+
+        // Request payload
+        $payload = [
+            "merchantId"    => $merchantId,
+            "merchantTxnId" => $merchantTxnId,
+            "amount"        => $amount,
+            "currency"      => $currency,
+            "returnUrl"     => $returnUrl,
+            "timestamp"     => $timestamp,
+            "checksum"      => $checksum
+        ];
+
+        // API Call
+        $ch = curl_init();
+
+        curl_setopt_array($ch, [
+            CURLOPT_URL            => "https://merchant-api.sabpaisa.in/api/v2/payments",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST           => true,
+            CURLOPT_HTTPHEADER     => [
+                "X-Api-Key: " . $apiKey,
+                "Content-Type: application/json"
+            ],
+            CURLOPT_POSTFIELDS     => json_encode($payload)
+        ]);
+
+        $response = curl_exec($ch);
+
+        if (curl_errno($ch)) {
+            die("cURL Error: " . curl_error($ch));
+        }
+
+        curl_close($ch);
+
+        $result = json_decode($response, true);
+
+        // Debug Response
+        echo "<pre>";
+        print_r($result);
+        echo "</pre>";
+
+        // Redirect to checkout page
+        if (!empty($result['checkoutUrl'])) {
+
+            header("Location: " . $result['checkoutUrl']);
+            exit;
+        } else {
+
+            echo "Payment session creation failed.";
+        }
+    }
+
+    public function getOffer4_subpaisa(Request $request)
+    {
+        try {
+            $inputs = $request->all();
+            $request->validate([
+                'first_name' => 'required',
+                'last_name' => 'required',
+                'email' => 'required|email',
+                'mobile' => ['required', 'numeric', 'regex:/^[6-9]\d{9}$/']
+            ]);
+            $profile = $this->checkUserProcess($inputs);
+            if ($profile) {
+                return response()->json($profile);
+            } else {
+                $first_name = $inputs['first_name'];
+                $last_name = $inputs['last_name'];
+                $mobile = $inputs['mobile'];
+                $email = $inputs['email'];
+            }
+            /* product Data */
+            $products = Product::where('productslug', config('constant.SA_OFFER_4'))->first();
+
+            /* set amount of offer */
+            $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
+            $grandAmount = $amount + ($amount * 0.18);
+
+            $uatNumbers = explode(',', env('UAT_MOBILE_NUMBERS', '')); // Convert the string into an array
+
+            foreach ($uatNumbers as $uatNum) {
+                if ($uatNum == $mobile) {
+                    $grandAmount = 1;
+                    break; // Exit the loop once a match is found
+                }
+            }
+
+            /* insert the adta in cardoffer */
+            $offerId = DB::table('cardoffer')->updateOrInsert(
+                ['mobile' => $mobile], // Search condition
+                [ // Values to update or insert
+                    'rec_date' => date('Y-m-d H:i:s'),
+                    'offerpage' =>  7, //sa offer 4 or star offer
+                    'first_name' => $first_name,
+                    'last_name' => $last_name,
+                    'emailid' => $email,
+                    'amount' => round($grandAmount),
+                    'isCustomer' => 0,
+                    'isActive' => 0,
+                    'isDelete' => 0,
+                ]
+            );
+
+            // Get the ID of the updated or inserted record
+            $record = DB::table('cardoffer')->where('mobile', $mobile)->first();
+            $offerId = $record->id;
+            // $token = $profile['data']['token'];
+
+            $orderId = number_format(microtime(true) * 1000, 0, '.', '');
+            $encData = null;
+            $returnUrl = 'https://crednexai.com/api/self-apply/star-offer-response';
+
+            Log::info('SABPAISA_MODE' . config('constant.SABPAISA_MODE'));
+            Log::info('SABPAISA_CLIENT_CODE' . config('constant.SABPAISA_CLIENT_CODE'));
+            Log::info('SABPAISA_USERNAME' . config('constant.SABPAISA_USERNAME'));
+            Log::info('SABPAISA_PASSWORD' . config('constant.SABPAISA_PASSWORD'));
+
+            if (config('constant.SABPAISA_MODE') == "PROD") {
+                $curlurl = "https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1";
+            } else {
+                $curlurl = "https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1";
+            }
+            $fullname = trim($first_name) . " " . trim($last_name);
+            /* subpaisa encrypt data */
+            // $encData = "?clientCode=" . env('SABPAISA_CLIENT_CODE') . "&transUserName=" . env('SABPAISA_USERNAME') . "&transUserPassword=" . env('SABPAISA_PASSWORD') . "&amount=" . round($grandAmount) . "&amountType=INR&clientTxnId=" . $orderId . "&payerName=" . $fullname . "&payerMobile=" . $mobile . "&payerEmail=" . trim(strtolower($email)) . "&mcc=5137&channelId=#&callbackUrl=" . $returnUrl;
+            $encData = "?clientCode=" . config('constant.SABPAISA_CLIENT_CODE') . "&transUserName=" . config('constant.SABPAISA_USERNAME') . "&transUserPassword=" . config('constant.SABPAISA_PASSWORD') . "&amount=" . round($grandAmount) . "&amountType=INR&clientTxnId=" . $orderId . "&payerName=" . trim($fullname) . "&payerMobile=" . $mobile . "&payerEmail=" . trim(strtolower($email)) . "&mcc=5137&channelId=#&callbackUrl=" . $returnUrl;
+            /* generate subpaisa paymenturl */
+            $AesCipher = new Authuntication();
+            $encryptData = $AesCipher->encrypt($encData);
+
+            $subpaisaData = array(
+                'rec_date' => date('Y-m-d H:i:s'),
+                'entryfor' => 7, // sa offer 2 or mega offer
+                'userid' => $offerId,
+                'orderid' => $orderId,
+                'orderamount' => round($grandAmount),
+                'ordernote' => $products->productname
+            );
+
+            $response = SubpaisaEntry::insert($subpaisaData);
+            $html = view('pg.pay', [
+                'data' => $encryptData,
+                'clientCode' => config('constant.SABPAISA_CLIENT_CODE'),
+                'action' => $curlurl
+            ])->render();
+
+            return response()->json(array('type' => 'SUCCESS', 'message' => 'Please wait... We are redirecting to the payment page.', 'html' => $html));
+        } catch (ValidationException $e) {
+            return response()->json(array('type' => 'ERROR', 'errors' => $e->errors()), 422);
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+            return response()->json(array('type' => 'ERROR', 'message' => 'Oops! Something went wrong.'));
+        }
+    }
+
+    public function offer4Response(Request $request)
+    {
+        try {
+            //Log::info('request data - '. json_encode($request->all()));
+            $meta = selfApplyMeta();
+            $query = $request->input('encResponse');
+            $authKey = env('SABPAISA_AUTH_KEY');
+            $authIV = env('SABPAISA_AUTH_IV');
+
+            $AesCipher = new Authuntication();
+            $decText = $AesCipher->decrypt($query);
+
+            $grandtotal = $netamount = $cgstamount = $sgstamount = $igstamount = 0;
+
+            $token = strtok($decText, "&");
+
+            $i = 0;
+
+            /* response value After Decryption
+
+            payerName=Test&payerEmail=Test@gmail.com&payerMobile=1234567890&clientTxnId=1907&payerAddress=NA&amount=10.0
+            &clientCode=XXXXX&paidAmount=10.1&paymentMode=Debit Card&bankName=BOB&amountType=INR&status=FAILED&statusCode=0300&challanNumber=null
+            &sabpaisaTxnId=883602112220421050&sabpaisaMessage=Sorry, Your Transaction has Failed.&bankMessage=DebitCard&bankErrorCode=null
+            &sabpaisaErrorCode=null&bankTxnId=101202235510088892&transDate=Wed Dec 21 16:26:28 IST 2022&udf1=NA&udf2=NA&udf3=NA&udf4=NA&udf5=NA
+            &udf6=NA&udf7=NA&udf8=NA&udf9=null&udf10=null&udf11=null&udf12=null&udf13=null&udf14=null&udf15=null&udf16=null&udf17=null&udf18=null
+            &udf19=null&udf20=nulli- */
+
+            //Log::info($token);
+
+            while ($token !== false) {
+                $i = $i + 1;
+                $token1 = strchr($token, "=");
+                $token = strtok("&");
+                $fstr = ltrim($token1, "=");
+
+                if ($i == 1) {
+                    $payerName = $fstr;
+                }
+                if ($i == 2)
+                    $payerEmail = $fstr;
+                if ($i == 3)
+                    $payerMobile = $fstr;
+                if ($i == 4)
+                    $clientTxnId = $fstr;
+                if ($i == 5)
+                    $payerAddress = $fstr;
+                if ($i == 6)
+                    $amount = $fstr;
+                if ($i == 7)
+                    $clientCode = $fstr;
+                if ($i == 8)
+                    $paidAmount = $fstr;
+                if ($i == 9)
+                    $paymentMode = $fstr;
+                if ($i == 10)
+                    $bankName = $fstr;
+                if ($i == 11)
+                    $amountType = $fstr;
+                if ($i == 12)
+                    $status = $fstr;
+                if ($i == 13)
+                    $statusCode = $fstr;
+                if ($i == 14)
+                    $challanNumber = $fstr;
+                if ($i == 15)
+                    $sabpaisaTxnId = $fstr;
+                if ($i == 16)
+                    $sabpaisaMessage = $fstr;
+                if ($i == 17)
+                    $bankMessage = $fstr;
+                if ($i == 18)
+                    $bankErrorCode = $fstr;
+                if ($i == 19)
+                    $sabpaisaErrorCode = $fstr;
+                if ($i == 20)
+                    $bankTxnId = $fstr;
+                if ($i == 21)
+                    $transDate = $fstr;
+
+                if ($token == true) {
+                }
+            }
+            /* update client tax id in subpaisa_entry table */
+            /* Log::info($clientTxnId);
+            Log::info($paymentMode);
+            Log::info($status);
+            Log::info($statusCode);*/
+
+            $paymentData = SubpaisaEntry::where('orderid', $clientTxnId)->first();
+            $subpaisaData = array(
+                'rec_date' => date('Y-m-d H:i:s'),
+                'referenceid' => $sabpaisaTxnId,
+                'txstatus' => $status,
+                'paymentmode' => $paymentMode
+            );
+            //Log::info('subpaisa data - '. json_encode($subpaisaData));
+            $response1 = SubpaisaEntry::where('id', $paymentData->id)->update($subpaisaData);
+            //Log::info('subpaisa response - '. $response1);
+            if ($statusCode == '0000') {
+                $cardno = random_code_num(16);
+                $userData = Cardoffer::where('id', $paymentData->userid)->first();
+                $data = array(
+                    'rec_date' => date('Y-m-d H:i:s'),
+                    'card_number' => $cardno,
+                    'registration_date' => date('Y-m-d'),
+                    'expiry_date' => date('Y-m-d', strtotime('+3 months')),
+                    'paymentid' => $sabpaisaTxnId,
+                    'amount' => $paymentData->orderamount,
+                    'isActive' => 1
+                );
+                $response = Cardoffer::where('id', $paymentData->userid)->update($data);
+                if ($response) {
+                    $regUser = UserRegistration::where('mobile', $userData->mobile)
+                        ->where(['isActive' => 1, 'isDelete' => 0])
+                        ->first();
+
+                    if ($regUser) {
+                        $converted = convertIntoCustomer($cardno, $regUser, $userData, $paymentData->orderamount, $sabpaisaTxnId, 1, 'self-apply', 'SA_', 5);
+                        if (!$converted) {
+                            Log::error("Conversion to customer failed for user: " . $regUser->id);
+                            dd('check log');
+                        }
+                    } else {
+                        $sent = sendPaymentGreetings($userData->first_name . ' ' . $userData->last_name, $userData->mobile, $userData->emailid);
+                    }
+                }
+                session()->forget(['isMailSend', 'cardno']);
+                return view('cardoffer-response', [
+                    'meta' => $meta,
+                    'response' => TRUE,
+                ]);
+            } else if ($statusCode == '0300') {
+                return view('cardoffer-response', [
+                    'meta' => $meta,
+                    'response' => FALSE,
+                ]);
+            } else {
+                return view('cardoffer-response', [
+                    'meta' => $meta,
+                    'response' => FALSE,
+                ]);
+            }
+        } catch (\Exception $e) {
+            Log::info($e->getMessage());
+            return view('cardoffer-response', [
+                'meta' => $meta,
+                'response' => FALSE,
+            ]);
+        }
+    }
+
+    public function getOffer4_razorpay(Request $request)
     {
         try {
             $inputs = $request->all();
@@ -2579,7 +2661,7 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function offer4Response(Request $request)
+    public function offer4Response_razorpay(Request $request)
     {
         try {
 
