@@ -224,13 +224,9 @@ $(document).ready(function() {
                     $(this).attr("disabled", false);
                     if (result.type === 'SUCCESS') {
                         toastr.success(result.message);
-                        // setTimeout(function() {
-                        //     window.location.href = result.url;
-                        // }, 5000);
-                        $('#result-container').html(result.html);
                         setTimeout(function() {
-                            document.frm1.submit();
-                        }, 1000);
+                        window.location.href = result.url;
+                        }, 5000);
                     } else {
                         toastr.error(result.message);
                         $('#submit-btn').html('Apply Now');

@@ -2229,50 +2229,66 @@ class SelfApplyController extends Controller
         return view('selfApply.offers.offer-4', compact('meta', 'productData'));
     }
 
-    public function getOffer4(Request $request)
+    public function getOffer4_subpaisa(Request $request)
     {
-        $merchantId = "SQUA102";
-        $apiKey     = "sp_itOrld7Rm0SGjkqg_VSEXBtZXqi8T26-pMPfpUCxUQo";
-        $secretKey  = "sec_lLao-1-yDLmV81YjExxgR00a8o7FgJ8-HLSJj9Od4hY";
-
+        $merchantId = "CRED1";
+        $apiKey     = "sp_keQHrFpgKH_cewQNSvrBxkzXIeFjBMt1ybQrN-XT0_8";
+        $secretKey  = "sec_GFElibE_fKNQUWLf0bsEztMFupjalohB81P5zSw2M1c";
         $returnUrl  = "https://crednexai.com/api/self-apply/star-offer-response";
+
+        // Staging API URL (Official Documentation)
+        $apiUrl = "https://merchant-api.sabpaisa.in/api/v2/payments";
 
         // =========================
         // PAYMENT DETAILS
         // =========================
 
-        $merchantTxnId = "TXN" . time();
-        $amount        = "100.00";
+        $merchantTxnId = "TXN" . time() . rand(1000, 9999);
+        $amountInPaise = 10000;  // ₹100 = 10000 paise (Amount in PAISE as per docs)
         $currency      = "INR";
         $timestamp     = time();
 
-        // Generate checksum
+        // Generate checksum (as per official docs)
+        // Format: merchantId|merchantTxnId|amount|currency|timestamp
         $input = $merchantId . "|" .
             $merchantTxnId . "|" .
-            $amount . "|" .
+            $amountInPaise . "|" .
             $currency . "|" .
             $timestamp;
 
         $checksum = hash_hmac('sha256', $input, $secretKey);
 
+        Log::info('Checksum Input String: ' . $input);
+        Log::info('Generated Checksum: ' . $checksum);
+
         // Request payload
         $payload = [
             "merchantId"    => $merchantId,
             "merchantTxnId" => $merchantTxnId,
-            "amount"        => $amount,
+            "amount"        => $amountInPaise,  // Amount in PAISE
             "currency"      => $currency,
             "returnUrl"     => $returnUrl,
             "timestamp"     => $timestamp,
-            "checksum"      => $checksum
+            "checksum"      => $checksum,
+            "customerName"  => "Test User",
+            "customerEmail" => "test@gmail.com",
+            "customerPhone" => "9879879879",
         ];
+
+        Log::info('API URL: ' . $apiUrl);
+        Log::info('Request Payload: ' . json_encode($payload));
 
         // API Call
         $ch = curl_init();
 
         curl_setopt_array($ch, [
-            CURLOPT_URL            => "https://merchant-api.sabpaisa.in/api/v2/payments",
+            CURLOPT_URL            => $apiUrl,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POST           => true,
+            CURLOPT_TIMEOUT        => 30,
+            CURLOPT_CONNECTTIMEOUT => 10,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false,
             CURLOPT_HTTPHEADER     => [
                 "X-Api-Key: " . $apiKey,
                 "Content-Type: application/json"
@@ -2281,32 +2297,45 @@ class SelfApplyController extends Controller
         ]);
 
         $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        Log::info('HTTP CODE: ' . $httpCode);
+        Log::info('Response: ' . $response);
 
         if (curl_errno($ch)) {
-            die("cURL Error: " . curl_error($ch));
+            Log::error('cURL Error: ' . curl_error($ch));
+            curl_close($ch);
+            return back()->with('error', 'Connection error. Please try again.');
         }
 
         curl_close($ch);
 
         $result = json_decode($response, true);
 
-        // Debug Response
-        echo "<pre>";
-        print_r($result);
-        echo "</pre>";
+        // Handle response
+        if ($result && isset($result['success']) && $result['success'] === true) {
 
-        // Redirect to checkout page
-        if (!empty($result['checkoutUrl'])) {
+            // Store these for future reference
+            $paymentId    = $result['paymentId'] ?? null;
+            $clientSecret = $result['clientSecret'] ?? null;  // Store securely - returned only once
+            $checkoutUrl  = $result['checkoutUrl'] ?? null;
 
-            header("Location: " . $result['checkoutUrl']);
-            exit;
+            Log::info('Payment ID: ' . $paymentId);
+            Log::info('Checkout URL: ' . $checkoutUrl);
+
+            if (!empty($checkoutUrl)) {
+                return response()->json(array('type' => 'SUCCESS', 'message' => 'Please wait... We are redirecting to the payment page.', 'redirect' => $checkoutUrl));
+            }
         } else {
+            $errorCode = $result['error']['code'] ?? 'UNKNOWN';
+            $errorMsg  = $result['error']['message'] ?? 'Payment session creation failed.';
 
-            echo "Payment session creation failed.";
+            Log::error('Payment Error - Code: ' . $errorCode . ', Message: ' . $errorMsg);
+            return response()->json(array('type' => 'ERROR', 'message' => $errorMsg));
         }
     }
 
-    public function getOffer4_subpaisa(Request $request)
+    public function getOffer4_subpaisa_old(Request $request)
     {
         try {
             $inputs = $request->all();
@@ -2409,7 +2438,7 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function offer4Response(Request $request)
+    public function offer4Response_subpaisa(Request $request)
     {
         try {
             //Log::info('request data - '. json_encode($request->all()));
@@ -2560,7 +2589,7 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function getOffer4_razorpay(Request $request)
+    public function getOffer4(Request $request)
     {
         try {
             $inputs = $request->all();
@@ -2661,7 +2690,7 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function offer4Response_razorpay(Request $request)
+    public function offer4Response(Request $request)
     {
         try {
 

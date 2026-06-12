@@ -1803,7 +1803,7 @@ class LoanAgentController extends Controller
     //     } 
     // }
 
-    public function getOffer2_razorpay(Request $request)
+    public function getOffer2(Request $request)
     {
         try {
             $inputs = $request->all();
@@ -1907,7 +1907,7 @@ class LoanAgentController extends Controller
         }
     }
 
-    public function offer2Response_razorpay(Request $request, $orderId, $token)
+    public function offer2Response(Request $request, $orderId, $token)
     {
         try {
             $meta = selfApplyMeta();
@@ -1983,7 +1983,7 @@ class LoanAgentController extends Controller
         }
     }
 
-    public function getOffer2(Request $request)
+    public function getOffer2_subpaisa(Request $request)
     {
         try {
             $inputs = $request->all();
@@ -2085,7 +2085,7 @@ class LoanAgentController extends Controller
         }
     }
 
-    public function offer2Response(Request $request)
+    public function offer2Response_subpaisa(Request $request)
     {
         try {
             //Log::info('request data - '. json_encode($request->all()));
