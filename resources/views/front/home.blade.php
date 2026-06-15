@@ -612,15 +612,15 @@
 </section>
 <!-- Our Partners section end  -->
 
-<!-- <section class="loan-roadmap pt-80 pb-0">
+<section class="loan-roadmap pt-80 pb-0">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-12">
                 <div class="section-title mb-40">
-                    <h2 class="s-28 mb-5"> Get Your Loan Approved In <span class="color--green-500">5 Easy Steps</span>
+                    <h2 class="s-28 mb-5"> Find the Right Loan in<span class="color--green-500"> 5 Easy Steps
+</span>
                     </h2>
-                    <p class="s-16 color--grey mt-0"> A quick and seamless journey to help you get the best loan offers
-                        without hassle.</p>
+                    <p class="s-16 color--grey mt-0">Simple process, quick approval, and trusted lenders.</p>
                 </div>
             </div>
         </div>
@@ -630,8 +630,8 @@
 <div class="d-flex align-items-center">
 
                     <span>01</span>
-                    <h4 class="s-18 w-700 ms-3">Loan Details</h4></div>
-                    <p class="s-16 color--grey fw-normal mb-0"> Choose the required loan amount and basic preferences.
+                    <h4 class="s-18 w-700 ms-2">Tell Us Your Requirement</h4></div>
+                    <p class="s-16 color--grey fw-normal mb-0"> Enter your loan details.
                     </p>
                 </div>
             </div>
@@ -639,9 +639,9 @@
                 <div class="content">
                     <div class="d-flex align-items-center">
                     <span>02</span>
-                    <h4 class="s-18 w-700 ms-3">Personal Details</h4></div>
+                    <h4 class="s-18 w-700 ms-2">Verify Your Information</h4></div>
                     <p class="s-16 color--grey fw-normal mb-0">
-                        Fill in personal and employment information securely.
+                        Fill in the required personal details.
                     </p>
                 </div>
             </div>
@@ -649,9 +649,9 @@
                 <div class="content">
                     <div class="d-flex align-items-center">
                     <span>03</span>
-                    <h4 class="s-18 w-700 ms-3">Unlock Offers</h4></div>
+                    <h4 class="s-18 w-700 ms-2">Get Matched Offers</h4></div>
                     <p class="s-16 color--grey fw-normal mb-0">
-                        Instantly explore loan offers matched to your profile.
+                        See loan options based on your profile.
                     </p>
                 </div>
             </div>
@@ -659,9 +659,9 @@
                 <div class="content">
                     <div class="d-flex align-items-center">
                     <span>04</span>
-                    <h4 class="s-18 w-700 ms-3">Purchase Plan</h4></div>
+                    <h4 class="s-18 w-700 ms-2">Choose Your Loan Plan</h4></div>
                     <p class="s-16 color--grey fw-normal mb-0">
-                        Compare available repayment plans and choose wisely.
+                        Select the most suitable offer.
                     </p>
                 </div>
             </div>
@@ -669,15 +669,15 @@
                 <div class="content">
                     <div class="d-flex align-items-center">
                     <span>05</span>
-                    <h4 class="s-18 w-700 ms-3">Personalized Offers</h4></div>
+                    <h4 class="s-18 w-700 ms-2">Loan Disbursed Quickly</h4></div>
                     <p class="s-16 color--grey fw-normal mb-0">
-                        Receive customized loan offers with quick approval.
+                        Get approval and receive funds faster.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-</section> -->
+</section> 
 
 <!-- Testimonioals section starts -->
 <section id="reviews-1" class="py-80 reviews-section">
