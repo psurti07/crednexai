@@ -517,7 +517,7 @@
   left: -12px;
 }
 
-@media(max-width:768px) {
+@media screen and (max-width:768px) {
   .loan-roadmap .step {
     margin-bottom: 20px;
   }
