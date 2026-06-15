@@ -14,7 +14,7 @@
                 <!-- <div class="review-avatar">
                     <img src="{{ asset('front/images/logo/apple-touch-icon.png') }}" alt="review-avatar" width="auto">
                 </div> -->
-                <div class="review-author ps-0">
+                <div class="review-author ps-0 mb-1">
                     <h4 class="s-16 w-600">Aniket Sharma</h4>
                     <div class="star-rating ico-15">
                         <span class="flaticon-star"></span>
@@ -42,7 +42,7 @@
                 <!-- <div class="review-avatar">
                     <img src="{{ asset('front/images/logo/apple-touch-icon.png') }}" alt="review-avatar" width="auto">
                 </div> -->
-                <div class="review-author ps-0">
+                <div class="review-author ps-0 mb-1">
                     <h4 class="s-16 w-600">Dayaram Mishra</h4>
                     <div class="star-rating ico-15">
                         <span class="flaticon-star"></span>
@@ -70,7 +70,7 @@
                 <!-- <div class="review-avatar">
                     <img src="{{ asset('front/images/logo/apple-touch-icon.png') }}" alt="review-avatar" width="auto">
                 </div> -->
-                <div class="review-author ps-0">
+                <div class="review-author ps-0 mb-1">
                     <h4 class="s-16 w-600">Gitesh Patel</h4>
                     <div class="star-rating ico-15">
                         <span class="flaticon-star"></span>
@@ -98,7 +98,7 @@
                 <!-- <div class="review-avatar">
                     <img src="{{ asset('front/images/logo/apple-touch-icon.png') }}" alt="review-avatar" width="auto">
                 </div> -->
-                <div class="review-author ps-0">
+                <div class="review-author ps-0 mb-1">
                     <h4 class="s-16 w-600">Ankur Mehta</h4>
                     <div class="star-rating ico-15">
                         <span class="flaticon-star"></span>
