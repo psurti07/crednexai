@@ -2229,7 +2229,7 @@ class SelfApplyController extends Controller
         return view('selfApply.offers.offer-4', compact('meta', 'productData'));
     }
 
-    public function getOffer4_subpaisa(Request $request)
+    public function getOffer4_subpaisa_old(Request $request)
     {
         $merchantId = "CRED1";
         $apiKey     = "sp_keQHrFpgKH_cewQNSvrBxkzXIeFjBMt1ybQrN-XT0_8";
@@ -2256,13 +2256,14 @@ class SelfApplyController extends Controller
             $currency . "|" .
             $timestamp;
 
-        $checksum = hash_hmac('sha256', $input, $secretKey);
+        $message = "{$merchantId}|{$merchantTxnId}|{$amountInPaise}|{$currency}|{$timestamp}";
+        $checksum = hash_hmac('sha256', $message, $secretKey);
 
         Log::info('Checksum Input String: ' . $input);
         Log::info('Generated Checksum: ' . $checksum);
 
         // Request payload
-        $payload = [
+        $postData = [
             "merchantId"    => $merchantId,
             "merchantTxnId" => $merchantTxnId,
             "amount"        => $amountInPaise,  // Amount in PAISE
@@ -2275,67 +2276,39 @@ class SelfApplyController extends Controller
             "customerPhone" => "9879879879",
         ];
 
-        Log::info('API URL: ' . $apiUrl);
-        Log::info('Request Payload: ' . json_encode($payload));
-
         // API Call
-        $ch = curl_init();
+        $curl = curl_init();
 
-        curl_setopt_array($ch, [
-            CURLOPT_URL            => $apiUrl,
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://merchant-api.sabpaisa.in/api/v2/payments',
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POST           => true,
-            CURLOPT_TIMEOUT        => 30,
-            CURLOPT_CONNECTTIMEOUT => 10,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_SSL_VERIFYHOST => false,
-            CURLOPT_HTTPHEADER     => [
-                "X-Api-Key: " . $apiKey,
-                "Content-Type: application/json"
-            ],
-            CURLOPT_POSTFIELDS     => json_encode($payload)
-        ]);
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => json_encode($postData),
+            CURLOPT_HTTPHEADER => array(
+                'X-Api-Key: ' . $apiKey,
+                'Content-Type: application/json'
+            ),
+        ));
 
-        $response = curl_exec($ch);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $response = curl_exec($curl);
+        $error = curl_error($curl);
 
-        Log::info('HTTP CODE: ' . $httpCode);
-        Log::info('Response: ' . $response);
+        curl_close($curl);
+        Log::info("error", [$error]);
+        $response = json_decode($response, true);
+        Log::info("response", [$response]);
 
-        if (curl_errno($ch)) {
-            Log::error('cURL Error: ' . curl_error($ch));
-            curl_close($ch);
-            return back()->with('error', 'Connection error. Please try again.');
-        }
-
-        curl_close($ch);
-
-        $result = json_decode($response, true);
-
-        // Handle response
-        if ($result && isset($result['success']) && $result['success'] === true) {
-
-            // Store these for future reference
-            $paymentId    = $result['paymentId'] ?? null;
-            $clientSecret = $result['clientSecret'] ?? null;  // Store securely - returned only once
-            $checkoutUrl  = $result['checkoutUrl'] ?? null;
-
-            Log::info('Payment ID: ' . $paymentId);
-            Log::info('Checkout URL: ' . $checkoutUrl);
-
-            if (!empty($checkoutUrl)) {
-                return response()->json(array('type' => 'SUCCESS', 'message' => 'Please wait... We are redirecting to the payment page.', 'redirect' => $checkoutUrl));
-            }
-        } else {
-            $errorCode = $result['error']['code'] ?? 'UNKNOWN';
-            $errorMsg  = $result['error']['message'] ?? 'Payment session creation failed.';
-
-            Log::error('Payment Error - Code: ' . $errorCode . ', Message: ' . $errorMsg);
-            return response()->json(array('type' => 'ERROR', 'message' => $errorMsg));
-        }
+        return response()->json(array('type' => 'SUCCESS', 'message' => 'Please wait... We are redirecting to the payment page.', 'url' => $response['checkoutUrl'] . "?clientSecret=" . $response['clientSecret']));
     }
 
-    public function getOffer4_subpaisa_old(Request $request)
+    public function getOffer4(Request $request)
     {
         try {
             $inputs = $request->all();
@@ -2388,48 +2361,83 @@ class SelfApplyController extends Controller
 
             // Get the ID of the updated or inserted record
             $record = DB::table('cardoffer')->where('mobile', $mobile)->first();
-            $offerId = $record->id;
-            // $token = $profile['data']['token'];
 
-            $orderId = number_format(microtime(true) * 1000, 0, '.', '');
-            $encData = null;
             $returnUrl = 'https://crednexai.com/api/self-apply/star-offer-response';
 
-            Log::info('SABPAISA_MODE' . config('constant.SABPAISA_MODE'));
-            Log::info('SABPAISA_CLIENT_CODE' . config('constant.SABPAISA_CLIENT_CODE'));
-            Log::info('SABPAISA_USERNAME' . config('constant.SABPAISA_USERNAME'));
-            Log::info('SABPAISA_PASSWORD' . config('constant.SABPAISA_PASSWORD'));
-
-            if (config('constant.SABPAISA_MODE') == "PROD") {
-                $curlurl = "https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1";
-            } else {
-                $curlurl = "https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1";
-            }
             $fullname = trim($first_name) . " " . trim($last_name);
-            /* subpaisa encrypt data */
-            // $encData = "?clientCode=" . env('SABPAISA_CLIENT_CODE') . "&transUserName=" . env('SABPAISA_USERNAME') . "&transUserPassword=" . env('SABPAISA_PASSWORD') . "&amount=" . round($grandAmount) . "&amountType=INR&clientTxnId=" . $orderId . "&payerName=" . $fullname . "&payerMobile=" . $mobile . "&payerEmail=" . trim(strtolower($email)) . "&mcc=5137&channelId=#&callbackUrl=" . $returnUrl;
-            $encData = "?clientCode=" . config('constant.SABPAISA_CLIENT_CODE') . "&transUserName=" . config('constant.SABPAISA_USERNAME') . "&transUserPassword=" . config('constant.SABPAISA_PASSWORD') . "&amount=" . round($grandAmount) . "&amountType=INR&clientTxnId=" . $orderId . "&payerName=" . trim($fullname) . "&payerMobile=" . $mobile . "&payerEmail=" . trim(strtolower($email)) . "&mcc=5137&channelId=#&callbackUrl=" . $returnUrl;
-            /* generate subpaisa paymenturl */
-            $AesCipher = new Authuntication();
-            $encryptData = $AesCipher->encrypt($encData);
+
+            $merchantId = "CRED1";
+            $apiKey     = "sp_keQHrFpgKH_cewQNSvrBxkzXIeFjBMt1ybQrN-XT0_8";
+            $secretKey  = "sec_GFElibE_fKNQUWLf0bsEztMFupjalohB81P5zSw2M1c";
+            $returnUrl  = "https://crednexai.com/api/self-apply/star-offer-response";
+            $merchantTxnId = "TXN" . time() . rand(1000, 9999);
+            $amountInPaise = ($grandAmount * 100);
+            $currency      = "INR";
+            $timestamp     = time();
+
+            $input = $merchantId . "|" . $merchantTxnId . "|" . $amountInPaise . "|" . $currency . "|" . $timestamp;
+
+            $message = "{$merchantId}|{$merchantTxnId}|{$amountInPaise}|{$currency}|{$timestamp}";
+            $checksum = hash_hmac('sha256', $message, $secretKey);
+
+            Log::info('Checksum Input String: ' . $input);
+            Log::info('Generated Checksum: ' . $checksum);
+
+            // Request payload
+            $postData = [
+                "merchantId"    => $merchantId,
+                "merchantTxnId" => $merchantTxnId,
+                "amount"        => $amountInPaise,  // Amount in PAISE
+                "currency"      => $currency,
+                "returnUrl"     => $returnUrl,
+                "timestamp"     => $timestamp,
+                "checksum"      => $checksum,
+                "customerName"  => $fullname,
+                "customerEmail" => $email,
+                "customerPhone" => $mobile,
+            ];
+
+            // API Call
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => 'https://merchant-api.sabpaisa.in/api/v2/payments',
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_SSL_VERIFYPEER => false,
+                CURLOPT_SSL_VERIFYHOST => false,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                CURLOPT_POSTFIELDS => json_encode($postData),
+                CURLOPT_HTTPHEADER => array(
+                    'X-Api-Key: ' . $apiKey,
+                    'Content-Type: application/json'
+                ),
+            ));
+
+            $response = curl_exec($curl);
+            $error = curl_error($curl);
+
+            curl_close($curl);
+            Log::info("error", [$error]);
+            $response = json_decode($response, true);
+            Log::info("response", [$response]);
 
             $subpaisaData = array(
                 'rec_date' => date('Y-m-d H:i:s'),
                 'entryfor' => 7, // sa offer 2 or mega offer
                 'userid' => $offerId,
-                'orderid' => $orderId,
+                'orderid' => $merchantTxnId,
                 'orderamount' => round($grandAmount),
                 'ordernote' => $products->productname
             );
 
             $response = SubpaisaEntry::insert($subpaisaData);
-            $html = view('pg.pay', [
-                'data' => $encryptData,
-                'clientCode' => config('constant.SABPAISA_CLIENT_CODE'),
-                'action' => $curlurl
-            ])->render();
 
-            return response()->json(array('type' => 'SUCCESS', 'message' => 'Please wait... We are redirecting to the payment page.', 'html' => $html));
+            return response()->json(array('type' => 'SUCCESS', 'message' => 'Please wait... We are redirecting to the payment page.', 'url' => $response['checkoutUrl'] . "?clientSecret=" . $response['clientSecret']));
         } catch (ValidationException $e) {
             return response()->json(array('type' => 'ERROR', 'errors' => $e->errors()), 422);
         } catch (\Exception $e) {
@@ -2438,105 +2446,39 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function offer4Response_subpaisa(Request $request)
+    public function offer4Response(Request $request)
     {
         try {
-            //Log::info('request data - '. json_encode($request->all()));
             $meta = selfApplyMeta();
-            $query = $request->input('encResponse');
-            $authKey = env('SABPAISA_AUTH_KEY');
-            $authIV = env('SABPAISA_AUTH_IV');
 
-            $AesCipher = new Authuntication();
-            $decText = $AesCipher->decrypt($query);
+            $ch = curl_init(getenv('SABPAISA_BASE_URL') . '/api/v2/payments/enquiry');
+            curl_setopt_array($ch, [
+                CURLOPT_POST           => true,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_HTTPHEADER     => [
+                    'X-Api-Key: ' . getenv('SABPAISA_API_KEY'),
+                    'Content-Type: application/json',
+                ],
+                CURLOPT_POSTFIELDS => json_encode([
+                    'clientCode'    => getenv('SABPAISA_MERCHANT_ID'),
+                    'merchantTxnId' => $request->merchantTxnId,
+                ]),
+            ]);
 
-            $grandtotal = $netamount = $cgstamount = $sgstamount = $igstamount = 0;
+            $result = json_decode(curl_exec($ch), true);
+            curl_close($ch);
 
-            $token = strtok($decText, "&");
-
-            $i = 0;
-
-            /* response value After Decryption
-
-            payerName=Test&payerEmail=Test@gmail.com&payerMobile=1234567890&clientTxnId=1907&payerAddress=NA&amount=10.0
-            &clientCode=XXXXX&paidAmount=10.1&paymentMode=Debit Card&bankName=BOB&amountType=INR&status=FAILED&statusCode=0300&challanNumber=null
-            &sabpaisaTxnId=883602112220421050&sabpaisaMessage=Sorry, Your Transaction has Failed.&bankMessage=DebitCard&bankErrorCode=null
-            &sabpaisaErrorCode=null&bankTxnId=101202235510088892&transDate=Wed Dec 21 16:26:28 IST 2022&udf1=NA&udf2=NA&udf3=NA&udf4=NA&udf5=NA
-            &udf6=NA&udf7=NA&udf8=NA&udf9=null&udf10=null&udf11=null&udf12=null&udf13=null&udf14=null&udf15=null&udf16=null&udf17=null&udf18=null
-            &udf19=null&udf20=nulli- */
-
-            //Log::info($token);
-
-            while ($token !== false) {
-                $i = $i + 1;
-                $token1 = strchr($token, "=");
-                $token = strtok("&");
-                $fstr = ltrim($token1, "=");
-
-                if ($i == 1) {
-                    $payerName = $fstr;
-                }
-                if ($i == 2)
-                    $payerEmail = $fstr;
-                if ($i == 3)
-                    $payerMobile = $fstr;
-                if ($i == 4)
-                    $clientTxnId = $fstr;
-                if ($i == 5)
-                    $payerAddress = $fstr;
-                if ($i == 6)
-                    $amount = $fstr;
-                if ($i == 7)
-                    $clientCode = $fstr;
-                if ($i == 8)
-                    $paidAmount = $fstr;
-                if ($i == 9)
-                    $paymentMode = $fstr;
-                if ($i == 10)
-                    $bankName = $fstr;
-                if ($i == 11)
-                    $amountType = $fstr;
-                if ($i == 12)
-                    $status = $fstr;
-                if ($i == 13)
-                    $statusCode = $fstr;
-                if ($i == 14)
-                    $challanNumber = $fstr;
-                if ($i == 15)
-                    $sabpaisaTxnId = $fstr;
-                if ($i == 16)
-                    $sabpaisaMessage = $fstr;
-                if ($i == 17)
-                    $bankMessage = $fstr;
-                if ($i == 18)
-                    $bankErrorCode = $fstr;
-                if ($i == 19)
-                    $sabpaisaErrorCode = $fstr;
-                if ($i == 20)
-                    $bankTxnId = $fstr;
-                if ($i == 21)
-                    $transDate = $fstr;
-
-                if ($token == true) {
-                }
-            }
-            /* update client tax id in subpaisa_entry table */
-            /* Log::info($clientTxnId);
-            Log::info($paymentMode);
-            Log::info($status);
-            Log::info($statusCode);*/
-
-            $paymentData = SubpaisaEntry::where('orderid', $clientTxnId)->first();
+            $paymentData = SubpaisaEntry::where('orderid', $request->merchantTxnId)->first();
             $subpaisaData = array(
                 'rec_date' => date('Y-m-d H:i:s'),
-                'referenceid' => $sabpaisaTxnId,
-                'txstatus' => $status,
-                'paymentmode' => $paymentMode
+                'referenceid' => $request->sabpaisaTxnId,
+                'txstatus' => $request->status,
+                'paymentmode' => $request->paymentMode
             );
             //Log::info('subpaisa data - '. json_encode($subpaisaData));
             $response1 = SubpaisaEntry::where('id', $paymentData->id)->update($subpaisaData);
             //Log::info('subpaisa response - '. $response1);
-            if ($statusCode == '0000') {
+            if ($result['status'] == 'success') {
                 $cardno = random_code_num(16);
                 $userData = Cardoffer::where('id', $paymentData->userid)->first();
                 $data = array(
@@ -2544,7 +2486,7 @@ class SelfApplyController extends Controller
                     'card_number' => $cardno,
                     'registration_date' => date('Y-m-d'),
                     'expiry_date' => date('Y-m-d', strtotime('+3 months')),
-                    'paymentid' => $sabpaisaTxnId,
+                    'paymentid' => $request->sabpaisaTxnId,
                     'amount' => $paymentData->orderamount,
                     'isActive' => 1
                 );
@@ -2555,7 +2497,7 @@ class SelfApplyController extends Controller
                         ->first();
 
                     if ($regUser) {
-                        $converted = convertIntoCustomer($cardno, $regUser, $userData, $paymentData->orderamount, $sabpaisaTxnId, 1, 'self-apply', 'SA_', 5);
+                        $converted = convertIntoCustomer($cardno, $regUser, $userData, $paymentData->orderamount, $request->sabpaisaTxnId, 1, 'self-apply', 'SA_', 5);
                         if (!$converted) {
                             Log::error("Conversion to customer failed for user: " . $regUser->id);
                             dd('check log');
@@ -2568,11 +2510,6 @@ class SelfApplyController extends Controller
                 return view('cardoffer-response', [
                     'meta' => $meta,
                     'response' => TRUE,
-                ]);
-            } else if ($statusCode == '0300') {
-                return view('cardoffer-response', [
-                    'meta' => $meta,
-                    'response' => FALSE,
                 ]);
             } else {
                 return view('cardoffer-response', [
@@ -2589,7 +2526,7 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function getOffer4(Request $request)
+    public function getOffer4_razorpay(Request $request)
     {
         try {
             $inputs = $request->all();
@@ -2690,7 +2627,7 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function offer4Response(Request $request)
+    public function offer4Response_razorpay(Request $request)
     {
         try {
 

@@ -225,8 +225,8 @@ $(document).ready(function() {
                     if (result.type === 'SUCCESS') {
                         toastr.success(result.message);
                         setTimeout(function() {
-                        window.location.href = result.url;
-                        }, 5000);
+                            window.location.href = result.url;
+                        }, 3000);
                     } else {
                         toastr.error(result.message);
                         $('#submit-btn').html('Apply Now');

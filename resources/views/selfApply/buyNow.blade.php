@@ -191,63 +191,6 @@
                                 </div>
 
                                 <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="card mb-3">
-                                        <div class="card-body">
-                                            <p class="fw-bold mt-0">Loan Eligibility Criteria : </p>
-                                            <p class="fw-semibold">Salaried Employees :</p>
-
-                                            <div class="cbox-1 ico-15 ml-10">
-                                                <div class="ico-wrap color--grey">
-                                                    <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
-                                                </div>
-                                                <div class="cbox-1-txt">
-                                                    <p class="s-14 mt-0"> Minimum Age: 21 Years </p>
-                                                </div>
-                                            </div>
-                                            <div class="cbox-1 ico-15 ml-10">
-                                                <div class="ico-wrap color--grey">
-                                                    <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
-                                                </div>
-                                                <div class="cbox-1-txt">
-                                                    <p class="s-14 mt-0"> Minimum Salary – Rs.15,000/month (Should be reflected in the bank statement)</p>
-                                                </div>
-                                            </div>
-                                            <div class="cbox-1 ico-15 ml-10">
-                                                <div class="ico-wrap color--grey">
-                                                    <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
-                                                </div>
-                                                <div class="cbox-1-txt">
-                                                    <p class="s-14 mt-0"> Minimum Job Duration: 1 Year</p>
-                                                </div>
-                                            </div>
-
-                                            <p class="fw-semibold">Self-Employed Individuals :</p>
-                                            <div class="cbox-1 ico-15 ml-10">
-                                                <div class="ico-wrap color--grey">
-                                                    <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
-                                                </div>
-                                                <div class="cbox-1-txt">
-                                                    <p class="s-14 mt-0"> Minimum Age: 21 Years</p>
-                                                </div>
-                                            </div>
-                                            <div class="cbox-1 ico-15 ml-10">
-                                                <div class="ico-wrap color--grey">
-                                                    <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
-                                                </div>
-                                                <div class="cbox-1-txt">
-                                                    <p class="s-14 mt-0"> Minimum 1 year in the business</p>
-                                                </div>
-                                            </div>
-                                            <div class="cbox-1 ico-15 ml-10">
-                                                <div class="ico-wrap color--grey">
-                                                    <div class="cbox-1-ico"><span class="flaticon-check"></span></div>
-                                                </div>
-                                                <div class="cbox-1-txt">
-                                                    <p class="s-14 mt-0"> Income Tax Return of at least 1 year</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="card">
                                         <div class="card-body">
                                             <p class="fw-bold mt-0">Subscription Benefits: : </p>
