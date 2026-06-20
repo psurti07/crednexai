@@ -1496,16 +1496,13 @@ class SelfApplyController extends Controller
     {
         try {
             $inputs = $request->all();
-
             $request->validate([
                 'first_name' => 'required',
                 'last_name' => 'required',
                 'email' => 'required|email',
                 'mobile' => ['required', 'numeric', 'regex:/^[6-9]\d{9}$/']
             ]);
-            /* first check in user registration */
             $profile = $this->checkUserProcess($inputs);
-
             if ($profile) {
                 return response()->json($profile);
             } else {
@@ -1515,7 +1512,8 @@ class SelfApplyController extends Controller
                 $email = $inputs['email'];
             }
             /* product Data */
-            $products = Product::where('productslug', env('SA_OFFER_2'))->first();
+            $products = Product::where('productslug', config('constant.SA_OFFER_4'))->first();
+
             /* set amount of offer */
             $amount = ($products->inOffer == 1) ? $products->offeramount : $products->amount;
             $grandAmount = $amount + ($amount * 0.18);
@@ -1534,7 +1532,7 @@ class SelfApplyController extends Controller
                 ['mobile' => $mobile], // Search condition
                 [ // Values to update or insert
                     'rec_date' => date('Y-m-d H:i:s'),
-                    'offerpage' => 5, //SA offer  or mega offer
+                    'offerpage' =>  7, //sa offer 4 or star offer
                     'first_name' => $first_name,
                     'last_name' => $last_name,
                     'emailid' => $email,
@@ -1547,48 +1545,83 @@ class SelfApplyController extends Controller
 
             // Get the ID of the updated or inserted record
             $record = DB::table('cardoffer')->where('mobile', $mobile)->first();
-            $offerId = $record->id;
 
-            $orderId = number_format(microtime(true) * 1000, 0, '.', '');
-            $encData = null;
-            $returnUrl = 'https://crednexai.com/api/self-apply/mega-offer-response';
+            $returnUrl = 'https://crednexai.com/api/self-apply/star-offer-response';
 
-            if (env('SABPAISA_MODE') == "PROD") {
-                $curlurl = "https://securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1";
-            } else {
-                $curlurl = "https://stage-securepay.sabpaisa.in/SabPaisa/sabPaisaInit?v=1";
-            }
             $fullname = trim($first_name) . " " . trim($last_name);
-            /* subpaisa encrypt data */
-            $encData = "?clientCode=" . env('SABPAISA_CLIENT_CODE') . "&transUserName=" . env('SABPAISA_USERNAME') . "&transUserPassword=" . env('SABPAISA_PASSWORD') . "&amount=" . round($grandAmount) . "&amountType=INR&clientTxnId=" . $orderId . "&payerName=" . $fullname . "&payerMobile=" . $mobile . "&payerEmail=" . trim(strtolower($email)) . "&mcc=5137&channelId=#&callbackUrl=" . $returnUrl;
 
-            /* generate subpaisa paymenturl */
-            $AesCipher = new Authuntication();
-            $encryptData = $AesCipher->encrypt(env('SABPAISA_AUTH_KEY'), env('SABPAISA_AUTH_IV'), $encData);
+            $merchantId = "CRED1";
+            $apiKey     = "sp_keQHrFpgKH_cewQNSvrBxkzXIeFjBMt1ybQrN-XT0_8";
+            $secretKey  = "sec_GFElibE_fKNQUWLf0bsEztMFupjalohB81P5zSw2M1c";
+            $returnUrl  = "https://crednexai.com/api/self-apply/star-offer-response";
+            $merchantTxnId = "TXN" . time() . rand(1000, 9999);
+            $amountInPaise = ($grandAmount * 100);
+            $currency      = "INR";
+            $timestamp     = time();
 
-            /*$postData = array(
-                'clientCode' => env('SABPAISA_CLIENT_CODE'),
-                'encryptData' => $encryptData,
-                'action' => $curlurl
-            );*/
+            $input = $merchantId . "|" . $merchantTxnId . "|" . $amountInPaise . "|" . $currency . "|" . $timestamp;
+
+            $message = "{$merchantId}|{$merchantTxnId}|{$amountInPaise}|{$currency}|{$timestamp}";
+            $checksum = hash_hmac('sha256', $message, $secretKey);
+
+            Log::info('Checksum Input String: ' . $input);
+            Log::info('Generated Checksum: ' . $checksum);
+
+            // Request payload
+            $postData = [
+                "merchantId"    => $merchantId,
+                "merchantTxnId" => $merchantTxnId,
+                "amount"        => $amountInPaise,  // Amount in PAISE
+                "currency"      => $currency,
+                "returnUrl"     => $returnUrl,
+                "timestamp"     => $timestamp,
+                "checksum"      => $checksum,
+                "customerName"  => $fullname,
+                "customerEmail" => $email,
+                "customerPhone" => $mobile,
+            ];
+
+            // API Call
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => 'https://merchant-api.sabpaisa.in/api/v2/payments',
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_SSL_VERIFYPEER => false,
+                CURLOPT_SSL_VERIFYHOST => false,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                CURLOPT_POSTFIELDS => json_encode($postData),
+                CURLOPT_HTTPHEADER => array(
+                    'X-Api-Key: ' . $apiKey,
+                    'Content-Type: application/json'
+                ),
+            ));
+
+            $response = curl_exec($curl);
+            $error = curl_error($curl);
+
+            curl_close($curl);
+            Log::info("error", [$error]);
+            $response = json_decode($response, true);
+            Log::info("response", [$response]);
 
             $subpaisaData = array(
                 'rec_date' => date('Y-m-d H:i:s'),
                 'entryfor' => 7, // sa offer 2 or mega offer
                 'userid' => $offerId,
-                'orderid' => $orderId,
+                'orderid' => $merchantTxnId,
                 'orderamount' => round($grandAmount),
                 'ordernote' => $products->productname
             );
 
             $response = SubpaisaEntry::insert($subpaisaData);
-            $html = view('pg.pay', [
-                'data' => $encryptData,
-                'clientCode' => env('SABPAISA_CLIENT_CODE'),
-                'action' => $curlurl
-            ])->render();
 
-            return response()->json(array('type' => 'SUCCESS', 'message' => 'Please wait... We are redirecting to the payment page.', 'html' => $html));
+            return response()->json(array('type' => 'SUCCESS', 'message' => 'Please wait... We are redirecting to the payment page.', 'url' => $response['checkoutUrl'] . "?clientSecret=" . $response['clientSecret']));
         } catch (ValidationException $e) {
             return response()->json(array('type' => 'ERROR', 'errors' => $e->errors()), 422);
         } catch (\Exception $e) {
@@ -2229,86 +2262,7 @@ class SelfApplyController extends Controller
         return view('selfApply.offers.offer-4', compact('meta', 'productData'));
     }
 
-    public function getOffer4_subpaisa_old(Request $request)
-    {
-        $merchantId = "CRED1";
-        $apiKey     = "sp_keQHrFpgKH_cewQNSvrBxkzXIeFjBMt1ybQrN-XT0_8";
-        $secretKey  = "sec_GFElibE_fKNQUWLf0bsEztMFupjalohB81P5zSw2M1c";
-        $returnUrl  = "https://crednexai.com/api/self-apply/star-offer-response";
-
-        // Staging API URL (Official Documentation)
-        $apiUrl = "https://merchant-api.sabpaisa.in/api/v2/payments";
-
-        // =========================
-        // PAYMENT DETAILS
-        // =========================
-
-        $merchantTxnId = "TXN" . time() . rand(1000, 9999);
-        $amountInPaise = 10000;  // ₹100 = 10000 paise (Amount in PAISE as per docs)
-        $currency      = "INR";
-        $timestamp     = time();
-
-        // Generate checksum (as per official docs)
-        // Format: merchantId|merchantTxnId|amount|currency|timestamp
-        $input = $merchantId . "|" .
-            $merchantTxnId . "|" .
-            $amountInPaise . "|" .
-            $currency . "|" .
-            $timestamp;
-
-        $message = "{$merchantId}|{$merchantTxnId}|{$amountInPaise}|{$currency}|{$timestamp}";
-        $checksum = hash_hmac('sha256', $message, $secretKey);
-
-        Log::info('Checksum Input String: ' . $input);
-        Log::info('Generated Checksum: ' . $checksum);
-
-        // Request payload
-        $postData = [
-            "merchantId"    => $merchantId,
-            "merchantTxnId" => $merchantTxnId,
-            "amount"        => $amountInPaise,  // Amount in PAISE
-            "currency"      => $currency,
-            "returnUrl"     => $returnUrl,
-            "timestamp"     => $timestamp,
-            "checksum"      => $checksum,
-            "customerName"  => "Test User",
-            "customerEmail" => "test@gmail.com",
-            "customerPhone" => "9879879879",
-        ];
-
-        // API Call
-        $curl = curl_init();
-
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://merchant-api.sabpaisa.in/api/v2/payments',
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_SSL_VERIFYHOST => false,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => json_encode($postData),
-            CURLOPT_HTTPHEADER => array(
-                'X-Api-Key: ' . $apiKey,
-                'Content-Type: application/json'
-            ),
-        ));
-
-        $response = curl_exec($curl);
-        $error = curl_error($curl);
-
-        curl_close($curl);
-        Log::info("error", [$error]);
-        $response = json_decode($response, true);
-        Log::info("response", [$response]);
-
-        return response()->json(array('type' => 'SUCCESS', 'message' => 'Please wait... We are redirecting to the payment page.', 'url' => $response['checkoutUrl'] . "?clientSecret=" . $response['clientSecret']));
-    }
-
-    public function getOffer4(Request $request)
+    public function getOffer4_subpaisa(Request $request)
     {
         try {
             $inputs = $request->all();
@@ -2446,7 +2400,7 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function offer4Response(Request $request)
+    public function offer4Response_subpaisa(Request $request)
     {
         try {
             $meta = selfApplyMeta();
@@ -2526,7 +2480,7 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function getOffer4_razorpay(Request $request)
+    public function getOffer4(Request $request)
     {
         try {
             $inputs = $request->all();
@@ -2627,7 +2581,7 @@ class SelfApplyController extends Controller
         }
     }
 
-    public function offer4Response_razorpay(Request $request)
+    public function offer4Response(Request $request)
     {
         try {
 

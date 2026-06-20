@@ -374,7 +374,7 @@
                                                             <td>
                                                                 <div class="card-wrapper" style="position: relative;">
                                                                     <div class="loan-card {{ $loop->index > 0 ? 'blurred' : '' }}">
-                                                                        <img src="https://managecrednexai.com/upload/banks/{{$offer->bank_image}}" alt="{{ $offer->bank_name }}" class="logo">
+                                                                        <img src="https://manage.crednexai.com/upload/banks/{{$offer->bank_image}}" alt="{{ $offer->bank_name }}" class="logo">
                                                                         <div class="info-wrapper">
                                                                             <div class="info-block">
                                                                                 Loan Amount
