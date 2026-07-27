@@ -110,7 +110,7 @@ if (!function_exists('nbfcsList')) {
             $data['list'] .= '<div class="col company" data-index="' . $loop . '">
                             <a href="javascript:;" class="in_tool it-1 r-10">
                                 <div class="bg--white-100 block-shadow r-10 mb-20">
-                                    <img class="img-fluid" src="https://manage.easyailoans.com/upload/banks/' . $bank->bank_image . '" alt="' . $bank->bank_name . '" width="auto">
+                                    <img class="img-fluid" src="https://manage.crednexai.com/upload/banks/' . $bank->bank_image . '" alt="' . $bank->bank_name . '" width="auto">
                                 </div>
                                 <h6 class="s-14 w-700">' . $bank->bank_name . '</h6>
                             </a>
@@ -118,7 +118,7 @@ if (!function_exists('nbfcsList')) {
 
             $data['carousel'] .= '<div class="bg--white-100 r-10 mb-20 p-2">
                                     <a href="javascript:;">
-                                        <img class="img-fluid" src="https://manage.easyailoans.com/upload/banks/' . $bank->bank_image . '" alt="' . $bank->bank_name . '" width="auto">
+                                        <img class="img-fluid" src="https://manage.crednexai.com/upload/banks/' . $bank->bank_image . '" alt="' . $bank->bank_name . '" width="auto">
                                     </a>
                                 </div>';
             $loop++;
@@ -224,7 +224,7 @@ if (!function_exists('raiseRequestFaqs')) {
                         <div class="accordion-panel-item">
                             <div class="faqs-2-answer">
                                 <p>
-                                   We request you to kindly call the company on +91-{#VAR#} between 10 AM to 5 PM- Monday to Saturday (only business days). Allow us to discuss your concerns, and we will ensure that you receive the best solutions possible.
+                                   We request you to kindly call the company on +91-84888-48968 between 10 AM to 5 PM- Monday to Saturday (only business days). Allow us to discuss your concerns, and we will ensure that you receive the best solutions possible.
                                 </p>
                             </div>
                         </div>

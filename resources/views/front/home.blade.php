@@ -30,7 +30,7 @@
             </div>
             <div class="col-sm-8 col-md-6 col-lg-6 col-12 m-auto">
                 <div class="hero-7-img d-flex justify-content-center align-items-start">
-                    <img src="{{ asset('front/images/hero-img.png') }}" alt="easyailoans" class="img-fluid p-0">
+                    <img src="{{ asset('front/images/hero-img.png') }}" alt="crednexai" class="img-fluid p-0">
                 </div>
             </div>
         </div>
